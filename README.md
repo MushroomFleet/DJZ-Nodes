@@ -2,7 +2,7 @@
 Drift Johnsons Custom nodes for ComfyUI
 
 
-# cascade_resizer
+# AspectSize
 default maximum is 2048x2048, choose your aspect ratio.
 Often there is a problem with Cascade Stage A, with pixel_unshuffle where the image dimensions no longer divide by 2.
 example is shown here https://github.com/MushroomFleet/DJZ-Nodes/blob/main/pixel_unshuffle_Cascade_error.jpg
