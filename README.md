@@ -9,3 +9,6 @@ example is shown here https://github.com/MushroomFleet/DJZ-Nodes/blob/main/pixel
 
 This node fixes that problem by finding the safest values for cascade.
 This is my first public node, it also supports 1.5 and SDXL.
+
+Currently this is not a full fledged custom node pack, cloning will not work yet ;)
+just put the .py files in the main comfyui customnodes folder, then restart to use them.
