@@ -1,4 +1,2 @@
-from .simple_source_file import SIMPLE_CUSTOM_NODE
-NODE_CLASS_MAPPINGS = { "AspectSize" : SimpleCustomNode }
-NODE_DISPLAY_NAME_MAPPINGS = { "AspectSize" : "Aspect Size" }
+from .AspectSize import AspectSize, NODE_CLASS_MAPPINGs, NODE_DISPLAY_NAME_MAPPINGS
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
