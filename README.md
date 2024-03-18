@@ -50,7 +50,7 @@ This is my first public node, it also supports 1.5 and SDXL.</p>
 <a href="https://twitter.com/mushroomfleet" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="mushroomfleet" height="30" width="40" /></a>
 <a href="https://linkedin.com/in/mushroomfleet" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mushroomfleet" height="30" width="40" /></a>
 <a href="https://instagram.com/mushroomfleet" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="mushroomfleet" height="30" width="40" /></a>
-<a href="https://www.youtube.com/c/mushroomfleet" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="mushroomfleet" height="30" width="40" /></a>
+<a href="https://www.youtube.com/@FiveBelowFiveUK" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="mushroomfleet" height="30" width="40" /></a>
 <a href="https://discord.gg/https://discord.gg/DtMXKqD5bT" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="https://discord.gg/DtMXKqD5bT" height="30" width="40" /></a>
 </p>
 
