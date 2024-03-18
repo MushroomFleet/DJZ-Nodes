@@ -53,7 +53,7 @@ class AspectSize:
     
         # Return the width and height as a tuple of integers
         return (int(width), int(height))
-    
+
 NODE_CLASS_MAPPINGS = {
     "AspectSize": AspectSize
 }
