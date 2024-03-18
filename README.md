@@ -20,10 +20,10 @@ This is my first public node, it also supports 1.5 and SDXL.</p>
 <br /><br />
 <h2>Installation</h2>
 
--- Clone this repo into /custom_nodes/
+-- Clone this repo into /custom_nodes/ <br />
 
-> cd custom_nodes
-> git clone https://github.com/MushroomFleet/DJZ-Nodes
+> cd custom_nodes <br />
+> git clone https://github.com/MushroomFleet/DJZ-Nodes <br />
 
 <br /><br />
 <h1 align="center">Hi 👋, I'm Drift Johnson</h1>
