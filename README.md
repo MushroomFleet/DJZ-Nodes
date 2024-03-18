@@ -12,7 +12,7 @@ simply choose your aspect ratio.</p> <br />
 
 <br /><br />
 <p align="left"> Often there is a problem with Cascade Stage A, with pixel_unshuffle where the image dimensions no longer divide by 2.
-example is shown here:
+example is shown here: <br />
 <img src="https://github.com/MushroomFleet/DJZ-Nodes/blob/main/pixel_unshuffle_Cascade_error.jpg" />
 <br />
 This node fixes that problem by finding the safest values for cascade.
