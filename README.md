@@ -16,7 +16,7 @@ simply choose your aspect ratio.</p> <br />
 SD 512x512 <br />
 SDXL 1024x1024 <br />
 Cascade 2048x2048  <br />
-allows cutomisation of the Downscale factor<br />
+allows customisation of the Downscale factor<br />
 simply choose your aspect ratio.</p> <br />
 
 <br /><br />
