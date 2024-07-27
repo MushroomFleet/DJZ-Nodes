@@ -8,6 +8,15 @@ Article: https://civitai.com/user/driftjohnson/articles</p> <br />
 SD 512x512 <br />
 SDXL 1024x1024 <br />
 Cascade 2048x2048  <br />
+Downscale factor 16 was baked into this version <br />
+simply choose your aspect ratio.</p> <br />
+<br /><br />
+<h3>AspectSizeV2</h3> <br />
+<p align="left"> default maximums: <br />
+SD 512x512 <br />
+SDXL 1024x1024 <br />
+Cascade 2048x2048  <br />
+allows cutomisation of the Downscale factor<br />
 simply choose your aspect ratio.</p> <br />
 
 <br /><br />
