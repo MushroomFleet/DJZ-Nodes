@@ -1,0 +1,7 @@
+$$natural_setting
+$$fantasy_realm
+ancient $$historical_place
+futuristic $$sci_fi_location
+mysterious $$enigmatic_place
+cozy $$domestic_space
+bustling $$public_place

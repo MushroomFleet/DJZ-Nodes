@@ -1,0 +1,8 @@
+$$size $$species
+majestic $$predator
+cute $$pet
+rare $$exotic_animal
+$$flying_creature
+$$aquatic_creature
+mythical $$fantasy_creature
+robotic $$mechanical_animal

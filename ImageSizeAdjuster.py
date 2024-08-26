@@ -8,7 +8,7 @@ class ImageSizeAdjuster:
                 "image": ("IMAGE",),
                 "model_type": (["SD", "SDXL", "Cascade"],),
                 "downscale_factor": ("INT", {
-                    "default": 16,
+                    "default": 64,
                     "min": 1,
                     "max": 128,
                     "step": 1,

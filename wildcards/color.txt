@@ -1,0 +1,17 @@
+$$shade red
+$$shade white
+$$shade blue
+$$shade black
+$$shade green
+$$shade yellow
+$$shade purple
+$$shade orange
+$$shade teal
+$$shade cyan
+$$shade pink
+$$shade grey
+vibrant purple
+deep orange
+shimmering gold
+muted $$neutral
+iridescent
