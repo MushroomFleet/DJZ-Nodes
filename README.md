@@ -3,6 +3,15 @@
 Video: https://www.youtube.com/watch?v=MnZnP0Fav8E <br />
 Article: https://civitai.com/user/driftjohnson/articles</p> <br />
 <br /><br />
+<p>AspectSize and ImageSizeAdjuster both address a simple problem, for best results images benefit from having dimensions divisible by 64<br />
+AspectSize allows choice of base model and Aspect Ratio, it then calculates the best height and width which is closest to the targer and /64 on both sides<br />
+ImageSizeAdjuster is the same idea but with an image input, doing the same calulation and outputting adjust dimensions for a resize node <br />
+Zenkai-Prompt allows you to mix text files with random line chosen with seed <br />
+Zenkai-wildcards parses a string for wildcards and swap out a single word in the same way <br />
+recursive wildcard examples and 5000 prompts from my Zenkai system are included in the pack <br />
+StringWeights simply wraps the generated strings with comfyui prompt weighting <br /> <br />
+In all workflows the V2 offer advanced controls which might be useful over the base function</p> <br />
+  <br /><br />
 <h3>AspectSize</h3> <br />
 <p align="left"> default maximums: <br />
 SD 512x512 <br />
