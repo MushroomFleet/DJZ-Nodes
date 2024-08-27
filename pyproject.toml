@@ -1,0 +1,14 @@
+[project]
+name = "djz-nodes"
+description = "AspectSize and other nodes"
+version = "1.0.0"
+license = {file = "LICENSE"}
+
+[project.urls]
+Repository = "https://github.com/MushroomFleet/DJZ-Nodes"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "DJZ-Nodes"
+Icon = ""
