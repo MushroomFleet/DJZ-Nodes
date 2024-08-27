@@ -16,16 +16,68 @@ simply choose your aspect ratio.</p> <br />
 SD 512x512 <br />
 SDXL 1024x1024 <br />
 Cascade 2048x2048  <br />
-allows customisation of the Downscale factor<br />
+allows customisation of the Downscale factor, 64 recommended<br />
 simply choose your aspect ratio.</p> <br />
+<br /><br />
+<h3>ImageSizeAdjuster</h3> <br />
+<p align="left"> default maximums: <br />
+SD 512x512 <br />
+SDXL 1024x1024 <br />
+Cascade 2048x2048  <br />
+allows customisation of the Downscale factor, 64 recommended<br />
+simply input your image, feed adjusted dimensions to a resize node.</p> <br />
+<br /><br />
+<h3>ImageSizeAdjusterV2</h3> <br />
+<p align="left"> default maximums: <br />
+SD 512x512 <br />
+SDXL 1024x1024 <br />
+Cascade 2048x2048  <br />
+allows customisation of the Downscale factor, 64 recommended<br />
+simply input your image, feed adjusted dimensions to a resize node.</p> <br />
+<br /><br />
+<h3>ZenkaiPrompt</h3> <br />
+<p align="left"> place .txt files inside: \prompts\ <br />
+choose the text file <br />
+separate prompts with new lines in the .txt <br />
+use seed control to control the random selection</p>  <br />
+<br /><br />
+<h3>ZenkaiPromptV2</h3> <br />
+<p align="left"> place .txt files inside: \prompts\ <br />
+choose the text file <br />
+separate prompts with new lines in the .txt <br />
+supports multi-sampled prompt <br />
+use seed control to control the random selection</p>  <br />
+<br /><br />
+<h3>ZenkaiWildcard</h3> <br />
+<p align="left"> place .txt files inside: \wildcards\ <br />
+one or two words per line, for each wildcard file <br />
+custom symbol (default $$) used to invoke the text filename <br /> 
+designed for text passthrough <br /> 
+use seed control to control the random selection</p>  <br />
+<br /><br />
+<h3>ZenkaiWildcardV2</h3> <br />
+<p align="left"> place .txt files inside: \wildcards\ <br />
+one or two words per line, for each wildcard file <br />
+custom symbol (default $$) used to invoke the text filename <br /> 
+support recursive wilcards (wildcards inside wildcards) <br />
+designed for text passthrough <br /> 
+use seed control to control the random selection</p>  <br />
+<br /><br />
+<h3>StringWeights</h3> <br />
+<p align="left"> random string weight control: <br />
+text string passtrhough node<br />
+wraps the string with the selected wieght <br />
+string="Hello" result=(hello:0.9) with weight 0.9 selected  <br />
+made for convenience <br /> </p> <br />
+
 
 <br /><br />
-<p align="left"> Often there is a problem with Cascade Stage A, with pixel_unshuffle where the image dimensions no longer divide by 2.
-example is shown here: <br />
-<img src="https://github.com/MushroomFleet/DJZ-Nodes/blob/main/pixel_unshuffle_Cascade_error.jpg" />
+<p align="left"> Zenkai-Prompt and Zenkai-Wildcard, with StringWeights for control.
+example is shown here: </p><br />
+![image](https://github.com/user-attachments/assets/477282b2-fc59-451d-996c-4383599edba0)
 <br />
-This node fixes that problem by finding the safest values for cascade.
-This is my first public node, it also supports 1.5 and SDXL.</p>
+
+
 <br /><br />
 <h2>Installation</h2>
 
