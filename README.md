@@ -26,6 +26,7 @@ SDXL 1024x1024 <br />
 Cascade 2048x2048  <br />
 allows customisation of the Downscale factor, 64 recommended<br />
 simply input your image, feed adjusted dimensions to a resize node.</p> <br />
+<img src="https://i.gyazo.com/d922a13e0ba47e83405db6c2657f7c6c.png" />
 <br /><br />
 <h3>ImageSizeAdjusterV2</h3> <br />
 <p align="left"> default maximums: <br />
@@ -34,12 +35,14 @@ SDXL 1024x1024 <br />
 Cascade 2048x2048  <br />
 allows customisation of the Downscale factor, 64 recommended<br />
 simply input your image, feed adjusted dimensions to a resize node.</p> <br />
+<img src="https://i.gyazo.com/de2e50570fe2e7dd611feaffdebab929.png" />
 <br /><br />
 <h3>ZenkaiPrompt</h3> <br />
 <p align="left"> place .txt files inside: \prompts\ <br />
 choose the text file <br />
 separate prompts with new lines in the .txt <br />
 use seed control to control the random selection</p>  <br />
+<img src="https://i.gyazo.com/bbf9a12d4f0dd819aa17d5dcd9847ffa.png" />
 <br /><br />
 <h3>ZenkaiPromptV2</h3> <br />
 <p align="left"> place .txt files inside: \prompts\ <br />
@@ -47,6 +50,7 @@ choose the text file <br />
 separate prompts with new lines in the .txt <br />
 supports multi-sampled prompt <br />
 use seed control to control the random selection</p>  <br />
+<img src="https://i.gyazo.com/2bd40c42de4a116bbf60e4a99c131b84.png" />
 <br /><br />
 <h3>ZenkaiWildcard</h3> <br />
 <p align="left"> place .txt files inside: \wildcards\ <br />
@@ -54,6 +58,7 @@ one or two words per line, for each wildcard file <br />
 custom symbol (default $$) used to invoke the text filename <br /> 
 designed for text passthrough <br /> 
 use seed control to control the random selection</p>  <br />
+<img src="https://i.gyazo.com/4d7831155d033618023c975f64c2c149.png" />
 <br /><br />
 <h3>ZenkaiWildcardV2</h3> <br />
 <p align="left"> place .txt files inside: \wildcards\ <br />
@@ -62,6 +67,7 @@ custom symbol (default $$) used to invoke the text filename <br />
 support recursive wilcards (wildcards inside wildcards) <br />
 designed for text passthrough <br /> 
 use seed control to control the random selection</p>  <br />
+<img src="https://i.gyazo.com/ac056f611f1087844b051a7f68a93f7f.png" />
 <br /><br />
 <h3>StringWeights</h3> <br />
 <p align="left"> random string weight control: <br />
@@ -69,12 +75,13 @@ text string passtrhough node<br />
 wraps the string with the selected wieght <br />
 string="Hello" result=(hello:0.9) with weight 0.9 selected  <br />
 made for convenience <br /> </p> <br />
+<img src="https://i.gyazo.com/ed85699fbd22af2011d48832bba9c819.png" />
 
 
 <br /><br />
 <p align="left"> Zenkai-Prompt and Zenkai-Wildcard, with StringWeights for control.
 example is shown here: </p><br />
-![image](https://github.com/user-attachments/assets/477282b2-fc59-451d-996c-4383599edba0)
+<img src="https://i.gyazo.com/e1431b0412590806f0fb388c337f59cf.png" />
 <br />
 
 
