@@ -18,6 +18,7 @@ SDXL 1024x1024 <br />
 Cascade 2048x2048  <br />
 allows customisation of the Downscale factor, 64 recommended<br />
 simply choose your aspect ratio.</p> <br />
+<img src="https://i.gyazo.com/b354edf9deee624fa27512da98601b36.png" />
 <br /><br />
 <h3>ImageSizeAdjuster</h3> <br />
 <p align="left"> default maximums: <br />
