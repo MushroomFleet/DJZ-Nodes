@@ -64,7 +64,6 @@ try:
 except ImportError:
     print("Unable to import StringWeights. This node will not be available.")
 
-# New StringPainter node
 try:
     from .StringPainter import StringPainter
     NODE_CLASS_MAPPINGS["StringPainter"] = StringPainter
@@ -72,7 +71,6 @@ try:
 except ImportError:
     print("Unable to import StringPainter. This node will not be available.")
 
-# Add the new StringPainterV2 node
 try:
     from .StringPainterV2 import StringPainterV2
     NODE_CLASS_MAPPINGS["StringPainterV2"] = StringPainterV2
@@ -80,5 +78,11 @@ try:
 except ImportError:
     print("Unable to import StringPainterV2. This node will not be available.")
 
+try:
+    from .FFXFADEORAMA import FFXFADEORAMA
+    NODE_CLASS_MAPPINGS["FFXFADEORAMA"] = FFXFADEORAMA
+    NODE_DISPLAY_NAME_MAPPINGS["FFXFADEORAMA"] = "FFX Fade-O-Rama"
+except ImportError:
+    print("Unable to import FFXFADEORAMA. This node will not be available.")
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
