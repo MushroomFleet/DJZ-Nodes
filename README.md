@@ -94,11 +94,16 @@ generates the 16/32bit Hex from seed with options <br />
 chaos inpaint/variation, colaboration with @StringPaintSunday from 2022<br />
 V2 offers more controls and has a seed range limiter <br /> </p> <br />
 <img src="https://i.gyazo.com/261e5a8b04212cd0711d0f12cfe97e70.png" />
-
+<br /><br />
+<h3>String Painter</h3> <br />
+<p align="left"> FFX Fade-O-Rama: <br />
+creates a sequence of images using two images<br />
+comes with a bunch of stock transition effect <br />
+<img src="https://cdn.discordapp.com/attachments/1210800590955880448/1278401352975913061/9a2755de83e1825ae6cb23d0c16b433e.png" />
 
 <br /><br />
 <p align="left"> Zenkai-Prompt and Zenkai-Wildcard, with StringWeights for control.
-example is shown here: </p><br />
+examples folder, contains example workflows. </p><br />
 <img src="https://i.gyazo.com/e1431b0412590806f0fb388c337f59cf.png" />
 <br />
 
