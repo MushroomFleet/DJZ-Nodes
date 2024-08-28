@@ -99,7 +99,7 @@ V2 offers more controls and has a seed range limiter <br /> </p> <br />
 <p align="left"> FFX Fade-O-Rama: <br />
 creates a sequence of images using two images<br />
 comes with a bunch of stock transition effect <br />
-<img src="https://cdn.discordapp.com/attachments/1210800590955880448/1278401352975913061/9a2755de83e1825ae6cb23d0c16b433e.png" />
+<img src="https://i.gyazo.com/9a2755de83e1825ae6cb23d0c16b433e.png" />
 
 <br /><br />
 <p align="left"> Zenkai-Prompt and Zenkai-Wildcard, with StringWeights for control.
