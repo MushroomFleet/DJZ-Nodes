@@ -85,7 +85,15 @@ text string passtrhough node<br />
 wraps the string with the selected wieght <br />
 string="Hello" result=(hello:0.9) with weight 0.9 selected  <br />
 made for convenience <br /> </p> <br />
-<img src="https://i.gyazo.com/ed85699fbd22af2011d48832bba9c819.png" />
+<img src="https://i.gyazo.com/ac056f611f1087844b051a7f68a93f7f.png" />
+<br /><br />
+<h3>String Painter</h3> <br />
+<p align="left"> String Painting Nodes: <br />
+add the string to the end of a prompt, to see the effect<br />
+generates the 16/32bit Hex from seed with options <br />
+chaos inpaint/variation, colaboration with @StringPaintSunday from 2022<br />
+V2 offers more controls and has a seed range limiter <br /> </p> <br />
+<img src="https://i.gyazo.com/261e5a8b04212cd0711d0f12cfe97e70.png" />
 
 
 <br /><br />
