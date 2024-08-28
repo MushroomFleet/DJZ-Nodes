@@ -64,4 +64,21 @@ try:
 except ImportError:
     print("Unable to import StringWeights. This node will not be available.")
 
+# New StringPainter node
+try:
+    from .StringPainter import StringPainter
+    NODE_CLASS_MAPPINGS["StringPainter"] = StringPainter
+    NODE_DISPLAY_NAME_MAPPINGS["StringPainter"] = "String Painter"
+except ImportError:
+    print("Unable to import StringPainter. This node will not be available.")
+
+# Add the new StringPainterV2 node
+try:
+    from .StringPainterV2 import StringPainterV2
+    NODE_CLASS_MAPPINGS["StringPainterV2"] = StringPainterV2
+    NODE_DISPLAY_NAME_MAPPINGS["StringPainterV2"] = "String Painter V2"
+except ImportError:
+    print("Unable to import StringPainterV2. This node will not be available.")
+
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
