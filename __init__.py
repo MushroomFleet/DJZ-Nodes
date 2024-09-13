@@ -92,4 +92,11 @@ try:
 except ImportError:
     print("Unable to import ProjectFilePathNode. This node will not be available.")
 
+try:
+    from .CaptionsToPromptList import CaptionsToPromptList
+    NODE_CLASS_MAPPINGS["CaptionsToPromptList"] = CaptionsToPromptList
+    NODE_DISPLAY_NAME_MAPPINGS["CaptionsToPromptList"] = "Captions To Prompt List"
+except ImportError:
+    print("Unable to import CaptionsToPromptList. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
