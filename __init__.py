@@ -85,4 +85,11 @@ try:
 except ImportError:
     print("Unable to import FFXFADEORAMA. This node will not be available.")
 
+try:
+    from .ProjectFilePathNode import ProjectFilePathNode
+    NODE_CLASS_MAPPINGS["ProjectFilePathNode"] = ProjectFilePathNode
+    NODE_DISPLAY_NAME_MAPPINGS["ProjectFilePathNode"] = "Project File Path Generator"
+except ImportError:
+    print("Unable to import ProjectFilePathNode. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
