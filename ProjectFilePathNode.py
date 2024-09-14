@@ -8,7 +8,7 @@ class ProjectFilePathNode:
                 "root": ("STRING", {"default": "output"}),
                 "project_name": ("STRING", {"default": "MyProject"}),
                 "subfolder": ("STRING", {"default": "images"}),
-                "filename": ("STRING", {"default": "image.png"}),
+                "filename": ("STRING", {"default": "image"}),
             },
             "optional": {
                 "separator": (["auto", "forward_slash", "backslash"], {"default": "auto"}),
@@ -35,11 +35,8 @@ class ProjectFilePathNode:
             sep = "\\"
 
         # Construct path
-        path_components = [root, project_name, subfolder]
-        directory_path = sep.join(filter(bool, path_components))
-
-        # Add filename to the path
-        full_path = os.path.join(directory_path, filename)
+        path_components = [root, project_name, subfolder, filename]
+        full_path = sep.join(filter(bool, path_components))
 
         # Normalize the path
         full_path = os.path.normpath(full_path)
@@ -63,9 +60,8 @@ class ProjectFilePathNode:
         unsafe_chars = ['<', '>', ':', '"', '/', '\\', '|', '?', '*']
         for char in unsafe_chars:
             filename = filename.replace(char, '')
-        # Ensure the filename has an extension
-        if not os.path.splitext(filename)[1]:
-            filename += '.png'
+        # Remove any file extension
+        filename = os.path.splitext(filename)[0]
         return filename
 
     @classmethod
