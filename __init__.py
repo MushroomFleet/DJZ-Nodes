@@ -99,4 +99,19 @@ try:
 except ImportError:
     print("Unable to import CaptionsToPromptList. This node will not be available.")
 
+try:
+    from .ImageSizeAdjusterV3 import ImageSizeAdjusterV3
+    NODE_CLASS_MAPPINGS["ImageSizeAdjusterV3"] = ImageSizeAdjusterV3
+    NODE_DISPLAY_NAME_MAPPINGS["ImageSizeAdjusterV3"] = "Image Size Adjuster V3"
+except ImportError:
+    print("Unable to import ImageSizeAdjusterV3. This node will not be available.")
+
+try:
+    from .DJZLoadLatent import DJZLoadLatent
+    NODE_CLASS_MAPPINGS["DJZ-LoadLatent"] = DJZLoadLatent
+    NODE_DISPLAY_NAME_MAPPINGS["DJZ-LoadLatent"] = "DJZ Load Latent"
+except ImportError:
+    print("Unable to import DJZ-LoadLatent. This node will not be available.")
+
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
