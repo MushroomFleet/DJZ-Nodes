@@ -113,5 +113,11 @@ try:
 except ImportError:
     print("Unable to import DJZ-LoadLatent. This node will not be available.")
 
+try:
+    from .DJZLoadLatentV2 import DJZLoadLatentV2
+    NODE_CLASS_MAPPINGS["DJZ-LoadLatentV2"] = DJZLoadLatentV2
+    NODE_DISPLAY_NAME_MAPPINGS["DJZ-LoadLatentV2"] = "DJZ Load Latent V2"
+except ImportError:
+    print("Unable to import DJZ-LoadLatentV2. This node will not be available.")
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
