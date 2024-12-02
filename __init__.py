@@ -127,4 +127,11 @@ try:
 except ImportError:
     print("Unable to import SaveText. This node will not be available.")
 
+try:
+    from .LoadVideoBatchFrame import LoadVideoBatchFrame
+    NODE_CLASS_MAPPINGS["LoadVideoBatchFrame"] = LoadVideoBatchFrame
+    NODE_DISPLAY_NAME_MAPPINGS["LoadVideoBatchFrame"] = "Load Video Batch Frame"
+except ImportError:
+    print("Unable to import LoadVideoBatchFrame. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
