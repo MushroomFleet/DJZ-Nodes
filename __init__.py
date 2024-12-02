@@ -120,4 +120,11 @@ try:
 except ImportError:
     print("Unable to import DJZ-LoadLatentV2. This node will not be available.")
 
+try:
+    from .SaveText import SaveText
+    NODE_CLASS_MAPPINGS["SaveText"] = SaveText
+    NODE_DISPLAY_NAME_MAPPINGS["SaveText"] = "Save Text"
+except ImportError:
+    print("Unable to import SaveText. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
