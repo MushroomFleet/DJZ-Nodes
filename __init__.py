@@ -134,4 +134,11 @@ try:
 except ImportError:
     print("Unable to import LoadVideoBatchFrame. This node will not be available.")
 
+try:
+    from .BatchOffset import BatchOffset
+    NODE_CLASS_MAPPINGS["BatchOffset"] = BatchOffset
+    NODE_DISPLAY_NAME_MAPPINGS["BatchOffset"] = "Batch Offset"
+except ImportError:
+    print("Unable to import BatchOffset. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
