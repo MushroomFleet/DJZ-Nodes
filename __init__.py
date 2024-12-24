@@ -140,5 +140,19 @@ try:
     NODE_DISPLAY_NAME_MAPPINGS["BatchOffset"] = "Batch Offset"
 except ImportError:
     print("Unable to import BatchOffset. This node will not be available.")
+    
+try:
+    from .DjzDatamosh import DJZDatamosh
+    NODE_CLASS_MAPPINGS["DJZDatamosh"] = DJZDatamosh
+    NODE_DISPLAY_NAME_MAPPINGS["DJZDatamosh"] = "DJZ Datamosh"
+except ImportError:
+    print("Unable to import DJZDatamosh. This node will not be available.")
+    
+try:
+    from .DJZDatamoshV2 import DJZDatamoshV2
+    NODE_CLASS_MAPPINGS["DJZDatamoshV2"] = DJZDatamoshV2
+    NODE_DISPLAY_NAME_MAPPINGS["DJZDatamoshV2"] = "DJZ Datamosh V2"
+except ImportError:
+    print("Unable to import DJZDatamoshV2. This node will not be available.")
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
