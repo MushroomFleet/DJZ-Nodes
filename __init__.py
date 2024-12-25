@@ -162,4 +162,11 @@ try:
 except ImportError:
     print("Unable to import DjzDatamoshV3. This node will not be available.")
 
+try:
+    from .DjzDatamoshV4 import DjzDatamoshV4
+    NODE_CLASS_MAPPINGS["DjzDatamoshV4"] = DjzDatamoshV4
+    NODE_DISPLAY_NAME_MAPPINGS["DjzDatamoshV4"] = "Djz Datamosh V4 (Style Transfer)"
+except ImportError:
+    print("Unable to import DjzDatamoshV4. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
