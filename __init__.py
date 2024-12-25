@@ -169,4 +169,11 @@ try:
 except ImportError:
     print("Unable to import DjzDatamoshV4. This node will not be available.")
 
+try:
+    from .DjzDatamoshV5 import DjzDatamoshV5
+    NODE_CLASS_MAPPINGS["DjzDatamoshV5"] = DjzDatamoshV5
+    NODE_DISPLAY_NAME_MAPPINGS["DjzDatamoshV5"] = "Djz Datamosh V5 (Pixel Sort)"
+except ImportError:
+    print("Unable to import DjzDatamoshV5. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
