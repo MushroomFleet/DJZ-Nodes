@@ -190,4 +190,18 @@ try:
 except ImportError:
     print("Unable to import DjzDatamoshV7. This node will not be available.")
 
+try:
+    from .BatchThief import BatchThief
+    NODE_CLASS_MAPPINGS["BatchThief"] = BatchThief
+    NODE_DISPLAY_NAME_MAPPINGS["BatchThief"] = "Batch Thief"
+except ImportError:
+    print("Unable to import BatchThief. This node will not be available.")
+
+try:
+    from .BatchRangeSwap import BatchRangeSwap
+    NODE_CLASS_MAPPINGS["BatchRangeSwap"] = BatchRangeSwap
+    NODE_DISPLAY_NAME_MAPPINGS["BatchRangeSwap"] = "Batch Range Swap"
+except ImportError:
+    print("Unable to import BatchRangeSwap. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
