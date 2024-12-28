@@ -170,5 +170,5 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "DjzDatamoshV5": "Djz Datamosh V5 (Scrub)"
+    "DjzDatamoshV5": "Djz Datamosh V5 (Size Range)"
 }
