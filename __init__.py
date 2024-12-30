@@ -204,4 +204,11 @@ try:
 except ImportError:
     print("Unable to import BatchRangeSwap. This node will not be available.")
 
+try:
+    from .LoadVideoDirectory import LoadVideoDirectory
+    NODE_CLASS_MAPPINGS["LoadVideoDirectory"] = LoadVideoDirectory
+    NODE_DISPLAY_NAME_MAPPINGS["LoadVideoDirectory"] = "Load Video Directory"
+except ImportError:
+    print("Unable to import LoadVideoDirectory. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
