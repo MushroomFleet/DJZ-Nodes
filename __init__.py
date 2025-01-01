@@ -211,4 +211,11 @@ try:
 except ImportError:
     print("Unable to import LoadVideoDirectory. This node will not be available.")
 
+try:
+    from .BatchRangeInsert import BatchRangeInsert
+    NODE_CLASS_MAPPINGS["BatchRangeInsert"] = BatchRangeInsert
+    NODE_DISPLAY_NAME_MAPPINGS["BatchRangeInsert"] = "Batch Range Insert"
+except ImportError:
+    print("Unable to import BatchRangeInsert. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
