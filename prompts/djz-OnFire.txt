@@ -1,0 +1,30 @@
+onfire style, fire, no humans, scenery, sky, outdoors
+onfire style,, scenery, ruins
+onfire style,, sky, scenery, outdoors, cloud, solo, standing
+onfire style,, fire, no humans, molten rock, scenery, sky
+onfire style, scenery, no humans, outdoors, cave, rock, sky, ruins
+onfire style,, fire, no humans, scenery, ruins
+onfire style,, fire, scenery, no humans, sky, smoke
+onfire style,, no humans, scenery, fire, outdoors, sky, molten rock, cloud, ruins
+onfire style,, scenery, fire, orange theme, outdoors
+onfire style, fire, scenery, no humans, city, sky
+onfire style,, fire, scenery, sky, cloud
+onfire style, scenery, no humans, fire
+onfire style, no humans, scenery, ruins, fire
+onfire style, fire, no humans, smoke, destruction
+onfire style,, fire, silhouette, smoke, sky, burning, dark
+onfire style, no humans, scenery, fire, sky, smoke
+onfire style,, scenery, fire
+onfire style, scenery, no humans, smoke, fire, sky, cloud
+onfire style,, fire, east asian architecture, architecture, scenery, building, orange theme, molten rock
+onfire style,, fire, smoke, solo
+onfire style,, no humans, smoke, fire, scenery, city, building, sky
+onfire style, fire, no humans, scenery, burning, sky
+onfire style,, scenery, sky, cloud, outdoors
+onfire style, scenery, fire, no humans, outdoors
+onfire style, fire, burning, orange theme
+onfire style,, fire, orange theme, solo, burning, scenery
+onfire style, fire, no humans, molten rock, scenery
+onfire style, scenery, fire
+onfire style, scenery, fire
+onfire style, scenery, no humans, fire, sky, outdoors
