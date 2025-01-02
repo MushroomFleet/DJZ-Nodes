@@ -218,4 +218,11 @@ try:
 except ImportError:
     print("Unable to import BatchRangeInsert. This node will not be available.")
 
+try:
+    from .SequentialNumberGenerator import SequentialNumberGenerator
+    NODE_CLASS_MAPPINGS["SequentialNumberGenerator"] = SequentialNumberGenerator
+    NODE_DISPLAY_NAME_MAPPINGS["SequentialNumberGenerator"] = "Sequential Number Generator"
+except ImportError:
+    print("Unable to import SequentialNumberGenerator. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
