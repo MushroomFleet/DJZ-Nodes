@@ -1,6 +1,7 @@
 """
 Sequential Number Generator Node for ComfyUI
-Generates sequential integer numbers within a specified range.
+Generates sequential integer numbers within a defined range.
+Uses ComfyUI's seed logic for counter control.
 """
 
 class SequentialNumberGenerator:
@@ -9,44 +10,38 @@ class SequentialNumberGenerator:
     The numbers cycle through the range in order, resetting back to the start when reaching the end.
     """
     
-    def __init__(self):
-        self.execution_count = 0
-        self.current_range = None
-    
     @classmethod
     def INPUT_TYPES(cls):
         return {
             "required": {
                 "start": ("INT", {"default": 0, "min": -2147483648, "max": 2147483647}),
                 "end": ("INT", {"default": 1, "min": -2147483648, "max": 2147483647}),
+                "seed": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
             },
         }
 
-    RETURN_TYPES = ("INT",)
+    RETURN_TYPES = ("INT", "INT",)  # Returns (current_value, next_value)
+    RETURN_NAMES = ("value", "next")
     FUNCTION = "generate"
     CATEGORY = "number operations"
     
-    def IS_CHANGED(self, start, end):
-        range_id = f"{start}-{end}"
-        if self.current_range != range_id:
-            self.current_range = range_id
-            self.execution_count = 0
-        return self.execution_count
-
-    def generate(self, start, end):
+    def generate(self, start, end, seed):
+        # Validate the range
+        if start > end:
+            raise ValueError(f"Start value ({start}) must be less than or equal to end value ({end})")
+            
         # Calculate the range size
         range_size = end - start + 1
         
-        # Calculate the current position in the sequence
-        current_position = self.execution_count % range_size
+        # Map the seed to a valid value in our range
+        current = start + (seed % range_size)
         
-        # Calculate the actual number based on the position
-        result = start + current_position
-        
-        # Increment the execution count
-        self.execution_count += 1
-        
-        return (result,)
+        # Calculate the next value
+        next_value = current + 1
+        if next_value > end:
+            next_value = start
+            
+        return (current, next_value)
 
 # Define the node class mapping
 NODE_CLASS_MAPPINGS = {
