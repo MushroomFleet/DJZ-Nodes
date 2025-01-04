@@ -275,5 +275,12 @@ try:
 except ImportError:
     print("Unable to import ParametricMeshGen. This node will not be available.")
 
+try:
+    from .FractalGenerator import FractalGenerator
+    NODE_CLASS_MAPPINGS["FractalGenerator"] = FractalGenerator
+    NODE_DISPLAY_NAME_MAPPINGS["FractalGenerator"] = "Fractal Art Generator"
+except ImportError:
+    print("Unable to import FractalGenerator. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
