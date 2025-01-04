@@ -304,5 +304,12 @@ try:
 except ImportError:
     print("Unable to import FractalGeneratorV3. This node will not be available.")
 
+try:
+    from .DatasetWordcloud import DatasetWordcloud
+    NODE_CLASS_MAPPINGS["DatasetWordcloud"] = DatasetWordcloud
+    NODE_DISPLAY_NAME_MAPPINGS["DatasetWordcloud"] = "Dataset Wordcloud"
+except ImportError:
+    print("Unable to import DatasetWordcloud. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

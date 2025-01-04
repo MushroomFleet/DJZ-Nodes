@@ -1,2 +1,4 @@
 rtree
 trimesh
+wordcloud
+matplotlib
