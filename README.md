@@ -2,6 +2,14 @@
 <p align="left"> Drift Johnsons Custom nodes for ComfyUI <br />
 Video: https://www.youtube.com/watch?v=MnZnP0Fav8E <br />
 Article: https://civitai.com/user/driftjohnson/articles</p> <br />
+- [Detailed Nodes Index](https://github.com/MushroomFleet/DJZ-Nodes/blob/main/DJZ-Nodes-Index.md)
+<br /><br />
+<h2>Installation</h2>
+
+-- Clone this repo into /custom_nodes/ <br />
+
+> cd custom_nodes <br />
+> git clone https://github.com/MushroomFleet/DJZ-Nodes <br />
 <br /><br />
 <p>AspectSize and ImageSizeAdjuster both address a simple problem, for best results images benefit from having dimensions divisible by 64<br />
 AspectSize allows choice of base model and Aspect Ratio, it then calculates the best height and width which is closest to the targer and /64 on both sides<br />
@@ -108,13 +116,6 @@ examples folder, contains example workflows. </p><br />
 <br />
 
 
-<br /><br />
-<h2>Installation</h2>
-
--- Clone this repo into /custom_nodes/ <br />
-
-> cd custom_nodes <br />
-> git clone https://github.com/MushroomFleet/DJZ-Nodes <br />
 
 <br /><br />
 <h1 align="center">Hi 👋, I'm Drift Johnson</h1>
