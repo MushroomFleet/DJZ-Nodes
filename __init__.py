@@ -72,6 +72,14 @@ except ImportError:
     print("Unable to import PromptCleaner. This node will not be available.")
 
 try:
+    from .PromptSwap import PromptSwap
+    NODE_CLASS_MAPPINGS["PromptSwap"] = PromptSwap
+    NODE_DISPLAY_NAME_MAPPINGS["PromptSwap"] = "Prompt Swap"
+except ImportError:
+    print("Unable to import PromptSwap. This node will not be available.")
+
+
+try:
     from .StringPainter import StringPainter
     NODE_CLASS_MAPPINGS["StringPainter"] = StringPainter
     NODE_DISPLAY_NAME_MAPPINGS["StringPainter"] = "String Painter"
