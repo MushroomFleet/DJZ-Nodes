@@ -240,4 +240,12 @@ try:
 except ImportError:
     print("Unable to import SequentialNumberGenerator. This node will not be available.")
 
+try:
+    from .DinskyPlus import DinskyPlus
+    NODE_CLASS_MAPPINGS["DinskyPlus"] = DinskyPlus
+    NODE_DISPLAY_NAME_MAPPINGS["DinskyPlus"] = "Dinsky Plus Generator"
+except ImportError:
+    print("Unable to import DinskyPlus. This node will not be available.")
+
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
