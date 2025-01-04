@@ -282,5 +282,12 @@ try:
 except ImportError:
     print("Unable to import FractalGenerator. This node will not be available.")
 
+try:
+    from .FractalGeneratorV2 import FractalGeneratorV2
+    NODE_CLASS_MAPPINGS["FractalGeneratorV2"] = FractalGeneratorV2
+    NODE_DISPLAY_NAME_MAPPINGS["FractalGeneratorV2"] = "Fractal Art Generator V2"
+except ImportError:
+    print("Unable to import FractalGeneratorV2. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
