@@ -65,6 +65,13 @@ except ImportError:
     print("Unable to import StringWeights. This node will not be available.")
 
 try:
+    from .PromptCleaner import PromptCleaner
+    NODE_CLASS_MAPPINGS["PromptCleaner"] = PromptCleaner
+    NODE_DISPLAY_NAME_MAPPINGS["PromptCleaner"] = "Prompt Cleaner"
+except ImportError:
+    print("Unable to import PromptCleaner. This node will not be available.")
+
+try:
     from .StringPainter import StringPainter
     NODE_CLASS_MAPPINGS["StringPainter"] = StringPainter
     NODE_DISPLAY_NAME_MAPPINGS["StringPainter"] = "String Painter"
