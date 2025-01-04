@@ -268,5 +268,12 @@ try:
 except ImportError:
     print("Unable to import TrianglesPlusV2. This node will not be available.")
 
+try:
+    from .ParametricMeshGen import ParametricMeshGen
+    NODE_CLASS_MAPPINGS["ParametricMeshGen"] = ParametricMeshGen
+    NODE_DISPLAY_NAME_MAPPINGS["ParametricMeshGen"] = "Parametric Mesh Generator"
+except ImportError:
+    print("Unable to import ParametricMeshGen. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
