@@ -247,5 +247,12 @@ try:
 except ImportError:
     print("Unable to import DinskyPlus. This node will not be available.")
 
+try:
+    from .DinskyPlusV2 import DinskyPlusV2
+    NODE_CLASS_MAPPINGS["DinskyPlusV2"] = DinskyPlusV2
+    NODE_DISPLAY_NAME_MAPPINGS["DinskyPlusV2"] = "Dinsky Plus Generator V2"
+except ImportError:
+    print("Unable to import DinskyPlusV2. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
