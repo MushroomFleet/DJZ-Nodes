@@ -52,12 +52,15 @@ class ParametricMeshGenV2:
         faces = []
         for i in range(height - 1):
             for j in range(width - 1):
-                v1 = i + j * width
-                v2 = i + (j + 1) * width
-                v3 = i + j * width + 1
-                v4 = i + (j + 1) * width + 1
-                faces.append([v1, v2, v3])
-                faces.append([v2, v4, v3])
+                # Calculate vertex indices correctly based on grid position
+                v1 = i * width + j           # Current vertex
+                v2 = i * width + (j + 1)     # Right vertex
+                v3 = (i + 1) * width + j     # Bottom vertex
+                v4 = (i + 1) * width + (j + 1) # Bottom-right vertex
+                
+                # Create two triangles for each quad
+                faces.append([v1, v2, v4])  # Upper triangle
+                faces.append([v1, v4, v3])  # Lower triangle
         return faces
 
     def save_to_obj(self, filepath, vertices, faces, smoothness=1):
@@ -144,10 +147,31 @@ class ParametricMeshGenV2:
                 secondary_amplitude * np.sin(secondary_frequency * v + secondary_phase)
                 
         elif surface_type == "KLEIN_BOTTLE":
-            # Parametric equations for Klein bottle
-            x = scale * (2 * np.cos(u) * (3 * np.cos(v) - 30 * np.sin(u) + 90 * np.cos(u)**4 * np.sin(u) - 60 * np.cos(u)**6 * np.sin(u) + 5 * np.cos(u) * np.cos(v) * np.sin(u)))
-            y = scale * (np.sin(u) * (3 * np.cos(v) - 3 * np.cos(u)**2 * np.cos(v) - 48 * np.cos(u)**4 * np.cos(v) + 48 * np.cos(u)**6 * np.cos(v) - 60 * np.sin(u) + 5 * np.cos(u) * np.cos(v) * np.sin(u) - 5 * np.cos(u)**3 * np.cos(v) * np.sin(u) - 80 * np.cos(u)**5 * np.cos(v) * np.sin(u) + 80 * np.cos(u)**7 * np.cos(v) * np.sin(u)))
-            z = scale * (2 * np.sin(v)) + amplitude * np.sin(frequency * u + phase)
+            # Improved Klein bottle parametric equations
+            r = 4  # Major radius
+            a = 2  # Minor radius
+            n = 4  # Number of lobes for better visualization
+            
+            # Pre-calculate trigonometric values
+            cos_u = np.cos(u)
+            sin_u = np.sin(u)
+            cos_v = np.cos(v)
+            sin_v = np.sin(v)
+            cos_nu = np.cos(n*u)
+            sin_nu = np.sin(n*u)
+            
+            # Calculate the characteristic Klein bottle shape
+            c = 0.5 * (1 - cos_u/2)  # Transition factor
+            
+            # Base shape
+            x = scale * ((r + a*cos_v)*cos_u * (1 - c) + a*cos_v*cos_nu * c)
+            y = scale * ((r + a*cos_v)*sin_u * (1 - c) + a*cos_v*sin_nu * c)
+            z = scale * (a * sin_v + 2 * a * sin_u * c)
+            
+            # Add wave deformations
+            x += scale * amplitude * np.sin(frequency * u + phase) * cos_v
+            y += scale * amplitude * np.sin(frequency * u + phase) * sin_v
+            z += scale * amplitude * np.cos(frequency * u + phase)
             
         else:  # MOBIUS
             # Parametric equations for Möbius strip
@@ -162,16 +186,24 @@ class ParametricMeshGenV2:
                      secondary_amplitude, secondary_frequency, secondary_phase, smoothness,
                      twist, preview_elevation, preview_azimuth, mesh_color, edge_visibility):
         # Create ComfyUI OBJ output directory if it doesn't exist
-        output_dir = os.path.join(os.path.dirname(__file__), "outputs")
+        output_dir = os.path.join(os.path.dirname(__file__), "..", "..", "output", "OBJ")
         os.makedirs(output_dir, exist_ok=True)
         
         # Generate unique filename for OBJ
         obj_filename = self.generate_unique_filename(base=f"parametric_{surface_type.lower()}", ext="obj")
         obj_path = os.path.join(output_dir, obj_filename)
         
-        # Generate parametric surface
-        u = np.linspace(0, 2 * np.pi, resolution)
-        v = np.linspace(0, np.pi, resolution)
+        # Generate parameter ranges based on surface type
+        if surface_type == "MOBIUS":
+            u = np.linspace(0, 2 * np.pi, resolution)
+            v = np.linspace(-1, 1, resolution)  # Möbius strip needs different v range
+        elif surface_type == "KLEIN_BOTTLE":
+            u = np.linspace(0, 2 * np.pi, resolution)
+            v = np.linspace(0, 2 * np.pi, resolution)  # Klein bottle needs full range
+        else:  # SPHERE and TORUS
+            u = np.linspace(0, 2 * np.pi, resolution)
+            v = np.linspace(0, 2 * np.pi, resolution)
+        
         u, v = np.meshgrid(u, v)
 
         # Generate surface based on type
