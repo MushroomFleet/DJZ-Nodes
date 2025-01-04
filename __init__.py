@@ -276,6 +276,14 @@ except ImportError:
     print("Unable to import ParametricMeshGen. This node will not be available.")
 
 try:
+    from .ParametricMeshGenV2 import ParametricMeshGenV2
+    NODE_CLASS_MAPPINGS["ParametricMeshGenV2"] = ParametricMeshGenV2
+    NODE_DISPLAY_NAME_MAPPINGS["ParametricMeshGenV2"] = "Parametric Mesh Generator V2"
+except ImportError:
+    print("Unable to import ParametricMeshGenV2. This node will not be available.")
+
+
+try:
     from .FractalGenerator import FractalGenerator
     NODE_CLASS_MAPPINGS["FractalGenerator"] = FractalGenerator
     NODE_DISPLAY_NAME_MAPPINGS["FractalGenerator"] = "Fractal Art Generator"
