@@ -261,5 +261,12 @@ try:
 except ImportError:
     print("Unable to import TrianglesPlus. This node will not be available.")
 
+try:
+    from .TrianglesPlusV2 import TrianglesPlusV2
+    NODE_CLASS_MAPPINGS["TrianglesPlusV2"] = TrianglesPlusV2
+    NODE_DISPLAY_NAME_MAPPINGS["TrianglesPlusV2"] = "Triangles Plus Generator V2"
+except ImportError:
+    print("Unable to import TrianglesPlusV2. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
