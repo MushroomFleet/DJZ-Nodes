@@ -311,5 +311,12 @@ try:
 except ImportError:
     print("Unable to import DatasetWordcloud. This node will not be available.")
 
+try:
+    from .LoadTextDirectory import LoadTextDirectory
+    NODE_CLASS_MAPPINGS["LoadTextDirectory"] = LoadTextDirectory
+    NODE_DISPLAY_NAME_MAPPINGS["LoadTextDirectory"] = "Load Text Directory"
+except ImportError:
+    print("Unable to import LoadTextDirectory. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
