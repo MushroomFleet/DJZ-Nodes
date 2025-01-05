@@ -104,6 +104,10 @@
 - [Documentation](ImageSizeAdjusterV3.md)
 - [Example Workflow](#)
 
+## LoadTextDirectory
+- [Documentation](LoadTextDirectory.md)
+- [Example Workflow](#)
+
 ## LoadVideoBatchFrame
 - [Documentation](LoadVideoBatchFrame.md)
 - [Example Workflow](#)
