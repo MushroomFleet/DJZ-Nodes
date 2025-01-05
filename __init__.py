@@ -318,5 +318,12 @@ try:
 except ImportError:
     print("Unable to import LoadTextDirectory. This node will not be available.")
 
+try:
+    from .PromptInject import PromptInject
+    NODE_CLASS_MAPPINGS["PromptInject"] = PromptInject
+    NODE_DISPLAY_NAME_MAPPINGS["PromptInject"] = "Prompt Inject"
+except ImportError:
+    print("Unable to import PromptInject. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
