@@ -132,6 +132,10 @@
 - [Documentation](PromptCleaner.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Prompt-Cleaner.json)
 
+## PromptInject
+- [Documentation](PromptInject.md)
+- [Example Workflow](#)
+
 ## PromptSwap
 - [Documentation](PromptSwap.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Prompt-Swap.json)
