@@ -1,25 +1,78 @@
 # DJZ-Nodes
 
-Drift Johnsons Custom nodes for ComfyUI  
-Video: https://www.youtube.com/watch?v=MnZnP0Fav8E  
-Article: https://civitai.com/user/driftjohnson/articles
+A comprehensive collection of custom nodes for ComfyUI focused on advanced image processing, batch operations, prompt engineering, and workflow optimization.
 
-## Installation
+## 🌟 Key Features
 
-Clone this repo into /custom_nodes/
+- **Advanced Datamoshing Suite**: Multiple versions of datamoshing nodes (V1-V7) for creative image manipulation
+- **Batch Processing Tools**: Sophisticated batch operations including offset, range insertion, swapping, and frame management
+- **Prompt Engineering**: Rich set of prompt manipulation tools including ZenkaiPrompt system, wildcards, and prompt cleaning
+- **Image Processing**: Various image size adjusters, aspect ratio tools, and fractal generators
+- **Video Processing**: Tools for video frame extraction and directory management
+- **3D Generation**: Parametric mesh generation for creating 3D objects
+- **Dataset Tools**: Wordcloud generation and caption processing capabilities
+
+## 🚀 Quick Links
+- [Video Tutorial](https://www.youtube.com/watch?v=MnZnP0Fav8E)
+- [Articles & Guides](https://civitai.com/user/driftjohnson/articles)
+- [Detailed Nodes Documentation](https://github.com/MushroomFleet/DJZ-Nodes/blob/main/DJZ-Nodes-Index.md)
+
+## 📦 Installation
+
+Clone this repository into your ComfyUI's custom_nodes directory:
 
 ```bash
 cd custom_nodes
 git clone https://github.com/MushroomFleet/DJZ-Nodes
 ```
 
-# Detailed Node Index is now available
-- [Detailed Nodes Index](https://github.com/MushroomFleet/DJZ-Nodes/blob/main/DJZ-Nodes-Index.md)
+## 🔧 Node Categories
 
+### Image Processing
+- AspectSize (V1, V2)
+- ImageSizeAdjuster (V1-V3)
+- FractalGenerator (V1-V3)
+- DjzDatamosh (V1-V7)
 
+### Batch Operations
+- BatchOffset
+- BatchRangeInsert
+- BatchRangeSwap
+- BatchThief
+- LoadVideoBatchFrame
 
+### Prompt Engineering
+- ZenkaiPrompt (V1, V2)
+- ZenkaiWildcard (V1, V2)
+- PromptCleaner
+- PromptInject
+- PromptSwap
+- StringWeights
 
-# Hi 👋, I'm Drift Johnson
+### Video & Directory Tools
+- LoadVideoDirectory
+- LoadTextDirectory
+- ProjectFilePathNode
+- FFXFADEORAMA
+
+### Creative Tools
+- DinskyPlus (V1, V2)
+- TrianglesPlus (V1, V2)
+- StringPainter (V1, V2)
+- ParametricMeshGen (V1, V2)
+
+### Data Processing
+- CaptionsToPromptList
+- DatasetWordcloud
+- SaveText
+- SequentialNumberGenerator
+
+## 🎯 Example Workflows
+Find example workflows for each node in the [DJZ-Nodes-Index.md](https://github.com/MushroomFleet/DJZ-Nodes/blob/main/DJZ-Nodes-Index.md) file.
+
+# About the Creator
+
+### Hi 👋, I'm Drift Johnson
 
 ### Data Scientist & Diffusion Designer from England
 
