@@ -23,37 +23,37 @@ class VHS_Effect_v2:
             "required": {
                 "images": ("IMAGE",),
                 "composite_preemphasis": ("FLOAT", {
-                    "default": 0.0,
+                    "default": 4.0,
                     "min": 0.0,
                     "max": 8.0,
                     "step": 0.1
                 }),
                 "vhs_out_sharpen": ("FLOAT", {
-                    "default": 1.5,
+                    "default": 2.5,
                     "min": 1.0,
                     "max": 5.0,
                     "step": 0.1
                 }),
                 "color_bleeding": ("FLOAT", {
-                    "default": 0.0,
+                    "default": 5.0,
                     "min": 0.0,
                     "max": 10.0,
                     "step": 0.1
                 }),
                 "video_noise": ("FLOAT", {
-                    "default": 2.0,
+                    "default": 1000.0,
                     "min": 0.0,
                     "max": 4200.0,
                     "step": 1.0
                 }),
                 "chroma_noise": ("FLOAT", {
-                    "default": 0.0,
+                    "default": 5000.0,
                     "min": 0.0,
                     "max": 16384.0,
                     "step": 1.0
                 }),
                 "chroma_phase_noise": ("FLOAT", {
-                    "default": 0.0,
+                    "default": 25.0,
                     "min": 0.0,
                     "max": 50.0,
                     "step": 1.0
