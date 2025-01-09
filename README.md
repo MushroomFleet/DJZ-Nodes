@@ -33,7 +33,7 @@ git clone https://github.com/MushroomFleet/DJZ-Nodes
 - ImageSizeAdjuster (V1-V3)
 - FractalGenerator (V1-V3)
 - DjzDatamosh (V1-V7)
-- VHS_Effect
+- VHS_Effect (V1, V2)
 - DinskyPlus (V1, V2)
 - TrianglesPlus (V1, V2)
 
@@ -52,6 +52,7 @@ git clone https://github.com/MushroomFleet/DJZ-Nodes
 - PromptSwap
 - StringWeights
 - StringPainter (V1, V2)
+- CaptionsToPromptList
 
 ### Video & Directory Tools
 - LoadVideoDirectory
@@ -62,9 +63,9 @@ git clone https://github.com/MushroomFleet/DJZ-Nodes
 
 ### 3D & Creative Tools
 - ParametricMeshGen (V1, V2) - Create 3D meshes (spheres, tori, Klein bottles)
+  - Example outputs in `/outputs` directory include sphere, torus, and Klein bottle models
 
 ### Data Processing
-- CaptionsToPromptList
 - DatasetWordcloud
 - SaveText
 - SequentialNumberGenerator
@@ -78,11 +79,14 @@ The `examples/` directory contains ready-to-use workflow examples:
 
 ### Prompt Templates
 The `prompts/` directory includes a vast collection of prompt templates for various styles and use cases:
-- Artistic styles (cyberpunk, fantasy, sci-fi)
-- Video generation prompts
-- Character descriptions
-- Scene compositions
-- Special effects
+- Video generation prompts (CogVideo series)
+- Character descriptions and styles
+- Scene compositions (cyberpunk, fantasy, sci-fi)
+- Special effects and artistic styles
+- Automotive and action sequences
+- Professional and workplace scenes
+- Nature and landscape descriptions
+- Emotional and dialogue-focused prompts
 
 Find more example workflows and detailed usage instructions in the [DJZ-Nodes-Index.md](https://github.com/MushroomFleet/DJZ-Nodes/blob/main/DJZ-Nodes-Index.md) file.
 
