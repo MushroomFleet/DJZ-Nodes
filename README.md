@@ -1,15 +1,15 @@
 # DJZ-Nodes
 
-A comprehensive collection of custom nodes for ComfyUI focused on advanced image processing, batch operations, prompt engineering, and workflow optimization.
+A comprehensive collection of custom nodes for ComfyUI focused on advanced image processing, batch operations, prompt engineering, and workflow optimization. This node pack provides powerful tools for creative image manipulation, video processing, and efficient workflow management.
 
 ## 🌟 Key Features
 
-- **Advanced Datamoshing Suite**: Multiple versions of datamoshing nodes (V1-V7) for creative image manipulation
+- **Advanced Datamoshing Suite**: Multiple versions of datamoshing nodes (V1-V7) for creative image manipulation and glitch art effects
 - **Batch Processing Tools**: Sophisticated batch operations including offset, range insertion, swapping, and frame management
 - **Prompt Engineering**: Rich set of prompt manipulation tools including ZenkaiPrompt system, wildcards, and prompt cleaning
-- **Image Processing**: Various image size adjusters, aspect ratio tools, and fractal generators
-- **Video Processing**: Tools for video frame extraction and directory management
-- **3D Generation**: Parametric mesh generation for creating 3D objects
+- **Image Processing**: Various image size adjusters, aspect ratio tools, VHS effects, and fractal generators
+- **Video Processing**: Tools for video frame extraction, directory management, and special effects
+- **3D Generation**: Parametric mesh generation for creating 3D objects (spheres, tori, Klein bottles)
 - **Dataset Tools**: Wordcloud generation and caption processing capabilities
 
 ## 🚀 Quick Links
@@ -28,11 +28,14 @@ git clone https://github.com/MushroomFleet/DJZ-Nodes
 
 ## 🔧 Node Categories
 
-### Image Processing
+### Image Processing & Effects
 - AspectSize (V1, V2)
 - ImageSizeAdjuster (V1-V3)
 - FractalGenerator (V1-V3)
 - DjzDatamosh (V1-V7)
+- VHS_Effect
+- DinskyPlus (V1, V2)
+- TrianglesPlus (V1, V2)
 
 ### Batch Operations
 - BatchOffset
@@ -48,18 +51,17 @@ git clone https://github.com/MushroomFleet/DJZ-Nodes
 - PromptInject
 - PromptSwap
 - StringWeights
+- StringPainter (V1, V2)
 
 ### Video & Directory Tools
 - LoadVideoDirectory
 - LoadTextDirectory
 - ProjectFilePathNode
 - FFXFADEORAMA
+- DJZLoadLatent (V1, V2)
 
-### Creative Tools
-- DinskyPlus (V1, V2)
-- TrianglesPlus (V1, V2)
-- StringPainter (V1, V2)
-- ParametricMeshGen (V1, V2)
+### 3D & Creative Tools
+- ParametricMeshGen (V1, V2) - Create 3D meshes (spheres, tori, Klein bottles)
 
 ### Data Processing
 - CaptionsToPromptList
@@ -67,8 +69,22 @@ git clone https://github.com/MushroomFleet/DJZ-Nodes
 - SaveText
 - SequentialNumberGenerator
 
-## 🎯 Example Workflows
-Find example workflows for each node in the [DJZ-Nodes-Index.md](https://github.com/MushroomFleet/DJZ-Nodes/blob/main/DJZ-Nodes-Index.md) file.
+## 📚 Resources & Examples
+
+### Example Workflows
+The `examples/` directory contains ready-to-use workflow examples:
+- FFX-Fade-O-Rama.json - Demonstrates video transition effects
+- Zenkai-System.json - Shows prompt engineering capabilities
+
+### Prompt Templates
+The `prompts/` directory includes a vast collection of prompt templates for various styles and use cases:
+- Artistic styles (cyberpunk, fantasy, sci-fi)
+- Video generation prompts
+- Character descriptions
+- Scene compositions
+- Special effects
+
+Find more example workflows and detailed usage instructions in the [DJZ-Nodes-Index.md](https://github.com/MushroomFleet/DJZ-Nodes/blob/main/DJZ-Nodes-Index.md) file.
 
 # About the Creator
 
