@@ -325,5 +325,11 @@ try:
 except ImportError:
     print("Unable to import PromptInject. This node will not be available.")
 
+try:
+    from .VHS_Effect_v1 import VHS_Effect_v1
+    NODE_CLASS_MAPPINGS["VHS_Effect_v1"] = VHS_Effect_v1
+    NODE_DISPLAY_NAME_MAPPINGS["VHS_Effect_v1"] = "VHS Effect v1"
+except ImportError:
+    print("Unable to import VHS_Effect_v1. This node will not be available.")
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
