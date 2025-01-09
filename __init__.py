@@ -332,4 +332,12 @@ try:
 except ImportError:
     print("Unable to import VHS_Effect_v1. This node will not be available.")
 
+try:
+    from .VHS_Effect_v2 import VHS_Effect_v2
+    NODE_CLASS_MAPPINGS["VHS_Effect_v2"] = VHS_Effect_v2
+    NODE_DISPLAY_NAME_MAPPINGS["VHS_Effect_v2"] = "VHS Effect v2"
+except ImportError:
+    print("Unable to import VHS_Effect_v2. This node will not be available.")
+
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
