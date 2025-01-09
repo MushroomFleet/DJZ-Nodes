@@ -170,7 +170,7 @@
 
 ## VHS_Effect_v1
 - [Documentation](VHS_Effect_v1.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-VHS-Effect-V1.json)
 
 ## ZenkaiPrompt
 - [Documentation](ZenkaiPrompt.md)
