@@ -168,6 +168,10 @@
 - [Documentation](TrianglesPlusV2.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Triangles-Plus-V2.json)
 
+## VHS_Effect_v1
+- [Documentation](VHS_Effect_v1.md)
+- [Example Workflow](#)
+
 ## ZenkaiPrompt
 - [Documentation](ZenkaiPrompt.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/Zenkai-System.json)
