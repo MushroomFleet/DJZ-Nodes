@@ -128,6 +128,14 @@
 - [Documentation](ParametricMeshGenV2.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Parametric-Mesh-Gen-V2.json)
 
+## PanavisionLensV1
+- [Documentation](PanavisionLensV1.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Panavision-Lens-Effect-V1.json)
+
+## PanavisionLensV2
+- [Documentation](PanavisionLensV2.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Panavision-Lens-Effect-V2.json)
+
 ## ProjectFilePathNode
 - [Documentation](ProjectFilePathNode.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/filepath-demo.json)

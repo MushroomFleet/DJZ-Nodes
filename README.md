@@ -19,12 +19,21 @@ A comprehensive collection of custom nodes for ComfyUI focused on advanced image
 
 ## 📦 Installation
 
+### Method 1: Git Clone
 Clone this repository into your ComfyUI's custom_nodes directory:
 
 ```bash
 cd custom_nodes
 git clone https://github.com/MushroomFleet/DJZ-Nodes
+cd DJZ-Nodes
+pip install -r requirements.txt
 ```
+
+### Method 2: Portable Installation
+For Windows users, you can use the provided installation batch files:
+1. Run `install-portable.bat` for basic installation
+2. Run `pip-update-portable.bat` to update dependencies
+3. Run `onnx-install-portable.bat` if you need ONNX support
 
 ## 🔧 Node Categories
 
@@ -38,6 +47,7 @@ git clone https://github.com/MushroomFleet/DJZ-Nodes
 - DinskyPlus (V1, V2) - Enhanced image processing
 - TrianglesPlus (V1, V2) - Geometric pattern generation
 - Technicolor3Strip (V1, V2) - Classic Technicolor film emulation effects
+- PanavisionLens (V1, V2) - Simulate Panavision lens characteristics and effects
 
 ### Batch Operations
 - BatchOffset - Offset batch processing operations
