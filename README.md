@@ -7,7 +7,7 @@ A comprehensive collection of custom nodes for ComfyUI focused on advanced image
 - **Advanced Datamoshing Suite**: Multiple versions of datamoshing nodes (V1-V7) for creative image manipulation and glitch art effects
 - **Batch Processing Tools**: Sophisticated batch operations including offset, range insertion, swapping, and frame management
 - **Prompt Engineering**: Rich set of prompt manipulation tools including ZenkaiPrompt system, wildcards, and prompt cleaning
-- **Image Processing**: Various image size adjusters, aspect ratio tools, VHS effects, and fractal generators
+- **Image Processing**: Various image size adjusters, aspect ratio tools, VHS effects, anamorphic effects, and fractal generators
 - **Video Processing**: Tools for video frame extraction, directory management, and special effects
 - **3D Generation**: Parametric mesh generation for creating 3D objects (spheres, tori, Klein bottles)
 - **Dataset Tools**: Wordcloud generation and caption processing capabilities
@@ -29,46 +29,47 @@ git clone https://github.com/MushroomFleet/DJZ-Nodes
 ## 🔧 Node Categories
 
 ### Image Processing & Effects
-- AspectSize (V1, V2)
-- ImageSizeAdjuster (V1-V3)
-- FractalGenerator (V1-V3)
-- DjzDatamosh (V1-V7)
-- VHS_Effect (V1, V2)
-- DinskyPlus (V1, V2)
-- TrianglesPlus (V1, V2)
+- AnamorphicEffect - Create cinematic anamorphic lens effects
+- AspectSize (V1, V2) - Advanced aspect ratio management
+- ImageSizeAdjuster (V1-V3) - Flexible image size manipulation
+- FractalGenerator (V1-V3) - Create complex fractal patterns
+- DjzDatamosh (V1-V7) - Advanced glitch art and datamoshing effects
+- VHS_Effect (V1, V2) - Retro VHS-style effects
+- DinskyPlus (V1, V2) - Enhanced image processing
+- TrianglesPlus (V1, V2) - Geometric pattern generation
 
 ### Batch Operations
-- BatchOffset
-- BatchRangeInsert
-- BatchRangeSwap
-- BatchThief
-- LoadVideoBatchFrame
+- BatchOffset - Offset batch processing operations
+- BatchRangeInsert - Insert operations within batch ranges
+- BatchRangeSwap - Swap elements within batch ranges
+- BatchThief - Advanced batch manipulation
+- LoadVideoBatchFrame - Load video frames for batch processing
 
 ### Prompt Engineering
-- ZenkaiPrompt (V1, V2)
-- ZenkaiWildcard (V1, V2)
-- PromptCleaner
-- PromptInject
-- PromptSwap
-- StringWeights
-- StringPainter (V1, V2)
-- CaptionsToPromptList
+- ZenkaiPrompt (V1, V2) - Advanced prompt enhancement system
+- ZenkaiWildcard (V1, V2) - Dynamic wildcard management
+- PromptCleaner - Clean and optimize prompts
+- PromptInject - Inject modifiers into prompts
+- PromptSwap - Swap prompt components
+- StringWeights - Manage prompt emphasis weights
+- StringPainter (V1, V2) - Visual prompt editing
+- CaptionsToPromptList - Convert captions to prompt lists
 
 ### Video & Directory Tools
-- LoadVideoDirectory
-- LoadTextDirectory
-- ProjectFilePathNode
-- FFXFADEORAMA
-- DJZLoadLatent (V1, V2)
+- LoadVideoDirectory - Batch video file loading
+- LoadTextDirectory - Text file directory management
+- ProjectFilePathNode - File path management
+- FFXFADEORAMA - Video transition effects
+- DJZLoadLatent (V1, V2) - Advanced latent loading
 
 ### 3D & Creative Tools
 - ParametricMeshGen (V1, V2) - Create 3D meshes (spheres, tori, Klein bottles)
   - Example outputs in `/outputs` directory include sphere, torus, and Klein bottle models
 
 ### Data Processing
-- DatasetWordcloud
-- SaveText
-- SequentialNumberGenerator
+- DatasetWordcloud - Generate word clouds from datasets
+- SaveText - Text data persistence
+- SequentialNumberGenerator - Generate sequential numbers
 
 ## 📚 Resources & Examples
 

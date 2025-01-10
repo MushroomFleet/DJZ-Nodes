@@ -1,20 +1,24 @@
 # DJZ-Nodes Collection Index
 
+## AnamorphicEffect
+- [Documentation](AnamorphicEffect.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Anamorphic-Lens.json)
+
 ## AspectSize
 - [Documentation](AspectSize.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-AspectSize.json)
 
 ## AspectSizeV2
 - [Documentation](AspectSizeV2.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-AspectSize-V2.json)
 
 ## BatchOffset
 - [Documentation](BatchOffset.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-BatchOffset.json)
 
 ## BatchRangeInsert
 - [Documentation](BatchRangeInsert.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-BatchInsert.json)
 
 ## BatchRangeSwap
 - [Documentation](BatchRangeSwap.md)
@@ -70,7 +74,7 @@
 
 ## DJZLoadLatent
 - [Documentation](DJZLoadLatent.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-LoadLatent.json)
 
 ## DJZLoadLatentV2
 - [Documentation](DJZLoadLatentV2.md)
@@ -78,7 +82,7 @@
 
 ## FFXFADEORAMA
 - [Documentation](FFXFADEORAMA.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-FFXFADEORAMA.json)
 
 ## FractalGenerator
 - [Documentation](FractalGenerator.md)
@@ -98,19 +102,19 @@
 
 ## ImageSizeAdjusterV2
 - [Documentation](ImageSizeAdjusterV2.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-image-size-adjuster-V2.json)
 
 ## ImageSizeAdjusterV3
 - [Documentation](ImageSizeAdjusterV3.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-image-size-adjuster-V3.json)
 
 ## LoadTextDirectory
 - [Documentation](LoadTextDirectory.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Load-text-Directory.json)
 
 ## LoadVideoBatchFrame
 - [Documentation](LoadVideoBatchFrame.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Load-Video-Batch-Frame.json)
 
 ## LoadVideoDirectory
 - [Documentation](LoadVideoDirectory.md)
@@ -142,7 +146,7 @@
 
 ## SaveText
 - [Documentation](SaveText.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Save-Text.json)
 
 ## SequentialNumberGenerator
 - [Documentation](SequentialNumberGenerator.md)
@@ -154,11 +158,11 @@
 
 ## StringPainterV2
 - [Documentation](StringPainterV2.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-String-Painter-V2.json)
 
 ## StringWeights
 - [Documentation](StringWeights.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-String-Weights.json)
 
 ## TrianglesPlus
 - [Documentation](TrianglesPlus.md)
@@ -182,12 +186,12 @@
 
 ## ZenkaiPromptV2
 - [Documentation](ZenkaiPromptV2.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Zenkai-Prompt-V2.json)
 
 ## ZenkaiWildcard
 - [Documentation](ZenkaiWildcard.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Zenkai-Wildcards.json)
 
 ## ZenkaiWildcardV2
 - [Documentation](ZenkaiWildcardV2.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Zenkai-Prompt-V2.json)
