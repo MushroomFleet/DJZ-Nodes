@@ -164,6 +164,14 @@
 - [Documentation](StringWeights.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-String-Weights.json)
 
+## Technicolor3Strip_v1
+- [Documentation](Technicolor3Strip_v1.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Technicolor-3Strip.json)
+
+## Technicolor3Strip_v2
+- [Documentation](Technicolor3Strip_v2.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Technicolor-3Strip-V2.json)
+
 ## TrianglesPlus
 - [Documentation](TrianglesPlus.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Triangles-Plus.json)

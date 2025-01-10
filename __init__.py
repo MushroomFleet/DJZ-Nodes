@@ -346,5 +346,19 @@ try:
 except ImportError:
     print("Unable to import AnamorphicEffect. This node will not be available.")
 
+try:
+    from .Technicolor3Strip_v1 import Technicolor3Strip_v1
+    NODE_CLASS_MAPPINGS["Technicolor3Strip_v1"] = Technicolor3Strip_v1
+    NODE_DISPLAY_NAME_MAPPINGS["Technicolor3Strip_v1"] = "Technicolor 3-Strip v1"
+except ImportError:
+    print("Unable to import Technicolor3Strip_v1. This node will not be available.")
+
+try:
+    from .Technicolor3Strip_v2 import Technicolor3Strip_v2
+    NODE_CLASS_MAPPINGS["Technicolor3Strip_v2"] = Technicolor3Strip_v2
+    NODE_DISPLAY_NAME_MAPPINGS["Technicolor3Strip_v2"] = "Technicolor 3-Strip v2"
+except ImportError:
+    print("Unable to import Technicolor3Strip_v2. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

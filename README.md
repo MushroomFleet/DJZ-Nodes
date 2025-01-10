@@ -7,7 +7,7 @@ A comprehensive collection of custom nodes for ComfyUI focused on advanced image
 - **Advanced Datamoshing Suite**: Multiple versions of datamoshing nodes (V1-V7) for creative image manipulation and glitch art effects
 - **Batch Processing Tools**: Sophisticated batch operations including offset, range insertion, swapping, and frame management
 - **Prompt Engineering**: Rich set of prompt manipulation tools including ZenkaiPrompt system, wildcards, and prompt cleaning
-- **Image Processing**: Various image size adjusters, aspect ratio tools, VHS effects, anamorphic effects, and fractal generators
+- **Image Processing**: Various image size adjusters, aspect ratio tools, VHS effects, anamorphic effects, fractal generators, and Technicolor effects
 - **Video Processing**: Tools for video frame extraction, directory management, and special effects
 - **3D Generation**: Parametric mesh generation for creating 3D objects (spheres, tori, Klein bottles)
 - **Dataset Tools**: Wordcloud generation and caption processing capabilities
@@ -37,6 +37,7 @@ git clone https://github.com/MushroomFleet/DJZ-Nodes
 - VHS_Effect (V1, V2) - Retro VHS-style effects
 - DinskyPlus (V1, V2) - Enhanced image processing
 - TrianglesPlus (V1, V2) - Geometric pattern generation
+- Technicolor3Strip (V1, V2) - Classic Technicolor film emulation effects
 
 ### Batch Operations
 - BatchOffset - Offset batch processing operations
