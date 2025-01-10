@@ -339,5 +339,12 @@ try:
 except ImportError:
     print("Unable to import VHS_Effect_v2. This node will not be available.")
 
+try:
+    from .AnamorphicEffect import AnamorphicEffect
+    NODE_CLASS_MAPPINGS["AnamorphicEffect"] = AnamorphicEffect
+    NODE_DISPLAY_NAME_MAPPINGS["AnamorphicEffect"] = "Anamorphic Lens Effect"
+except ImportError:
+    print("Unable to import AnamorphicEffect. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
