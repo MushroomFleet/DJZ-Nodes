@@ -1,16 +1,15 @@
 # DJZ-Nodes
 
-A comprehensive collection of custom nodes for ComfyUI focused on advanced image/video processing, audio manipulation, batch operations, prompt engineering, and workflow optimization. This node pack provides powerful tools for creative media manipulation and efficient workflow management.
+A comprehensive collection of custom nodes for ComfyUI that revolutionizes creative media workflows. This extensive node pack provides powerful tools for advanced image/video processing, audio manipulation, batch operations, prompt engineering, and workflow optimization. With over 50 specialized nodes, it offers one of the most complete custom node collections for ComfyUI, enabling everything from sophisticated video effects to advanced prompt engineering.
 
 ## 🌟 Key Features
 
-- **Advanced Datamoshing Suite**: Seven generations of datamoshing nodes (V1-V7) for creative image manipulation and glitch art effects
-- **Batch Processing Tools**: Sophisticated batch operations including offset, range insertion, swapping, and frame management
-- **Prompt Engineering**: Rich set of prompt manipulation tools including ZenkaiPrompt system, wildcards, and prompt cleaning
-- **Image Processing**: Various image size adjusters, aspect ratio tools, VHS effects, anamorphic effects, fractal generators, and Technicolor effects
-- **Video Processing**: Tools for video frame extraction, directory management, and special effects
-- **3D Generation**: Parametric mesh generation for creating 3D objects (spheres, tori, Klein bottles)
-- **Dataset Tools**: Wordcloud generation and caption processing capabilities
+- **Advanced Image Effects Suite**: Comprehensive collection of cinematic effects including Anamorphic, Panavision, Technicolor, Kinescope, and VHS simulations
+- **Video Processing & Datamoshing**: Seven generations of datamoshing nodes (V1-V7) plus advanced video frame management and effects
+- **Batch Processing Tools**: Sophisticated batch operations for efficient workflow management
+- **Prompt Engineering**: Advanced prompt manipulation with the ZenkaiPrompt system, wildcards, and cleaning tools
+- **3D Generation**: Parametric mesh generation for creating complex 3D objects
+- **Dataset & File Management**: Comprehensive tools for handling datasets, files, and text processing
 
 ## 🚀 Quick Links
 - [Video Tutorial](https://www.youtube.com/watch?v=MnZnP0Fav8E)
@@ -40,76 +39,76 @@ For Windows users, use the provided installation batch files:
 ## 🔧 Node Categories
 
 ### Audio Processing
-- **CombineAudio** - Mix and merge audio files with customizable parameters
+- **CombineAudio** - Professional audio mixing and merging with customizable parameters
 
 ### Image Processing & Effects
 - **Cinematic Effects**
-  - AnamorphicEffect - Create cinematic anamorphic lens effects
-  - PanavisionLens (V1, V2) - Simulate Panavision lens characteristics
-  - Technicolor3Strip (V1, V2) - Classic Technicolor film emulation
-  - KinescopeEffect - Vintage TV/film look simulation with customizable scan lines and distortion
-  - VHS_Effect (V1, V2) - Retro VHS-style effects
-  - VideoInterlaced - Create interlaced video effects
+  - AnamorphicEffect - Professional cinematic lens distortion
+  - PanavisionLens (V1, V2) - Authentic Panavision lens simulation
+  - Technicolor3Strip (V1, V2) - Classic film color process emulation
+  - KinescopeEffect - Vintage broadcast look with customizable parameters
+  - VHS_Effect (V1, V2) - Authentic retro video artifacts
+  - VideoInterlaced - Professional interlaced video simulation
 - **Creative Effects**
-  - DjzDatamosh (V1-V7) - Advanced glitch art and datamoshing effects
-  - FractalGenerator (V1-V3) - Create complex fractal patterns
-  - DinskyPlus (V1, V2) - Enhanced image processing
+  - DjzDatamosh (V1-V7) - Industry-leading glitch art suite
+  - FractalGenerator (V1-V3) - High-performance fractal creation
+  - DinskyPlus (V1, V2) - Advanced image processing suite
   - TrianglesPlus (V1, V2) - Geometric pattern generation
 - **Image Management**
-  - AspectSize (V1, V2) - Advanced aspect ratio management
-  - ImageSizeAdjuster (V1-V3) - Flexible image size manipulation
+  - AspectSize (V1, V2) - Precise aspect ratio control
+  - ImageSizeAdjuster (V1-V3) - Professional image scaling tools
 
 ### Video & Animation Tools
-- LoadVideoDirectory - Batch video file loading
-- LoadVideoBatchFrame - Precise video frame extraction
-- FFXFADEORAMA - Advanced video transition and fade effects
-- DJZLoadLatent (V1, V2) - Advanced latent loading and manipulation
+- LoadVideoDirectory - Efficient video batch processing
+- LoadVideoBatchFrame - Frame-accurate video extraction
+- FFXFADEORAMA - Professional transition effects
+- DJZLoadLatent (V1, V2) - Advanced latent space manipulation
 
 ### Batch Operations
-- BatchOffset - Offset batch processing operations
-- BatchRangeInsert - Insert operations within batch ranges
-- BatchRangeSwap - Swap elements within batch ranges
-- BatchThief - Advanced batch manipulation
+- BatchOffset - Precision batch timing control
+- BatchRangeInsert - Smart batch content insertion
+- BatchRangeSwap - Efficient batch content exchange
+- BatchThief - Advanced batch data manipulation
 
 ### Prompt Engineering & Text Tools
 - **Zenkai System**
-  - ZenkaiPrompt (V1, V2) - Advanced prompt enhancement system
-  - ZenkaiWildcard (V1, V2) - Dynamic wildcard management
+  - ZenkaiPrompt (V1, V2) - Next-generation prompt enhancement
+  - ZenkaiWildcard (V1, V2) - Dynamic prompt variation system
 - **String Manipulation**
-  - StringPainter (V1, V2) - Visual prompt editing
-  - StringWeights - Manage prompt emphasis weights
-  - StringChaos - Advanced string manipulation
+  - StringPainter (V1, V2) - Visual prompt composition
+  - StringWeights - Precise prompt emphasis control
+  - StringChaos - Creative text transformation
 - **Prompt Management**
-  - PromptCleaner - Clean and optimize prompts
-  - PromptInject - Inject modifiers into prompts
-  - PromptSwap - Swap prompt components
-  - CaptionsToPromptList - Convert captions to prompt lists
+  - PromptCleaner - Intelligent prompt optimization
+  - PromptInject - Dynamic prompt modification
+  - PromptSwap - Smart prompt component exchange
+  - CaptionsToPromptList - Efficient caption conversion
 
 ### File & Data Management
-- LoadTextDirectory - Text file directory management
-- ProjectFilePathNode - File path management
-- SaveText - Text data persistence
-- SequentialNumberGenerator - Generate sequential numbers
-- DatasetWordcloud - Generate word clouds from datasets
+- LoadTextDirectory - Bulk text processing
+- ProjectFilePathNode - Project organization
+- SaveText - Data persistence
+- SequentialNumberGenerator - Custom sequence generation
+- DatasetWordcloud - Visual dataset analysis
 
 ### 3D Generation
-- ParametricMeshGen (V1, V2) - Create 3D meshes
+- ParametricMeshGen (V1, V2) - Professional 3D mesh creation
   - Supports: Spheres, Tori, Klein bottles, and custom parametric surfaces
   - Example outputs in `/outputs` directory
 
 ## 📚 Resources & Examples
 
 ### Example Workflows
-The `examples/` directory contains ready-to-use workflow examples:
-- FFX-Fade-O-Rama.json - Video transition effects
-- Zenkai-System.json - Prompt engineering system showcase
-- Combine-Audio-V1.json - Audio mixing and processing
-- Parametric-Mesh-Gen-V2.json - Advanced 3D mesh generation
+The `examples/` directory contains production-ready workflows:
+- FFX-Fade-O-Rama.json - Professional video transitions
+- Zenkai-System.json - Advanced prompt engineering
+- Combine-Audio-V1.json - Professional audio processing
+- Parametric-Mesh-Gen-V2.json - Complex 3D generation
 
 Each node has its own example workflow available in the [DJZ-Workflows repository](https://github.com/MushroomFleet/DJZ-Workflows/tree/main/DJZ-Nodes-Examples).
 
 ### Documentation
-Every node includes detailed documentation in its corresponding .md file, covering:
+Every node includes comprehensive documentation in its corresponding .md file, covering:
 - Input/Output specifications
 - Usage instructions
 - Example configurations

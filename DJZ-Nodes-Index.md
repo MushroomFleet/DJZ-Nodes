@@ -114,7 +114,7 @@
 
 ## KinescopeEffectV1
 - [Documentation](KinescopeEffectV1.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Kinescope-Effect-V1.json)
 
 ## LoadTextDirectory
 - [Documentation](LoadTextDirectory.md)
