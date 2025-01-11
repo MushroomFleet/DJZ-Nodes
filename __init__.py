@@ -374,4 +374,32 @@ try:
 except ImportError:
     print("Unable to import PanavisionLensV2. This node will not be available.")
 
+try:
+    from .KinescopeEffectV1 import KinescopeEffectV1
+    NODE_CLASS_MAPPINGS["KinescopeEffectV1"] = KinescopeEffectV1
+    NODE_DISPLAY_NAME_MAPPINGS["KinescopeEffectV1"] = "Kinescope Effect V1"
+except ImportError:
+    print("Unable to import KinescopeEffectV1. This node will not be available.")
+
+try:
+    from .VideoInterlaced import VideoInterlaced
+    NODE_CLASS_MAPPINGS["VideoInterlaced"] = VideoInterlaced
+    NODE_DISPLAY_NAME_MAPPINGS["VideoInterlaced"] = "Video Interlaced Upscaler"
+except ImportError:
+    print("Unable to import VideoInterlaced. This node will not be available.")
+
+try:
+    from .StringChaos import StringChaos
+    NODE_CLASS_MAPPINGS["StringChaos"] = StringChaos
+    NODE_DISPLAY_NAME_MAPPINGS["StringChaos"] = "String Chaos Modes"
+except ImportError:
+    print("Unable to import StringChaos. This node will not be available.")
+
+try:
+    from .CombineAudio import CombineAudio
+    NODE_CLASS_MAPPINGS["CombineAudio"] = CombineAudio
+    NODE_DISPLAY_NAME_MAPPINGS["CombineAudio"] = "Combine Audio Tracks"
+except ImportError:
+    print("Unable to import CombineAudio. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

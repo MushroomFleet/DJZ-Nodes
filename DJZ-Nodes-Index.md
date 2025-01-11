@@ -32,6 +32,10 @@
 - [Documentation](CaptionsToPromptList.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/Caption-to-Proimpt-List.json)
 
+## CombineAudio
+- [Documentation](CombineAudio.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Combine-Audio-V1.json)
+
 ## DatasetWordcloud
 - [Documentation](DatasetWordcloud.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Dataset-Wordcloud.json)
@@ -108,6 +112,10 @@
 - [Documentation](ImageSizeAdjusterV3.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-image-size-adjuster-V3.json)
 
+## KinescopeEffectV1
+- [Documentation](KinescopeEffectV1.md)
+- [Example Workflow](#)
+
 ## LoadTextDirectory
 - [Documentation](LoadTextDirectory.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Load-text-Directory.json)
@@ -160,6 +168,10 @@
 - [Documentation](SequentialNumberGenerator.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DjzDatamosh/DJZ-Nodes-Examples-Sequential-Selection.json)
 
+## StringChaos
+- [Documentation](StringChaos.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-String-Chaos-Modes-V1.json)
+
 ## StringPainter
 - [Documentation](StringPainter.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/StringPainter.json)
@@ -195,6 +207,10 @@
 ## VHS_Effect_v2
 - [Documentation](VHS_Effect_v2.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-VHS-Effect-V2.json)
+
+## VideoInterlaced
+- [Documentation](VideoInterlaced.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Interlaced-Upscaler-V1.json)
 
 ## ZenkaiPrompt
 - [Documentation](ZenkaiPrompt.md)

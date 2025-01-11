@@ -1,10 +1,10 @@
 # DJZ-Nodes
 
-A comprehensive collection of custom nodes for ComfyUI focused on advanced image processing, batch operations, prompt engineering, and workflow optimization. This node pack provides powerful tools for creative image manipulation, video processing, and efficient workflow management.
+A comprehensive collection of custom nodes for ComfyUI focused on advanced image/video processing, audio manipulation, batch operations, prompt engineering, and workflow optimization. This node pack provides powerful tools for creative media manipulation and efficient workflow management.
 
 ## 🌟 Key Features
 
-- **Advanced Datamoshing Suite**: Multiple versions of datamoshing nodes (V1-V7) for creative image manipulation and glitch art effects
+- **Advanced Datamoshing Suite**: Seven generations of datamoshing nodes (V1-V7) for creative image manipulation and glitch art effects
 - **Batch Processing Tools**: Sophisticated batch operations including offset, range insertion, swapping, and frame management
 - **Prompt Engineering**: Rich set of prompt manipulation tools including ZenkaiPrompt system, wildcards, and prompt cleaning
 - **Image Processing**: Various image size adjusters, aspect ratio tools, VHS effects, anamorphic effects, fractal generators, and Technicolor effects
@@ -15,11 +15,12 @@ A comprehensive collection of custom nodes for ComfyUI focused on advanced image
 ## 🚀 Quick Links
 - [Video Tutorial](https://www.youtube.com/watch?v=MnZnP0Fav8E)
 - [Articles & Guides](https://civitai.com/user/driftjohnson/articles)
+- [Example Workflows](https://github.com/MushroomFleet/DJZ-Workflows/tree/main/DJZ-Nodes-Examples)
 - [Detailed Nodes Documentation](https://github.com/MushroomFleet/DJZ-Nodes/blob/main/DJZ-Nodes-Index.md)
 
 ## 📦 Installation
 
-### Method 1: Git Clone
+### Method 1: Git Clone (Recommended)
 Clone this repository into your ComfyUI's custom_nodes directory:
 
 ```bash
@@ -29,78 +30,92 @@ cd DJZ-Nodes
 pip install -r requirements.txt
 ```
 
-### Method 2: Portable Installation
-For Windows users, you can use the provided installation batch files:
-1. Run `install-portable.bat` for basic installation
-2. Run `pip-update-portable.bat` to update dependencies
-3. Run `onnx-install-portable.bat` if you need ONNX support
+### Method 2: Portable Installation (Windows)
+For Windows users, use the provided installation batch files:
+1. Download and extract the repository
+2. Run `install-portable.bat` for basic installation
+3. Run `pip-update-portable.bat` to update dependencies
+4. Run `onnx-install-portable.bat` if you need ONNX support
 
 ## 🔧 Node Categories
 
+### Audio Processing
+- **CombineAudio** - Mix and merge audio files with customizable parameters
+
 ### Image Processing & Effects
-- AnamorphicEffect - Create cinematic anamorphic lens effects
-- AspectSize (V1, V2) - Advanced aspect ratio management
-- ImageSizeAdjuster (V1-V3) - Flexible image size manipulation
-- FractalGenerator (V1-V3) - Create complex fractal patterns
-- DjzDatamosh (V1-V7) - Advanced glitch art and datamoshing effects
-- VHS_Effect (V1, V2) - Retro VHS-style effects
-- DinskyPlus (V1, V2) - Enhanced image processing
-- TrianglesPlus (V1, V2) - Geometric pattern generation
-- Technicolor3Strip (V1, V2) - Classic Technicolor film emulation effects
-- PanavisionLens (V1, V2) - Simulate Panavision lens characteristics and effects
+- **Cinematic Effects**
+  - AnamorphicEffect - Create cinematic anamorphic lens effects
+  - PanavisionLens (V1, V2) - Simulate Panavision lens characteristics
+  - Technicolor3Strip (V1, V2) - Classic Technicolor film emulation
+  - KinescopeEffect - Vintage TV/film look simulation with customizable scan lines and distortion
+  - VHS_Effect (V1, V2) - Retro VHS-style effects
+  - VideoInterlaced - Create interlaced video effects
+- **Creative Effects**
+  - DjzDatamosh (V1-V7) - Advanced glitch art and datamoshing effects
+  - FractalGenerator (V1-V3) - Create complex fractal patterns
+  - DinskyPlus (V1, V2) - Enhanced image processing
+  - TrianglesPlus (V1, V2) - Geometric pattern generation
+- **Image Management**
+  - AspectSize (V1, V2) - Advanced aspect ratio management
+  - ImageSizeAdjuster (V1-V3) - Flexible image size manipulation
+
+### Video & Animation Tools
+- LoadVideoDirectory - Batch video file loading
+- LoadVideoBatchFrame - Precise video frame extraction
+- FFXFADEORAMA - Advanced video transition and fade effects
+- DJZLoadLatent (V1, V2) - Advanced latent loading and manipulation
 
 ### Batch Operations
 - BatchOffset - Offset batch processing operations
 - BatchRangeInsert - Insert operations within batch ranges
 - BatchRangeSwap - Swap elements within batch ranges
 - BatchThief - Advanced batch manipulation
-- LoadVideoBatchFrame - Load video frames for batch processing
 
-### Prompt Engineering
-- ZenkaiPrompt (V1, V2) - Advanced prompt enhancement system
-- ZenkaiWildcard (V1, V2) - Dynamic wildcard management
-- PromptCleaner - Clean and optimize prompts
-- PromptInject - Inject modifiers into prompts
-- PromptSwap - Swap prompt components
-- StringWeights - Manage prompt emphasis weights
-- StringPainter (V1, V2) - Visual prompt editing
-- CaptionsToPromptList - Convert captions to prompt lists
+### Prompt Engineering & Text Tools
+- **Zenkai System**
+  - ZenkaiPrompt (V1, V2) - Advanced prompt enhancement system
+  - ZenkaiWildcard (V1, V2) - Dynamic wildcard management
+- **String Manipulation**
+  - StringPainter (V1, V2) - Visual prompt editing
+  - StringWeights - Manage prompt emphasis weights
+  - StringChaos - Advanced string manipulation
+- **Prompt Management**
+  - PromptCleaner - Clean and optimize prompts
+  - PromptInject - Inject modifiers into prompts
+  - PromptSwap - Swap prompt components
+  - CaptionsToPromptList - Convert captions to prompt lists
 
-### Video & Directory Tools
-- LoadVideoDirectory - Batch video file loading
+### File & Data Management
 - LoadTextDirectory - Text file directory management
 - ProjectFilePathNode - File path management
-- FFXFADEORAMA - Video transition effects
-- DJZLoadLatent (V1, V2) - Advanced latent loading
-
-### 3D & Creative Tools
-- ParametricMeshGen (V1, V2) - Create 3D meshes (spheres, tori, Klein bottles)
-  - Example outputs in `/outputs` directory include sphere, torus, and Klein bottle models
-
-### Data Processing
-- DatasetWordcloud - Generate word clouds from datasets
 - SaveText - Text data persistence
 - SequentialNumberGenerator - Generate sequential numbers
+- DatasetWordcloud - Generate word clouds from datasets
+
+### 3D Generation
+- ParametricMeshGen (V1, V2) - Create 3D meshes
+  - Supports: Spheres, Tori, Klein bottles, and custom parametric surfaces
+  - Example outputs in `/outputs` directory
 
 ## 📚 Resources & Examples
 
 ### Example Workflows
 The `examples/` directory contains ready-to-use workflow examples:
-- FFX-Fade-O-Rama.json - Demonstrates video transition effects
-- Zenkai-System.json - Shows prompt engineering capabilities
+- FFX-Fade-O-Rama.json - Video transition effects
+- Zenkai-System.json - Prompt engineering system showcase
+- Combine-Audio-V1.json - Audio mixing and processing
+- Parametric-Mesh-Gen-V2.json - Advanced 3D mesh generation
 
-### Prompt Templates
-The `prompts/` directory includes a vast collection of prompt templates for various styles and use cases:
-- Video generation prompts (CogVideo series)
-- Character descriptions and styles
-- Scene compositions (cyberpunk, fantasy, sci-fi)
-- Special effects and artistic styles
-- Automotive and action sequences
-- Professional and workplace scenes
-- Nature and landscape descriptions
-- Emotional and dialogue-focused prompts
+Each node has its own example workflow available in the [DJZ-Workflows repository](https://github.com/MushroomFleet/DJZ-Workflows/tree/main/DJZ-Nodes-Examples).
 
-Find more example workflows and detailed usage instructions in the [DJZ-Nodes-Index.md](https://github.com/MushroomFleet/DJZ-Nodes/blob/main/DJZ-Nodes-Index.md) file.
+### Documentation
+Every node includes detailed documentation in its corresponding .md file, covering:
+- Input/Output specifications
+- Usage instructions
+- Example configurations
+- Tips and best practices
+
+Find the complete documentation index in [DJZ-Nodes-Index.md](https://github.com/MushroomFleet/DJZ-Nodes/blob/main/DJZ-Nodes-Index.md).
 
 # About the Creator
 
