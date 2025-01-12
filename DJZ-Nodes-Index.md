@@ -156,6 +156,10 @@
 - [Documentation](ProjectFilePathNode.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/filepath-demo.json)
 
+## RetroVideoText
+- [Documentation](RetroVideoText.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Retro-Video-Text-V1.json)
+
 ## PromptCleaner
 - [Documentation](PromptCleaner.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Prompt-Cleaner.json)

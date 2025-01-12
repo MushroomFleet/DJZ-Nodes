@@ -430,4 +430,11 @@ try:
 except ImportError:
     print("Unable to import VHS_Effect_V3. This node will not be available.")
 
+try:
+    from .RetroVideoText import RetroVideoText
+    NODE_CLASS_MAPPINGS["RetroVideoText"] = RetroVideoText
+    NODE_DISPLAY_NAME_MAPPINGS["RetroVideoText"] = "Retro Video Text"
+except ImportError:
+    print("Unable to import RetroVideoText. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

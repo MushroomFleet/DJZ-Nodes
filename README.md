@@ -1,10 +1,10 @@
 # DJZ-Nodes
 
-A comprehensive collection of custom nodes for ComfyUI that revolutionizes creative media workflows. This extensive node pack provides powerful tools for advanced image/video processing, audio manipulation, batch operations, prompt engineering, and workflow optimization. With over 60 specialized nodes, it offers one of the most complete custom node collections for ComfyUI, enabling everything from sophisticated video effects to advanced prompt engineering and 3D mesh generation.
+A comprehensive collection of custom nodes for ComfyUI that revolutionizes creative media workflows. This extensive node pack provides powerful tools for advanced image/video processing, audio manipulation, batch operations, prompt engineering, and workflow optimization. With over 80 specialized nodes, it offers one of the most complete custom node collections for ComfyUI, enabling everything from sophisticated video effects to advanced prompt engineering and 3D mesh generation.
 
 ## 🌟 Key Features
 
-- **Professional Video & Film Effects**: Industry-standard cinematic effects including Anamorphic, Panavision, Technicolor, Kinescope, and VHS simulations
+- **Professional Video & Film Effects**: Industry-standard cinematic effects including Anamorphic, Panavision, Technicolor, Kinescope, VHS, and Retro Text simulations
 - **Advanced Video Processing**: Seven generations of datamoshing nodes (V1-V7), interlaced video simulation, frame management, and transition effects
 - **Creative Tools Suite**: Fractal generation (V1-V3), parametric 3D mesh creation, geometric patterns, and advanced image processing
 - **Intelligent Prompt Engineering**: Advanced prompt manipulation with the Zenkai system, dynamic wildcards, and smart text processing
@@ -49,6 +49,7 @@ For Windows users, use the provided installation batch files:
   - VideoInterlaced (V1, V2) - Professional interlaced video simulation
   - BlackBars (V1, V2) - Cinematic aspect ratio control
   - DjzDatamosh (V1-V7) - Industry-leading glitch art suite
+  - RetroVideoText - Classic video text overlay effects
 
 ### Creative Generation Tools
 - **Visual Effects**
@@ -106,6 +107,11 @@ The `examples/` directory contains production-ready workflows:
 - Zenkai-System.json - Advanced prompt engineering
 
 Each node has its own example workflow available in the [DJZ-Workflows repository](https://github.com/MushroomFleet/DJZ-Workflows/tree/main/DJZ-Nodes-Examples).
+
+### Included Resources
+- **Prompts Directory**: A rich collection of pre-crafted prompts for various use cases, from traditional storytelling to cyberpunk themes
+- **TTF Directory**: Font resources for text-based nodes
+- **Wildcards Directory**: Dynamic text substitution lists for advanced prompt engineering
 
 ### Documentation
 Every node includes comprehensive documentation in its corresponding .md file, covering:
