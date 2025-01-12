@@ -419,8 +419,15 @@ except ImportError:
 try:
     from .VideoInterlacedV2 import VideoInterlacedV2
     NODE_CLASS_MAPPINGS["VideoInterlacedV2"] = VideoInterlacedV2
-    NODE_DISPLAY_NAME_MAPPINGS["VideoInterlacedV2"] = "Video Interlaced V2"
+    NODE_DISPLAY_NAME_MAPPINGS["VideoInterlacedV2"] = "Video Interlaced Upscaler V2"
 except ImportError:
     print("Unable to import VideoInterlacedV2. This node will not be available.")
+
+try:
+    from .VHS_Effect_V3 import VHS_Effect_V3
+    NODE_CLASS_MAPPINGS["VHS_Effect_V3"] = VHS_Effect_V3
+    NODE_DISPLAY_NAME_MAPPINGS["VHS_Effect_V3"] = "VHS Effect V3"
+except ImportError:
+    print("Unable to import VHS_Effect_V3. This node will not be available.")
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

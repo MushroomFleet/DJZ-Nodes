@@ -216,6 +216,10 @@
 - [Documentation](VHS_Effect_v2.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-VHS-Effect-V2.json)
 
+## VHS_Effect_V3
+- [Documentation](VHS_Effect_V3.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-VHS-Effect-V3.json)
+
 ## VideoInterlaced
 - [Documentation](VideoInterlaced.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Interlaced-Upscaler-V1.json)
