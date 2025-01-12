@@ -402,4 +402,25 @@ try:
 except ImportError:
     print("Unable to import CombineAudio. This node will not be available.")
 
+try:
+    from .BlackBarsV1 import BlackBarsV1
+    NODE_CLASS_MAPPINGS["BlackBarsV1"] = BlackBarsV1
+    NODE_DISPLAY_NAME_MAPPINGS["BlackBarsV1"] = "Black Bars V1"
+except ImportError:
+    print("Unable to import BlackBarsV1. This node will not be available.")
+
+try:
+    from .BlackBarsV2 import BlackBarsV2
+    NODE_CLASS_MAPPINGS["BlackBarsV2"] = BlackBarsV2
+    NODE_DISPLAY_NAME_MAPPINGS["BlackBarsV2"] = "Black Bars V2"
+except ImportError:
+    print("Unable to import BlackBarsV2. This node will not be available.")
+
+try:
+    from .VideoInterlacedV2 import VideoInterlacedV2
+    NODE_CLASS_MAPPINGS["VideoInterlacedV2"] = VideoInterlacedV2
+    NODE_DISPLAY_NAME_MAPPINGS["VideoInterlacedV2"] = "Video Interlaced V2"
+except ImportError:
+    print("Unable to import VideoInterlacedV2. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

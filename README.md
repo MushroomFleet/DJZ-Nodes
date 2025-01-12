@@ -1,6 +1,6 @@
 # DJZ-Nodes
 
-A comprehensive collection of custom nodes for ComfyUI that revolutionizes creative media workflows. This extensive node pack provides powerful tools for advanced image/video processing, audio manipulation, batch operations, prompt engineering, and workflow optimization. With over 50 specialized nodes, it offers one of the most complete custom node collections for ComfyUI, enabling everything from sophisticated video effects to advanced prompt engineering.
+A comprehensive collection of custom nodes for ComfyUI that revolutionizes creative media workflows. This extensive node pack provides powerful tools for advanced image/video processing, audio manipulation, batch operations, prompt engineering, and workflow optimization. With 54 specialized nodes, it offers one of the most complete custom node collections for ComfyUI, enabling everything from sophisticated video effects to advanced prompt engineering.
 
 ## 🌟 Key Features
 
@@ -48,7 +48,8 @@ For Windows users, use the provided installation batch files:
   - Technicolor3Strip (V1, V2) - Classic film color process emulation
   - KinescopeEffect - Vintage broadcast look with customizable parameters
   - VHS_Effect (V1, V2) - Authentic retro video artifacts
-  - VideoInterlaced - Professional interlaced video simulation
+  - VideoInterlaced (V1, V2) - Professional interlaced video simulation
+  - BlackBars (V1, V2) - Cinematic aspect ratio bars
 - **Creative Effects**
   - DjzDatamosh (V1-V7) - Industry-leading glitch art suite
   - FractalGenerator (V1-V3) - High-performance fractal creation
@@ -102,8 +103,6 @@ For Windows users, use the provided installation batch files:
 The `examples/` directory contains production-ready workflows:
 - FFX-Fade-O-Rama.json - Professional video transitions
 - Zenkai-System.json - Advanced prompt engineering
-- Combine-Audio-V1.json - Professional audio processing
-- Parametric-Mesh-Gen-V2.json - Complex 3D generation
 
 Each node has its own example workflow available in the [DJZ-Workflows repository](https://github.com/MushroomFleet/DJZ-Workflows/tree/main/DJZ-Nodes-Examples).
 
