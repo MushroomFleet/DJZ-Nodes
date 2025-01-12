@@ -437,4 +437,11 @@ try:
 except ImportError:
     print("Unable to import RetroVideoText. This node will not be available.")
 
+try:
+    from .NonSquarePixelsV1 import NonSquarePixelsV1
+    NODE_CLASS_MAPPINGS["NonSquarePixelsV1"] = NonSquarePixelsV1
+    NODE_DISPLAY_NAME_MAPPINGS["NonSquarePixelsV1"] = "Non-Square Pixels V1"
+except ImportError:
+    print("Unable to import NonSquarePixelsV1. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

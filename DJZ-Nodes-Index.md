@@ -136,6 +136,10 @@
 - [Documentation](LoadVideoDirectory.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DjzDatamosh/DJZ-Nodes-Examples-Load-Video-Directory.json)
 
+## NonSquarePixelsV1
+- [Documentation](NonSquarePixelsV1.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-non-square-pixels.json)
+
 ## ParametricMeshGen
 - [Documentation](ParametricMeshGen.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Parametric-Mesh-Generator.json)

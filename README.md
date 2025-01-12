@@ -1,6 +1,6 @@
 # DJZ-Nodes
 
-A comprehensive collection of custom nodes for ComfyUI that revolutionizes creative media workflows. This extensive node pack provides powerful tools for advanced image/video processing, audio manipulation, batch operations, prompt engineering, and workflow optimization. With over 80 specialized nodes, it offers one of the most complete custom node collections for ComfyUI, enabling everything from sophisticated video effects to advanced prompt engineering and 3D mesh generation.
+A comprehensive collection of custom nodes for ComfyUI that revolutionizes creative media workflows. This extensive node pack provides powerful tools for advanced image/video processing, audio manipulation, batch operations, prompt engineering, and workflow optimization. With over 90 specialized nodes, it offers one of the most complete custom node collections for ComfyUI, enabling everything from sophisticated video effects to advanced prompt engineering and 3D mesh generation.
 
 ## 🌟 Key Features
 
@@ -43,6 +43,7 @@ For Windows users, use the provided installation batch files:
   - AnamorphicEffect - Professional anamorphic lens distortion
   - PanavisionLens (V1, V2) - Authentic Panavision lens simulation
   - Technicolor3Strip (V1, V2) - Classic film color process emulation
+  - NonSquarePixels - Advanced pixel aspect ratio manipulation
 - **Vintage & Creative Effects**
   - KinescopeEffect - Vintage broadcast look
   - VHS_Effect (V1-V3) - Authentic retro video artifacts
@@ -65,6 +66,7 @@ For Windows users, use the provided installation batch files:
   - LoadVideoDirectory - Efficient video batch processing
   - LoadVideoBatchFrame - Frame-accurate video extraction
   - FFXFADEORAMA - Professional transition effects
+  - SequentialNumberGenerator - Advanced frame sequencing
 - **Latent Space Tools**
   - DJZLoadLatent (V1, V2) - Advanced latent space manipulation
 - **Image Control**
