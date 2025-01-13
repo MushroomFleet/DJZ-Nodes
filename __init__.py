@@ -487,4 +487,11 @@ try:
 except ImportError:
     print("Unable to import FishEyeEffect. This node will not be available.")
 
+try:
+    from .ClassicFilmEffect import ClassicFilmEffect
+    NODE_CLASS_MAPPINGS["ClassicFilmEffect"] = ClassicFilmEffect
+    NODE_DISPLAY_NAME_MAPPINGS["ClassicFilmEffect"] = "Classic Film Effect"
+except ImportError:
+    print("Unable to import ClassicFilmEffect. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

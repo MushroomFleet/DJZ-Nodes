@@ -40,7 +40,7 @@ class FilmGrainEffect_v2:
                 "seed": ("INT", {
                     "default": 0,
                     "min": 0,
-                    "max": 0xffffffffffffffff
+                    "max": 2147483647  # 2**31 - 1
                 })
             },
         }

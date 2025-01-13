@@ -44,6 +44,10 @@
 - [Documentation](CaptionsToPromptList.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/Caption-to-Proimpt-List.json)
 
+## ClassicFilmEffect
+- [Documentation](ClassicFilmEffect.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Classic-Film-Effect-V1.json)
+
 ## CombineAudio
 - [Documentation](CombineAudio.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Combine-Audio-V1.json)
