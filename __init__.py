@@ -473,5 +473,12 @@ try:
 except ImportError:
     print("Unable to import FilmGrainEffect. This node will not be available.")
 
+try:
+    from .FilmGrainEffect_v2 import FilmGrainEffect_v2
+    NODE_CLASS_MAPPINGS["FilmGrainEffect_v2"] = FilmGrainEffect_v2
+    NODE_DISPLAY_NAME_MAPPINGS["FilmGrainEffect_v2"] = "Film Grain Effect V2 (video)"
+except ImportError:
+    print("Unable to import FilmGrainEffect_v2. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
