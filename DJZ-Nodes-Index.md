@@ -36,6 +36,10 @@
 - [Documentation](BlackBarsV2.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Black-Bars-V2.json)
 
+## BlackBarsV3
+- [Documentation](BlackBarsV3.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Black-Bars-V3.json)
+
 ## CaptionsToPromptList
 - [Documentation](CaptionsToPromptList.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/Caption-to-Proimpt-List.json)
@@ -235,6 +239,14 @@
 ## VideoInterlacedV2
 - [Documentation](VideoInterlacedV2.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Interlaced-Upscaler-V2.json)
+
+## VideoInterlaceFastV4
+- [Documentation](VideoInterlaceFastV4.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-FAST-Video-Interlaced-Upscaler-V4.json)
+
+## VideoInterlaceGANV3
+- [Documentation](VideoInterlaceGANV3.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-GAN-Video-Interlaced-Upscaler-V3.json)
 
 ## ZenkaiPrompt
 - [Documentation](ZenkaiPrompt.md)

@@ -444,4 +444,27 @@ try:
 except ImportError:
     print("Unable to import NonSquarePixelsV1. This node will not be available.")
 
+try:
+    from .BlackBarsV3 import BlackBarsV3
+    NODE_CLASS_MAPPINGS["BlackBarsV3"] = BlackBarsV3
+    NODE_DISPLAY_NAME_MAPPINGS["BlackBarsV3"] = "Black Bars V3"
+except ImportError:
+    print("Unable to import BlackBarsV3. This node will not be available.")
+
+try:
+    from .VideoInterlaceGANV3 import VideoInterlaceGANV3
+    NODE_CLASS_MAPPINGS["VideoInterlaceGANV3"] = VideoInterlaceGANV3
+    NODE_DISPLAY_NAME_MAPPINGS["VideoInterlaceGANV3"] = "GAN Video Interlaced Upscaler V3"
+except ImportError:
+    print("Unable to import VideoInterlaceGANV3. This node will not be available.")
+
+
+try:
+    from .VideoInterlaceFastV4 import VideoInterlaceFastV4
+    NODE_CLASS_MAPPINGS["VideoInterlaceFastV4"] = VideoInterlaceFastV4
+    NODE_DISPLAY_NAME_MAPPINGS["VideoInterlaceFastV4"] = "Fast Video Interlaced Upscaler V4"
+except ImportError:
+    print("Unable to import VideoInterlaceFastV4. This node will not be available.")
+
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

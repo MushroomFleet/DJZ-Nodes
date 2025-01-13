@@ -1,11 +1,11 @@
 # DJZ-Nodes
 
-A comprehensive collection of custom nodes for ComfyUI that revolutionizes creative media workflows. This extensive node pack provides powerful tools for advanced image/video processing, audio manipulation, batch operations, prompt engineering, and workflow optimization. With over 90 specialized nodes, it offers one of the most complete custom node collections for ComfyUI, enabling everything from sophisticated video effects to advanced prompt engineering and 3D mesh generation.
+A comprehensive collection of custom nodes for ComfyUI that revolutionizes creative media workflows. This extensive node pack provides powerful tools for advanced image/video processing, audio manipulation, batch operations, prompt engineering, and workflow optimization. With over 65 specialized nodes, it offers one of the most complete custom node collections for ComfyUI, enabling everything from sophisticated video effects to advanced prompt engineering and 3D mesh generation.
 
 ## 🌟 Key Features
 
 - **Professional Video & Film Effects**: Industry-standard cinematic effects including Anamorphic, Panavision, Technicolor, Kinescope, VHS, and Retro Text simulations
-- **Advanced Video Processing**: Seven generations of datamoshing nodes (V1-V7), interlaced video simulation, frame management, and transition effects
+- **Advanced Video Processing**: Seven generations of datamoshing nodes (V1-V7), multiple interlaced video simulation methods (including GAN-based and Fast implementations), frame management, and transition effects
 - **Creative Tools Suite**: Fractal generation (V1-V3), parametric 3D mesh creation, geometric patterns, and advanced image processing
 - **Intelligent Prompt Engineering**: Advanced prompt manipulation with the Zenkai system, dynamic wildcards, and smart text processing
 - **Workflow Optimization**: Comprehensive batch operations, file management, and dataset tools
@@ -47,8 +47,11 @@ For Windows users, use the provided installation batch files:
 - **Vintage & Creative Effects**
   - KinescopeEffect - Vintage broadcast look
   - VHS_Effect (V1-V3) - Authentic retro video artifacts
-  - VideoInterlaced (V1, V2) - Professional interlaced video simulation
-  - BlackBars (V1, V2) - Cinematic aspect ratio control
+  - VideoInterlaced Series:
+    - VideoInterlaced (V1, V2) - Professional interlaced video simulation
+    - VideoInterlaceGAN (V3) - AI-powered interlacing effects
+    - VideoInterlaceFast (V4) - High-performance interlacing
+  - BlackBars (V1-V3) - Enhanced cinematic aspect ratio control
   - DjzDatamosh (V1-V7) - Industry-leading glitch art suite
   - RetroVideoText - Classic video text overlay effects
 

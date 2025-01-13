@@ -4,12 +4,10 @@ from typing import Tuple, List
 import numpy as np
 
 class VideoInterlacedV2:
-    """
-    Enhanced ComfyUI custom node for interlaced upscaling of video frames.
-    Provides additional controls for field handling, interpolation methods,
-    and motion compensation.
-    """
-    
+    RETURN_TYPES = ("IMAGE",)
+    FUNCTION = "apply_interlacing"
+    CATEGORY = "image/upscaling"
+
     def __init__(self):
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
     
@@ -84,10 +82,6 @@ class VideoInterlacedV2:
             }
         }
 
-    RETURN_TYPES = ("IMAGE",)
-    FUNCTION = "apply_interlacing"
-    CATEGORY = "image/upscaling"
-
     def apply_edge_enhancement(self, frame: torch.Tensor, strength: float) -> torch.Tensor:
         """
         Applies edge enhancement to the frame using a Sobel operator.
@@ -121,12 +115,12 @@ class VideoInterlacedV2:
                                         next_frame: torch.Tensor,
                                         temporal_radius: int) -> torch.Tensor:
         """
-        Applies advanced motion compensation using temporal information.
+        Applies advanced motion compensation using temporal information at original resolution.
         """
         if temporal_radius <= 1 or prev_frame is None or next_frame is None:
             return frame
             
-        # Calculate motion vectors (simplified optical flow estimation)
+        # Calculate motion vectors at original resolution
         flow_prev = frame - prev_frame
         flow_next = next_frame - frame
         
@@ -157,9 +151,40 @@ class VideoInterlacedV2:
                               temporal_radius: int = 1,
                               edge_enhancement: float = 0.0) -> torch.Tensor:
         """
-        Creates an interlaced frame with enhanced options for field handling and processing.
+        Creates an interlaced frame with motion compensation applied before upscaling.
         """
-        # Initial upscale
+        # Apply motion compensation at original resolution if enabled
+        if motion_compensation != "none":
+            if motion_compensation == "advanced" and prev_frame is not None and next_frame is not None:
+                frame = self.apply_advanced_motion_compensation(
+                    frame, prev_frame, next_frame, temporal_radius
+                )
+            else:  # Basic motion compensation at original resolution
+                frame_even = frame.clone()
+                frame_odd = frame.clone()
+                
+                # Create masks for original resolution
+                h = frame.shape[0]
+                even_mask = torch.zeros((h, 1, 1), device=self.device)
+                odd_mask = torch.zeros((h, 1, 1), device=self.device)
+                
+                if field_order == "top_first":
+                    even_mask[::2] = 1.0
+                    odd_mask[1::2] = 1.0
+                else:
+                    even_mask[1::2] = 1.0
+                    odd_mask[::2] = 1.0
+                
+                # Apply basic motion compensation at original resolution
+                shifted_even = torch.roll(frame_even * even_mask, shifts=1, dims=0)
+                shifted_odd = torch.roll(frame_odd * odd_mask, shifts=-1, dims=0)
+                
+                frame = (
+                    frame * (1 - blend_factor) +
+                    (shifted_even + shifted_odd) * blend_factor
+                )
+        
+        # Upscale the motion-compensated frame
         upscaled = F.interpolate(
             frame.unsqueeze(0).permute(0, 3, 1, 2),
             size=(target_height, target_width),
@@ -167,7 +192,7 @@ class VideoInterlacedV2:
             align_corners=False if interpolation_mode != 'nearest' else None
         ).permute(0, 2, 3, 1).squeeze(0)
         
-        # Create field masks
+        # Create field masks for upscaled resolution
         even_mask = torch.zeros((target_height, 1, 1), device=self.device)
         odd_mask = torch.zeros((target_height, 1, 1), device=self.device)
         
@@ -185,19 +210,6 @@ class VideoInterlacedV2:
         # Separate fields
         even_field = upscaled * even_mask
         odd_field = upscaled * odd_mask
-        
-        # Apply motion compensation based on selected method
-        if motion_compensation != "none":
-            if motion_compensation == "advanced" and prev_frame is not None and next_frame is not None:
-                upscaled = self.apply_advanced_motion_compensation(
-                    upscaled, prev_frame, next_frame, temporal_radius
-                )
-            else:  # Basic motion compensation
-                shifted_even = torch.roll(even_field, shifts=1, dims=0)
-                shifted_odd = torch.roll(odd_field, shifts=-1, dims=0)
-                
-                even_field = (1 - blend_factor) * even_field + blend_factor * shifted_odd
-                odd_field = (1 - blend_factor) * odd_field + blend_factor * shifted_even
         
         # Apply deinterlacing method
         if deinterlace_method == "blend":
