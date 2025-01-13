@@ -100,6 +100,10 @@
 - [Documentation](FFXFADEORAMA.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-FFXFADEORAMA.json)
 
+## FilmGrainEffect
+- [Documentation](FilmGrainEffect.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-FILM-GRAIN-EFFECT.json)
+
 ## FractalGenerator
 - [Documentation](FractalGenerator.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Fractal-Generator.json)

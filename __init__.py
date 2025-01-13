@@ -466,5 +466,12 @@ try:
 except ImportError:
     print("Unable to import VideoInterlaceFastV4. This node will not be available.")
 
+try:
+    from .FilmGrainEffect import FilmGrainEffect
+    NODE_CLASS_MAPPINGS["FilmGrainEffect"] = FilmGrainEffect
+    NODE_DISPLAY_NAME_MAPPINGS["FilmGrainEffect"] = "Film Grain Effect (video)"
+except ImportError:
+    print("Unable to import FilmGrainEffect. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

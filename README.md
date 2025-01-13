@@ -46,6 +46,7 @@ For Windows users, use the provided installation batch files:
   - NonSquarePixels - Advanced pixel aspect ratio manipulation
 - **Vintage & Creative Effects**
   - KinescopeEffect - Vintage broadcast look
+  - FilmGrainEffect - Professional film grain simulation
   - VHS_Effect (V1-V3) - Authentic retro video artifacts
   - VideoInterlaced Series:
     - VideoInterlaced (V1, V2) - Professional interlaced video simulation
