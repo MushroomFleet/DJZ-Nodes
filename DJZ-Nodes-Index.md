@@ -108,6 +108,10 @@
 - [Documentation](FilmGrainEffect_v2.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-FILM-GRAIN-EFFECT-V2.json)
 
+## FishEyeEffect
+- [Documentation](FishEyeEffect.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-FISHEYE-EFFECT-V1.json)
+
 ## FractalGenerator
 - [Documentation](FractalGenerator.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Fractal-Generator.json)

@@ -1,10 +1,10 @@
 # DJZ-Nodes
 
-A comprehensive collection of custom nodes for ComfyUI that revolutionizes creative media workflows. This extensive node pack provides powerful tools for advanced image/video processing, audio manipulation, batch operations, prompt engineering, and workflow optimization. With over 65 specialized nodes, it offers one of the most complete custom node collections for ComfyUI, enabling everything from sophisticated video effects to advanced prompt engineering and 3D mesh generation.
+A comprehensive collection of custom nodes for ComfyUI that revolutionizes creative media workflows. This extensive node pack provides powerful tools for advanced image/video processing, audio manipulation, batch operations, prompt engineering, and workflow optimization. With over 70 specialized nodes, it offers one of the most complete custom node collections for ComfyUI, enabling everything from sophisticated video effects to advanced prompt engineering and 3D mesh generation. Each node comes with detailed documentation and example workflows to help you get started quickly.
 
 ## 🌟 Key Features
 
-- **Professional Video & Film Effects**: Industry-standard cinematic effects including Anamorphic, Panavision, Technicolor, Kinescope, VHS, and Retro Text simulations
+- **Professional Video & Film Effects**: Industry-standard cinematic effects including Anamorphic, FishEye, Panavision, Technicolor, Kinescope, VHS, and Retro Text simulations
 - **Advanced Video Processing**: Seven generations of datamoshing nodes (V1-V7), multiple interlaced video simulation methods (including GAN-based and Fast implementations), frame management, and transition effects
 - **Creative Tools Suite**: Fractal generation (V1-V3), parametric 3D mesh creation, geometric patterns, and advanced image processing
 - **Intelligent Prompt Engineering**: Advanced prompt manipulation with the Zenkai system, dynamic wildcards, and smart text processing
