@@ -51,30 +51,12 @@ class FilmGrainEffect_v2:
 
     # Preset expressions for different grain patterns
     PRESETS = {
-        'unstable_signal': (
-            "0.15 * normal(0.5, 0.3) * (1 + 0.5 * sin(t/5)) + "
-            "0.1 * sin(t/3) * exp(-t/100 % 20) + "
-            "0.05 * uniform(-1, 1) * sin(t/7)**2"
-        ),
-        'dip': (
-            "0.1 * (1 - exp(-((t % 60) - 30)**2 / 100)) * "
-            "normal(0.5, 0.2)"
-        ),
-        'ebb': (
-            "0.12 * (sin(t/20) * 0.5 + 0.5) * "
-            "normal(0.5, 0.15) * (1 + 0.3 * sin(t/7))"
-        ),
-        'flow': (
-            "0.1 * (1 + 0.4 * sin(t/15)) * "
-            "normal(0.6, 0.2) * (1 + 0.2 * sin(t/3))"
-        ),
-        'vintage': (
-            "0.15 * normal(0.5, 0.25) * (1 + 0.3 * sin(t/12)) + "
-            "0.05 * exp(-(t % 40)/10)"
-        ),
-        'subtle': (
-            "0.08 * normal(0.5, 0.15) * (1 + 0.2 * sin(t/25))"
-        )
+        'unstable_signal': "0.15 * normal(0.5, 0.3) * (1 + 0.5 * sin(t/5)) + 0.1 * sin(t/3) * exp(-t/20) + 0.05 * uniform(-1, 1)",
+        'dip': "0.1 * (1 - exp(-((t % 60) - 30)**2 / 100)) * normal(0.5, 0.2)",
+        'ebb': "0.12 * (sin(t/20) * 0.5 + 0.5) * normal(0.5, 0.15) * (1 + 0.3 * sin(t/7))",
+        'flow': "0.1 * (1 + 0.4 * sin(t/15)) * normal(0.6, 0.2) * (1 + 0.2 * sin(t/3))",
+        'vintage': "0.15 * normal(0.5, 0.25) * (1 + 0.3 * sin(t/12)) + 0.05 * exp(-t/40)",
+        'subtle': "0.08 * normal(0.5, 0.15) * (1 + 0.2 * sin(t/25))"
     }
 
     def safe_eval(self, expr: str, t: float, rng: np.random.RandomState) -> float:
@@ -105,7 +87,7 @@ class FilmGrainEffect_v2:
         
         try:
             # Remove any unsafe characters
-            clean_expr = re.sub(r'[^0-9+\-*/()., \t\nabcdefghijklmnopqrstuvwxyzπ_]', '', expr)
+            clean_expr = re.sub(r'[^0-9+\-*/%()., \t\nabcdefghijklmnopqrstuvwxyzπ_]', '', expr)
             # Evaluate expression with safe functions only
             return float(eval(clean_expr, {"__builtins__": {}}, safe_dict))
         except Exception as e:
