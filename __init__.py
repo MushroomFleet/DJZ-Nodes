@@ -494,4 +494,46 @@ try:
 except ImportError:
     print("Unable to import ClassicFilmEffect. This node will not be available.")
 
+try:
+    from .VideoBitClamp import VideoBitClamp
+    NODE_CLASS_MAPPINGS["VideoBitClamp"] = VideoBitClamp
+    NODE_DISPLAY_NAME_MAPPINGS["VideoBitClamp"] = "Video Bit Clamp"
+except ImportError:
+    print("Unable to import VideoBitClamp. This node will not be available.")
+
+try:
+    from .ThreeToneStyler import ThreeToneStyler
+    NODE_CLASS_MAPPINGS["ThreeToneStyler"] = ThreeToneStyler
+    NODE_DISPLAY_NAME_MAPPINGS["ThreeToneStyler"] = "Three Tone Styler"
+except ImportError:
+    print("Unable to import ThreeToneStyler. This node will not be available.")
+
+try:
+    from .PromptDupeRemover import PromptDupeRemover
+    NODE_CLASS_MAPPINGS["PromptDupeRemover"] = PromptDupeRemover
+    NODE_DISPLAY_NAME_MAPPINGS["PromptDupeRemover"] = "Prompt Dupe-Remover"
+except ImportError:
+    print("Unable to import PromptDupeRemover. This node will not be available.")
+
+try:
+    from .ZenkaiPromptV3 import ZenkaiPromptV3
+    NODE_CLASS_MAPPINGS["ZenkaiPromptV3"] = ZenkaiPromptV3
+    NODE_DISPLAY_NAME_MAPPINGS["ZenkaiPromptV3"] = "Zenkai Prompt V3"
+except ImportError:
+    print("Unable to import ZenkaiPromptV3. This node will not be available.")
+
+try:
+    from .DjzDatamoshV8 import DjzDatamoshV8
+    NODE_CLASS_MAPPINGS["DjzDatamoshV8"] = DjzDatamoshV8
+    NODE_DISPLAY_NAME_MAPPINGS["DjzDatamoshV8"] = "Djz Pixel Sort V8 Advanced"
+except ImportError:
+    print("Unable to import DjzDatamoshV8. This node will not be available.")
+
+try:
+    from .ImageInterleavedUpscaler import ImageInterleavedUpscaler
+    NODE_CLASS_MAPPINGS["ImageInterleavedUpscaler"] = ImageInterleavedUpscaler
+    NODE_DISPLAY_NAME_MAPPINGS["ImageInterleavedUpscaler"] = "Image Interleaved Upscaler (720p to 1080i)"
+except ImportError:
+    print("Unable to import ImageInterleavedUpscaler. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

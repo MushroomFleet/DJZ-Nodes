@@ -92,6 +92,10 @@
 - [Documentation](DjzDatamoshV7.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DjzDatamosh/DJZ-Nodes-Examples-DatamoshingV7.json)
 
+## DjzDatamoshV8
+- [Documentation](DjzDatamoshV8.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-DJZ-DATAMOSH-V8.json)
+
 ## DJZLoadLatent
 - [Documentation](DJZLoadLatent.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-LoadLatent.json)
@@ -127,6 +131,10 @@
 ## FractalGeneratorV3
 - [Documentation](FractalGeneratorV3.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Fractal-Gen-Cuda-V3.json)
+
+## ImageInterleavedUpscaler
+- [Documentation](ImageInterleavedUpscaler.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Image-Interleaved-Upscaler-v1.json)
 
 ## ImageSizeAdjuster
 - [Documentation](ImageSizeAdjuster.md)
@@ -188,6 +196,10 @@
 - [Documentation](PromptCleaner.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Prompt-Cleaner.json)
 
+## PromptDupeRemover
+- [Documentation](PromptDupeRemover.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Prompt-Dupe-Remover.json)
+
 ## PromptInject
 - [Documentation](PromptInject.md)
 - [Example Workflow](#)
@@ -228,6 +240,10 @@
 - [Documentation](Technicolor3Strip_v2.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Technicolor-3Strip-V2.json)
 
+## ThreeToneStyler
+- [Documentation](ThreeToneStyler.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Three-Tone-Styler.json)
+
 ## TrianglesPlus
 - [Documentation](TrianglesPlus.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Triangles-Plus.json)
@@ -247,6 +263,10 @@
 ## VHS_Effect_V3
 - [Documentation](VHS_Effect_V3.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-VHS-Effect-V3.json)
+
+## VideoBitClamp
+- [Documentation](VideoBitClamp.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Bit-Clamp.json)
 
 ## VideoInterlaced
 - [Documentation](VideoInterlaced.md)
@@ -271,6 +291,10 @@
 ## ZenkaiPromptV2
 - [Documentation](ZenkaiPromptV2.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Zenkai-Prompt-V2.json)
+
+## ZenkaiPromptV3
+- [Documentation](ZenkaiPromptV3.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-ZENKAIV3-Interpolation-v1.json)
 
 ## ZenkaiWildcard
 - [Documentation](ZenkaiWildcard.md)

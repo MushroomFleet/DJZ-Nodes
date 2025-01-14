@@ -1,13 +1,13 @@
 # DJZ-Nodes
 
-A comprehensive collection of custom nodes for ComfyUI that revolutionizes creative media workflows. This extensive node pack provides powerful tools for advanced image/video processing, audio manipulation, batch operations, prompt engineering, and workflow optimization. With over 80 specialized nodes, it offers one of the most complete custom node collections for ComfyUI, enabling everything from sophisticated video effects to advanced prompt engineering and 3D mesh generation. Each node comes with detailed documentation and example workflows to help you get started quickly.
+A comprehensive collection of custom nodes for ComfyUI that revolutionizes creative media workflows. This extensive node pack provides powerful tools for advanced image/video processing, audio manipulation, batch operations, prompt engineering, and workflow optimization. With over 75 specialized nodes, it offers one of the most complete custom node collections for ComfyUI, enabling everything from sophisticated video effects to advanced prompt engineering and 3D mesh generation. Each node comes with detailed documentation and example workflows to help you get started quickly.
 
 ## 🌟 Key Features
 
 - **Professional Video & Film Effects**: Industry-standard cinematic effects including Anamorphic, FishEye, Panavision, Technicolor, Kinescope, VHS, Classic Film, and Retro Text simulations
-- **Advanced Video Processing**: Seven generations of datamoshing nodes (V1-V7), multiple interlaced video simulation methods (including GAN-based and Fast implementations), frame management, and transition effects
-- **Creative Tools Suite**: Fractal generation (V1-V3), parametric 3D mesh creation, geometric patterns, and advanced image processing
-- **Intelligent Prompt Engineering**: Advanced prompt manipulation with the Zenkai system, dynamic wildcards, and smart text processing
+- **Advanced Video Processing**: Eight generations of datamoshing nodes (V1-V8), multiple interlaced video simulation methods (including GAN-based and Fast implementations), frame management, transition effects, and bit-depth manipulation
+- **Creative Tools Suite**: Fractal generation (V1-V3), parametric 3D mesh creation, geometric patterns, three-tone styling, and advanced image processing
+- **Intelligent Prompt Engineering**: Advanced prompt manipulation with the Zenkai system (V1-V3), dynamic wildcards (V1-V2), duplicate removal, and smart text processing
 - **Workflow Optimization**: Comprehensive batch operations, file management, and dataset tools
 - **Audio Integration**: Professional audio mixing and merging capabilities
 
@@ -46,6 +46,7 @@ For Windows users, use the provided installation batch files:
   - NonSquarePixels - Advanced pixel aspect ratio manipulation
   - FishEyeEffect - Authentic fish-eye lens distortion
   - ClassicFilmEffect - Vintage film look simulation
+  - ThreeToneStyler - Advanced tri-tone image styling
 - **Vintage & Creative Effects**
   - KinescopeEffect - Vintage broadcast look
   - FilmGrainEffect (V1, V2) - Professional film grain simulation
@@ -55,8 +56,10 @@ For Windows users, use the provided installation batch files:
     - VideoInterlaceGAN (V3) - AI-powered interlacing effects
     - VideoInterlaceFast (V4) - High-performance interlacing
   - BlackBars (V1-V3) - Enhanced cinematic aspect ratio control
-  - DjzDatamosh (V1-V7) - Industry-leading glitch art suite
+  - DjzDatamosh (V1-V8) - Industry-leading glitch art suite
   - RetroVideoText - Classic video text overlay effects
+  - VideoBitClamp - Precise video bit-depth control
+  - ImageInterleavedUpscaler - Advanced interleaved upscaling
 
 ### Creative Generation Tools
 - **Visual Effects**
@@ -93,7 +96,7 @@ For Windows users, use the provided installation batch files:
 
 ### Advanced Prompt Engineering
 - **Zenkai System**
-  - ZenkaiPrompt (V1, V2) - Next-generation prompt enhancement
+  - ZenkaiPrompt (V1-V3) - Next-generation prompt enhancement
   - ZenkaiWildcard (V1, V2) - Dynamic prompt variation
 - **Text Processing**
   - StringPainter (V1, V2) - Visual prompt composition
@@ -102,6 +105,7 @@ For Windows users, use the provided installation batch files:
   - PromptCleaner - Intelligent prompt optimization
   - PromptInject - Dynamic prompt modification
   - PromptSwap - Smart prompt exchange
+  - PromptDupeRemover - Efficient duplicate prompt removal
   - CaptionsToPromptList - Efficient caption processing
 
 ### Audio Processing
