@@ -284,6 +284,10 @@
 - [Documentation](VideoInterlaceGANV3.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-GAN-Video-Interlaced-Upscaler-V3.json)
 
+## WaveletDecompose
+- [Documentation](WaveletDecompose.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Wavelet-Decompose.json)
+
 ## ZenkaiPrompt
 - [Documentation](ZenkaiPrompt.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/Zenkai-System.json)

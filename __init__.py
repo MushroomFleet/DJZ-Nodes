@@ -536,4 +536,11 @@ try:
 except ImportError:
     print("Unable to import ImageInterleavedUpscaler. This node will not be available.")
 
+try:
+    from .WaveletDecompose import WaveletDecompose
+    NODE_CLASS_MAPPINGS["WaveletDecompose"] = WaveletDecompose
+    NODE_DISPLAY_NAME_MAPPINGS["WaveletDecompose"] = "Wavelet Decomposition"
+except ImportError:
+    print("Unable to import WaveletDecompose. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
