@@ -543,4 +543,39 @@ try:
 except ImportError:
     print("Unable to import WaveletDecompose. This node will not be available.")
 
+try:
+    from .WaveletCompose import WaveletCompose
+    NODE_CLASS_MAPPINGS["WaveletCompose"] = WaveletCompose
+    NODE_DISPLAY_NAME_MAPPINGS["WaveletCompose"] = "Wavelet Composition"
+except ImportError:
+    print("Unable to import WaveletCompose. This node will not be available.")
+
+try:
+    from .JitterEffect import JitterEffect
+    NODE_CLASS_MAPPINGS["JitterEffect"] = JitterEffect
+    NODE_DISPLAY_NAME_MAPPINGS["JitterEffect"] = "Jitter Effect"
+except ImportError:
+    print("Unable to import JitterEffect. This node will not be available.")
+
+try:
+    from .FishEyeV2 import FishEyeV2
+    NODE_CLASS_MAPPINGS["FishEyeV2"] = FishEyeV2
+    NODE_DISPLAY_NAME_MAPPINGS["FishEyeV2"] = "Fish Eye Effects V2"
+except ImportError:
+    print("Unable to import FishEyeV2. This node will not be available.")
+
+try:
+    from .PromptDupeRemoverV2 import PromptDupeRemoverV2
+    NODE_CLASS_MAPPINGS["PromptDupeRemoverV2"] = PromptDupeRemoverV2
+    NODE_DISPLAY_NAME_MAPPINGS["PromptDupeRemoverV2"] = "Prompt Dupe Remover V2"
+except ImportError:
+    print("Unable to import PromptDupeRemoverV2. This node will not be available.")
+
+try:
+    from .ImageInterleavedUpscalerV2 import ImageInterleavedUpscalerV2
+    NODE_CLASS_MAPPINGS["ImageInterleavedUpscalerV2"] = ImageInterleavedUpscalerV2
+    NODE_DISPLAY_NAME_MAPPINGS["ImageInterleavedUpscalerV2"] = "Image Interleaved Upscaler V2"
+except ImportError:
+    print("Unable to import ImageInterleavedUpscalerV2. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

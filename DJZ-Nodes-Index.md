@@ -120,6 +120,10 @@
 - [Documentation](FishEyeEffect.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-FISHEYE-EFFECT-V1.json)
 
+## FishEyeV2
+- [Documentation](FishEyeV2.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-FISH-EYE-Effect-V2.json)
+
 ## FractalGenerator
 - [Documentation](FractalGenerator.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Fractal-Generator.json)
@@ -136,6 +140,10 @@
 - [Documentation](ImageInterleavedUpscaler.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Image-Interleaved-Upscaler-v1.json)
 
+## ImageInterleavedUpscalerV2
+- [Documentation](ImageInterleavedUpscalerV2.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Interleaved-Upscaler-V2.json)
+
 ## ImageSizeAdjuster
 - [Documentation](ImageSizeAdjuster.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/imageSizeAdjuster.json)
@@ -147,6 +155,10 @@
 ## ImageSizeAdjusterV3
 - [Documentation](ImageSizeAdjusterV3.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-image-size-adjuster-V3.json)
+
+## JitterEffect
+- [Documentation](JitterEffect.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Jitter-Effect.json)
 
 ## KinescopeEffectV1
 - [Documentation](KinescopeEffectV1.md)
@@ -199,6 +211,10 @@
 ## PromptDupeRemover
 - [Documentation](PromptDupeRemover.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Prompt-Dupe-Remover.json)
+
+## PromptDupeRemoverV2
+- [Documentation](PromptDupeRemoverV2.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Dupe-Remover-V2.json)
 
 ## PromptInject
 - [Documentation](PromptInject.md)
@@ -283,6 +299,10 @@
 ## VideoInterlaceGANV3
 - [Documentation](VideoInterlaceGANV3.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-GAN-Video-Interlaced-Upscaler-V3.json)
+
+## WaveletCompose
+- [Documentation](WaveletCompose.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Wavelet-Compose.json)
 
 ## WaveletDecompose
 - [Documentation](WaveletDecompose.md)

@@ -1,12 +1,11 @@
 import torch
 import torch.nn.functional as F
-import numpy as np
 from typing import Tuple, Dict, Any
 
 class WaveletDecompose:
     """
-    ComfyUI custom node for performing Photoshop-style wavelet decomposition on images.
-    Uses Gaussian blur and blend operations to create detail scales.
+    ComfyUI custom node for performing wavelet decomposition on images.
+    Extracts detail scales with proper visualization while preserving reconstruction values.
     """
     
     def __init__(self):
@@ -28,47 +27,53 @@ class WaveletDecompose:
         }
 
     RETURN_TYPES = ("IMAGE", "IMAGE", "IMAGE", "IMAGE", "IMAGE", "IMAGE", "IMAGE")
-    RETURN_NAMES = ("residual", "scale_1", "scale_2", "scale_3", "scale_4", "scale_5", "original")
+    RETURN_NAMES = ("residual", "scale_1", "scale_2", "scale_3", "scale_4", "original", "scale_5")
     FUNCTION = "decompose"
     CATEGORY = "image/processing"
 
     def gaussian_kernel(self, kernel_size: int, sigma: float, device: str) -> torch.Tensor:
         """Create 2D Gaussian kernel"""
-        x = torch.linspace(-sigma, sigma, kernel_size, device=device)
+        x = torch.linspace(-3*sigma, 3*sigma, kernel_size, device=device)
         x = x.view(1, -1).repeat(kernel_size, 1)
         y = x.t()
         kernel = torch.exp(-(x ** 2 + y ** 2) / (2 * sigma ** 2))
         return kernel / kernel.sum()
 
     def gaussian_blur(self, img: torch.Tensor, kernel_size: int, sigma: float) -> torch.Tensor:
-        """Apply Gaussian blur to image"""
-        # Ensure image is on the correct device
+        """Apply Gaussian blur with reflection padding"""
         device = img.device
         
-        # Create kernel for each channel
+        # Create kernel
         kernel = self.gaussian_kernel(kernel_size, sigma, device)
         kernel = kernel.view(1, 1, kernel_size, kernel_size)
         kernel = kernel.repeat(img.shape[-1], 1, 1, 1)
         
-        # Prepare image for convolution
-        img = img.permute(0, 3, 1, 2)  # BCHW
+        # Convert image to BCHW format
+        img = img.permute(0, 3, 1, 2)
         
-        # Apply padding
+        # Apply reflection padding
         pad_size = kernel_size // 2
         img = F.pad(img, (pad_size, pad_size, pad_size, pad_size), mode='reflect')
         
-        # Apply convolution for each channel
+        # Perform convolution
         blurred = F.conv2d(img, kernel, groups=img.shape[1])
         
-        return blurred.permute(0, 2, 3, 1)  # Back to BHWC
+        # Return to BHWC format
+        return blurred.permute(0, 2, 3, 1)
 
-    def linear_light_blend(self, top: torch.Tensor, bottom: torch.Tensor) -> torch.Tensor:
-        """Apply linear light blend mode"""
-        return torch.clamp(2 * top + 2 * bottom - 1, 0, 1)
-
-    def decompose(self, image: torch.Tensor, scales: int) -> Tuple[torch.Tensor, ...]:
+    def normalize_for_display(self, detail: torch.Tensor) -> torch.Tensor:
         """
-        Perform Photoshop-style wavelet decomposition on the input image.
+        Normalize detail coefficients to 0-1 range for display.
+        Maps the range [-max(abs), +max(abs)] to [0, 1] with 0.5 being neutral.
+        """
+        abs_max = torch.abs(detail).max()
+        if abs_max == 0:
+            return torch.ones_like(detail) * 0.5
+        return (detail / (2 * abs_max) + 0.5).clamp(0, 1)
+
+    def decompose(self, image: torch.Tensor, scales: int) -> Tuple[torch.Tensor]:
+        """
+        Decompose image into frequency bands using Gaussian pyramid.
         
         Args:
             image: Input image tensor (B, H, W, C)
@@ -77,50 +82,54 @@ class WaveletDecompose:
         Returns:
             Tuple of tensors containing residual and detail scales
         """
-        # Move image to appropriate device and ensure float type
+        # Ensure proper type
         device = image.device
-        image = image.to(device, dtype=torch.float32)
+        image = image.to(dtype=torch.float32)
         if image.max() > 1.0:
             image = image / 255.0
 
         outputs = []
-        current = image
+        current = image.clone()
         original = image.clone()
+        detail_scales = []
 
         # Process each scale
         for i in range(scales):
-            # Calculate blur radius based on scale
-            blur_radius = 2.0 ** i - 0.5
-            kernel_size = int(blur_radius * 6) | 1  # Ensure odd kernel size
+            # Calculate blur parameters for this scale
+            sigma = 2.0 ** i
+            kernel_size = int(sigma * 6) | 1  # Ensure odd
             kernel_size = max(3, kernel_size)
             
-            # Create blurred version
-            blurred = self.gaussian_blur(current, kernel_size, blur_radius)
+            # Apply Gaussian blur
+            blurred = self.gaussian_blur(current, kernel_size, sigma)
             
             if i < scales - 1:
-                # Calculate detail layer (original - blur)
-                detail = (current - blurred + 0.5).clamp(0, 1)
-                outputs.append(detail)
+                # Extract detail as exact difference
+                detail = current - blurred
                 
-                # Update current for next iteration
+                # Normalize detail for display while preserving values for reconstruction
+                detail_display = self.normalize_for_display(detail)
+                
+                # Store display version
+                detail_scales.append(detail_display)
+                
+                # Update for next iteration
                 current = blurred
             else:
-                # Last iteration - this is our residual
-                residual = blurred
-                outputs.insert(0, residual)  # Residual goes first
+                # Last iteration - store residual
+                outputs.append(blurred)  # First output is residual
 
-        # Add original image as last output
-        outputs.append(original)
+        # Add detail scales in order
+        outputs.extend(detail_scales[:5])  # Add first 5 detail scales
+        outputs.append(original)  # Add original image at position 5 (zero-based index)
+        
+        if len(detail_scales) > 5:
+            outputs.append(detail_scales[5])  # Add scale_5 as last output if it exists
+        else:
+            outputs.append(torch.zeros_like(image, device=device))  # Pad with zeros if needed
 
-        # Pad with zeros if we need more outputs
-        while len(outputs) < 7:
-            outputs.append(torch.zeros_like(image, device=device))
-
-        # Ensure we only return 7 outputs
+        # Ensure exactly 7 outputs
         outputs = outputs[:7]
-
-        # Ensure all outputs are on the correct device
-        outputs = [x.to(device) for x in outputs]
 
         return tuple(outputs)
 
@@ -129,5 +138,5 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "WaveletDecompose": "Wavelet Decomposition (Photoshop Style)"
+    "WaveletDecompose": "Wavelet Decomposition"
 }
