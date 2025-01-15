@@ -578,4 +578,25 @@ try:
 except ImportError:
     print("Unable to import ImageInterleavedUpscalerV2. This node will not be available.")
 
+try:
+    from .NoiseFactory import NoiseFactory
+    NODE_CLASS_MAPPINGS["NoiseFactory"] = NoiseFactory
+    NODE_DISPLAY_NAME_MAPPINGS["NoiseFactory"] = "Noise Factory"
+except ImportError:
+    print("Unable to import NoiseFactory. This node will not be available.")
+
+try:
+    from .NoiseFactoryV2 import NoiseFactoryV2
+    NODE_CLASS_MAPPINGS["NoiseFactoryV2"] = NoiseFactoryV2
+    NODE_DISPLAY_NAME_MAPPINGS["NoiseFactoryV2"] = "Noise Factory V2"
+except ImportError:
+    print("Unable to import NoiseFactoryV2. This node will not be available.")
+
+try:
+    from .NoiseFactoryV3 import NoiseFactoryV3
+    NODE_CLASS_MAPPINGS["NoiseFactoryV3"] = NoiseFactoryV3
+    NODE_DISPLAY_NAME_MAPPINGS["NoiseFactoryV3"] = "Noise Factory V3"
+except ImportError:
+    print("Unable to import NoiseFactoryV3. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

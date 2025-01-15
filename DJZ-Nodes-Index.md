@@ -180,6 +180,18 @@
 - [Documentation](NonSquarePixelsV1.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-non-square-pixels.json)
 
+## NoiseFactory
+- [Documentation](NoiseFactory.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Noise%20Factory.json)
+
+## NoiseFactoryV2
+- [Documentation](NoiseFactoryV2.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Noise%20Factory.json)
+
+## NoiseFactoryV3
+- [Documentation](NoiseFactoryV3.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Noise%20Factory.json)
+
 ## ParametricMeshGen
 - [Documentation](ParametricMeshGen.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Parametric-Mesh-Generator.json)
