@@ -312,6 +312,10 @@
 - [Documentation](VideoInterlaceGANV3.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-GAN-Video-Interlaced-Upscaler-V3.json)
 
+## VideoNoiseFactory
+- [Documentation](VideoNoiseFactory.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Noise-Factory.json)
+
 ## WaveletCompose
 - [Documentation](WaveletCompose.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Wavelet-Compose.json)
@@ -319,6 +323,14 @@
 ## WaveletDecompose
 - [Documentation](WaveletDecompose.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Wavelet-Decompose.json)
+
+## WinampViz
+- [Documentation](WinampViz.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Winamp-Viz.json)
+
+## WinampVizV2
+- [Documentation](WinampVizV2.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Winamp-Viz-V2.json)
 
 ## ZenkaiPrompt
 - [Documentation](ZenkaiPrompt.md)

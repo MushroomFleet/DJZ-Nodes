@@ -1,0 +1,81 @@
+import numpy as np
+import cv2
+import colorsys
+
+class ParticleStormViz:
+    def __init__(self):
+        self.particles = []
+        self.color_offset = 0.0
+        self.width = 0
+        self.height = 0
+        
+    def update_particles(self, features, fps):
+        # Update existing particles
+        for particle in self.particles[:]:
+            particle['life'] -= 1.0 / fps
+            particle['x'] += particle['vx']
+            particle['y'] += particle['vy']
+            
+            # Remove dead particles
+            if particle['life'] <= 0:
+                self.particles.remove(particle)
+                
+        # Add new particles based on audio intensity
+        intensity = (features['bass'] + features['mids'] + features['highs']) / 3
+        if intensity > 0.1:
+            for _ in range(int(intensity * 10)):
+                angle = np.random.rand() * 2 * np.pi
+                speed = 2 + intensity * 5
+                self.particles.append({
+                    'x': self.width // 2,
+                    'y': self.height // 2,
+                    'vx': np.cos(angle) * speed,
+                    'vy': np.sin(angle) * speed,
+                    'size': 3 + intensity * 10,
+                    'life': 1.0,
+                    'color': self.color_offset
+                })
+
+def render(features, width, height, color_palette, state=None):
+    """
+    Renders a particle storm visualization.
+    
+    Args:
+        features (dict): Audio features including 'waveform', 'spectrum', 'bass', 'mids', 'highs'
+        width (int): Output image width
+        height (int): Output image height
+        color_palette (list): List of (R,G,B) tuples for colors
+        state (dict): Optional state dictionary for maintaining visualization state
+        
+    Returns:
+        tuple: (numpy.ndarray, dict) - RGB image of the visualization and updated state
+    """
+    # Initialize or get state
+    if state is None:
+        state = {'viz': ParticleStormViz(), 'fps': 30}
+    
+    viz = state['viz']
+    viz.width = width
+    viz.height = height
+    
+    # Create output image
+    image = np.zeros((height, width, 3), dtype=np.uint8)
+    
+    # Update particle system
+    viz.update_particles(features, state['fps'])
+    
+    # Draw particles
+    for particle in viz.particles:
+        hue = (viz.color_offset + particle['life']) % 1.0
+        rgb = colorsys.hsv_to_rgb(hue, 0.8, 1.0)
+        color = tuple(int(x * 255) for x in rgb)
+        
+        cv2.circle(image,
+                  (int(particle['x']), int(particle['y'])),
+                  int(particle['size'] * particle['life']),
+                  color,
+                  -1)
+    
+    viz.color_offset += 0.01
+    
+    return image, state

@@ -599,4 +599,25 @@ try:
 except ImportError:
     print("Unable to import NoiseFactoryV3. This node will not be available.")
 
+try:
+    from .WinampViz import WinampViz
+    NODE_CLASS_MAPPINGS["WinampViz"] = WinampViz
+    NODE_DISPLAY_NAME_MAPPINGS["WinampViz"] = "🦙 Winamp Viz"
+except ImportError:
+    print("Unable to import WinampViz. This node will not be available.")
+
+try:
+    from .WinampVizV2 import WinampVizV2
+    NODE_CLASS_MAPPINGS["WinampVizV2"] = WinampVizV2
+    NODE_DISPLAY_NAME_MAPPINGS["WinampVizV2"] = "🦙 Winamp Viz V2"
+except ImportError:
+    print("Unable to import WinampVizV2. This node will not be available.")
+
+try:
+    from .VideoNoiseFactory import VideoNoiseFactory
+    NODE_CLASS_MAPPINGS["VideoNoiseFactory"] = VideoNoiseFactory
+    NODE_DISPLAY_NAME_MAPPINGS["VideoNoiseFactory"] = "Video Noise Factory"
+except ImportError:
+    print("Unable to import VideoNoiseFactory. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

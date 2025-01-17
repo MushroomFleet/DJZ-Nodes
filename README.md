@@ -66,6 +66,7 @@ For Windows users, use the provided installation batch files:
   - FractalGenerator (V1-V3) - High-performance fractal creation
   - DinskyPlus (V1, V2) - Advanced image processing suite
   - TrianglesPlus (V1, V2) - Geometric pattern generation
+  - WaveletDecompose - Advanced image layer decomposition (⚠️ Color output currently being fixed)
 - **3D Generation**
   - ParametricMeshGen (V1, V2) - Professional 3D mesh creation
     - Supports: Spheres, Tori, Klein bottles, and custom parametric surfaces

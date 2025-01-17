@@ -1,0 +1,66 @@
+import numpy as np
+import cv2
+
+def render(features, width, height, color_palette):
+    """
+    Renders a butterfly curve visualization that reacts to audio.
+    
+    Args:
+        features (dict): Audio features including 'waveform', 'spectrum', 'bass', 'mids', 'highs'
+        width (int): Output image width
+        height (int): Output image height
+        color_palette (list): List of (R,G,B) tuples for colors
+        
+    Returns:
+        numpy.ndarray: RGB image of the visualization
+    """
+    image = np.zeros((height, width, 3), dtype=np.uint8)
+    center_x, center_y = width // 2, height // 2
+    
+    # Generate butterfly curve points modulated by audio
+    t = np.linspace(0, 24*np.pi, 1000)
+    bass_mod = 1 + features['bass'] * 2
+    mids_mod = 1 + features['mids']
+    highs_mod = 1 + features['highs'] * 0.5
+    
+    # Butterfly curve equation with audio modulation
+    x = np.sin(t) * (
+        np.exp(np.cos(t)) - 
+        2*np.cos(4*t * bass_mod) - 
+        np.power(np.sin(t/12), 5)
+    ) * bass_mod
+    
+    y = np.cos(t) * (
+        np.exp(np.cos(t)) - 
+        2*np.cos(4*t * mids_mod) - 
+        np.power(np.sin(t/12), 5)
+    ) * mids_mod
+    
+    # Scale and center the points
+    scale = min(width, height) * 0.2
+    x = (x * scale / np.max(np.abs(x)) + center_x).astype(np.int32)
+    y = (y * scale / np.max(np.abs(y)) + center_y).astype(np.int32)
+    
+    # Draw the curve with color variation
+    points = np.column_stack((x, y))
+    for i in range(len(points)-1):
+        # Color varies with position and high frequencies
+        color_idx = int((i / len(points) + features['highs']) * len(color_palette)) % len(color_palette)
+        color = color_palette[color_idx]
+        
+        # Draw line segment
+        cv2.line(image, tuple(points[i]), tuple(points[i+1]), color, 2)
+        
+        # Add glow points at peaks
+        if i % 50 == 0 and features['highs'] > 0.3:
+            cv2.circle(image, tuple(points[i]), 
+                      int(3 + features['highs'] * 5),
+                      color, -1)
+    
+    # Add optional motion blur based on bass
+    if features['bass'] > 0.6:
+        kernel_size = int(3 + features['bass'] * 5)
+        kernel_size = kernel_size if kernel_size % 2 == 1 else kernel_size + 1
+        cv2.GaussianBlur(image, (kernel_size, kernel_size), 0, dst=image)
+    
+    return image

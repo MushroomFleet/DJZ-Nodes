@@ -1,0 +1,42 @@
+import numpy as np
+import cv2
+
+def render(features, width, height, color_palette):
+    """
+    Renders an oscilloscope visualization.
+    
+    Args:
+        features (dict): Audio features including 'waveform', 'spectrum', 'bass', 'mids', 'highs'
+        width (int): Output image width
+        height (int): Output image height
+        color_palette (list): List of (R,G,B) tuples for colors
+        
+    Returns:
+        numpy.ndarray: RGB image of the visualization
+    """
+    image = np.zeros((height, width, 3), dtype=np.uint8)
+    
+    waveform = features['waveform']
+    points = []
+    for x in range(width):
+        sample_idx = int(x * len(waveform) / width)
+        y = int(height/2 + waveform[sample_idx] * height/2)
+        y = max(0, min(y, height-1))  # Clamp y value
+        points.append((x, y))
+    
+    # Draw the waveform using numpy operations
+    points = np.array(points)
+    for i in range(len(points)-1):
+        color = color_palette[i % len(color_palette)]
+        p1 = tuple(points[i])
+        p2 = tuple(points[i+1])
+        # Draw line using numpy slicing
+        x1, y1 = p1
+        x2, y2 = p2
+        if x1 == x2:  # Vertical line
+            y_start, y_end = sorted([y1, y2])
+            image[y_start:y_end+1, x1] = color
+        else:  # Use cv2.line for non-vertical lines
+            cv2.line(image, p1, p2, color, 2)
+            
+    return image
