@@ -627,4 +627,11 @@ try:
 except ImportError:
     print("Unable to import ZenkaiPromptV4. This node will not be available.")
 
+try:
+    from .VideoTimecode import VideoTimecode
+    NODE_CLASS_MAPPINGS["VideoTimecode"] = VideoTimecode
+    NODE_DISPLAY_NAME_MAPPINGS["VideoTimecode"] = "Video Timecode"
+except ImportError:
+    print("Unable to import VideoTimecode. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
