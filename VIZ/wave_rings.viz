@@ -1,0 +1,64 @@
+import numpy as np
+import cv2
+
+def render(features, width, height, color_palette, state=None):
+    """
+    Renders concentric rings that pulse with the audio.
+    Each frequency band (bass, mids, highs) controls different rings.
+    
+    Args:
+        features (dict): Audio features
+        width (int): Output image width
+        height (int): Output image height
+        color_palette (list): List of (R,G,B) tuples for colors
+        state (dict, optional): Previous frame state
+        
+    Returns:
+        numpy.ndarray: RGB image of the visualization
+    """
+    # Create black background
+    image = np.zeros((height, width, 3), dtype=np.uint8)
+    center = (width // 2, height // 2)
+    
+    # Calculate ring properties based on audio features
+    bass_radius = int(min(width, height) * 0.4 * (1 + features['bass']))
+    mids_radius = int(min(width, height) * 0.3 * (1 + features['mids']))
+    highs_radius = int(min(width, height) * 0.2 * (1 + features['highs']))
+    
+    # Draw rings with glow effect
+    for radius, color in [
+        (bass_radius, color_palette[0]),  # Bass ring
+        (mids_radius, color_palette[1]),  # Mids ring
+        (highs_radius, color_palette[2])  # Highs ring
+    ]:
+        # Draw main ring
+        cv2.circle(image, center, radius, color, 2)
+        
+        # Create glow effect
+        glow = np.zeros_like(image)
+        cv2.circle(glow, center, radius, color, 4)
+        cv2.GaussianBlur(glow, (15, 15), 5, dst=glow)
+        
+        # Blend glow with main image
+        image = cv2.addWeighted(image, 1, glow, 0.5, 0)
+    
+    # Add wave effect using the waveform data
+    waveform = features['waveform']
+    points = []
+    num_points = 100
+    for i in range(num_points):
+        angle = (i / num_points) * 2 * np.pi
+        # Get waveform sample
+        sample_idx = int((i / num_points) * len(waveform))
+        sample = waveform[sample_idx]
+        # Calculate point position
+        radius = int(min(width, height) * 0.25 * (1 + sample * 0.5))
+        x = center[0] + int(radius * np.cos(angle))
+        y = center[1] + int(radius * np.sin(angle))
+        points.append((x, y))
+    
+    # Draw wave line
+    points = np.array(points, dtype=np.int32)
+    cv2.polylines(image, [points], True, color_palette[-1], 2)
+    
+    return image

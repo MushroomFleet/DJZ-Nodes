@@ -1,0 +1,125 @@
+import numpy as np
+import cv2
+
+def render(features, width, height, color_palette, state=None):
+    """
+    Renders a vector scope visualization showing Lissajous patterns.
+    Creates patterns by plotting audio samples against each other with persistence.
+    
+    Args:
+        features (dict): Audio features
+        width (int): Output image width
+        height (int): Output image height
+        color_palette (list): List of (R,G,B) tuples for colors
+        state (dict, optional): Previous frame state
+        
+    Returns:
+        tuple: (numpy.ndarray, dict) - RGB image and updated state
+    """
+    # Initialize or get state
+    if state is None:
+        state = {
+            'persistence': np.zeros((height, width, 3), dtype=np.uint8),
+            'fade_factor': 0.95
+        }
+    
+    # Create black background for current frame
+    image = np.zeros((height, width, 3), dtype=np.uint8)
+    center = (width // 2, height // 2)
+    
+    # Get waveform data
+    waveform = features['waveform']
+    
+    # We need an even number of samples to pair them
+    num_samples = (len(waveform) // 2) * 2
+    
+    # Split waveform into "left" and "right" channels
+    # In mono audio, we create pseudo-stereo by using offset samples
+    left_channel = waveform[:num_samples:2]
+    right_channel = waveform[1:num_samples:2]
+    
+    # Calculate scaling factors
+    scale = min(width, height) * 0.4
+    
+    # Draw scope grid
+    grid_color = (30, 30, 30)  # Dark grey
+    
+    # Draw main axes
+    cv2.line(image, (center[0], 0), (center[0], height), grid_color, 1)
+    cv2.line(image, (0, center[1]), (width, center[1]), grid_color, 1)
+    
+    # Draw circular grid
+    for r in range(1, 4):
+        radius = int(scale * r / 3)
+        cv2.circle(image, center, radius, grid_color, 1)
+    
+    # Draw diagonal grid lines
+    cv2.line(image, 
+             (center[0] - int(scale), center[1] - int(scale)),
+             (center[0] + int(scale), center[1] + int(scale)),
+             grid_color, 1)
+    cv2.line(image, 
+             (center[0] - int(scale), center[1] + int(scale)),
+             (center[0] + int(scale), center[1] - int(scale)),
+             grid_color, 1)
+    
+    # Calculate intensity based on audio features
+    intensity = (features['bass'] + features['mids'] + features['highs']) / 3
+    
+    # Draw vector scope points
+    points = []
+    for i in range(len(left_channel)):
+        # Calculate point position
+        x = int(center[0] + left_channel[i] * scale)
+        y = int(center[1] + right_channel[i] * scale)
+        points.append((x, y))
+        
+        # Ensure point is within bounds
+        if 0 <= x < width and 0 <= y < height:
+            # Get color based on position and intensity
+            angle = np.arctan2(y - center[1], x - center[0])
+            color_idx = int(((angle + np.pi) / (2 * np.pi) + intensity) * len(color_palette))
+            color = color_palette[color_idx % len(color_palette)]
+            
+            # Scale color by intensity and position
+            dist = np.sqrt((x - center[0])**2 + (y - center[1])**2) / scale
+            brightness = min(1.0, dist + intensity)
+            color = tuple(int(c * brightness) for c in color)
+            
+            # Draw point with glow
+            cv2.circle(image, (x, y), 1, color, -1)
+            
+            # Add to persistence buffer
+            state['persistence'][y, x] = color
+    
+    # Draw lines between points for smoother appearance
+    if len(points) > 1:
+        points = np.array(points, dtype=np.int32)
+        
+        # Draw lines with color gradient
+        for i in range(len(points) - 1):
+            color_idx = int((i / len(points) + intensity) * len(color_palette))
+            color = color_palette[color_idx % len(color_palette)]
+            cv2.line(image, tuple(points[i]), tuple(points[i+1]), color, 1)
+    
+    # Apply persistence effect
+    # Fade out previous frame
+    state['persistence'] = (state['persistence'] * state['fade_factor']).astype(np.uint8)
+    
+    # Blend current frame with persistence
+    image = cv2.addWeighted(image, 0.7, state['persistence'], 0.3, 0)
+    
+    # Add glow effect to high intensity areas
+    glow = cv2.GaussianBlur(image, (7, 7), 2)
+    mask = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    _, bright_mask = cv2.threshold(mask, 50, 255, cv2.THRESH_BINARY)
+    bright_mask = cv2.dilate(bright_mask, np.ones((3, 3)))
+    image = cv2.addWeighted(image, 1, glow, 0.3 * intensity, 0, dst=image)
+    
+    # Add labels
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    font_scale = 0.4
+    cv2.putText(image, 'L', (width - 20, center[1] - 10), font, font_scale, (150, 150, 150), 1)
+    cv2.putText(image, 'R', (center[0] + 10, 20), font, font_scale, (150, 150, 150), 1)
+    
+    return image, state

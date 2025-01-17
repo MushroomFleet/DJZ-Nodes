@@ -1,0 +1,112 @@
+import numpy as np
+import cv2
+
+def render(features, width, height, color_palette, state=None):
+    """
+    Renders a kaleidoscopic pattern that reacts to audio.
+    Creates symmetrical patterns using waveform data and frequency information.
+    
+    Args:
+        features (dict): Audio features
+        width (int): Output image width
+        height (int): Output image height
+        color_palette (list): List of (R,G,B) tuples for colors
+        state (dict, optional): Previous frame state
+        
+    Returns:
+        tuple: (numpy.ndarray, dict) - RGB image and updated state
+    """
+    # Initialize or get state
+    if state is None:
+        state = {
+            'angle': 0,
+            'prev_points': None
+        }
+    
+    # Create black background
+    image = np.zeros((height, width, 3), dtype=np.uint8)
+    center = (width // 2, height // 2)
+    
+    # Update rotation based on bass
+    rotation_speed = 0.05 * (1 + features['bass'] * 2)
+    state['angle'] = (state['angle'] + rotation_speed) % (2 * np.pi)
+    
+    # Number of symmetry segments
+    num_segments = 8 + int(features['mids'] * 4)  # Varies between 8 and 12 based on mids
+    
+    # Generate base points from waveform
+    waveform = features['waveform']
+    num_points = min(100, len(waveform))
+    base_points = []
+    
+    # Calculate radius based on overall intensity
+    intensity = (features['bass'] + features['mids'] + features['highs']) / 3
+    base_radius = min(width, height) * 0.3 * (1 + intensity * 0.2)
+    
+    # Generate points based on waveform
+    for i in range(num_points):
+        angle = (i / num_points) * 2 * np.pi / num_segments
+        sample = waveform[i]
+        
+        # Modify radius based on audio features
+        radius = base_radius * (1 + sample * features['highs'])
+        
+        # Calculate point position
+        x = int(center[0] + radius * np.cos(angle + state['angle']))
+        y = int(center[1] + radius * np.sin(angle + state['angle']))
+        base_points.append((x, y))
+    
+    # Convert to numpy array
+    base_points = np.array(base_points, dtype=np.int32)
+    
+    # Apply kaleidoscope effect by rotating and mirroring the base pattern
+    for segment in range(num_segments):
+        # Rotate points for this segment
+        angle = (segment * 2 * np.pi / num_segments)
+        rotation_matrix = cv2.getRotationMatrix2D(center, np.degrees(angle), 1.0)
+        
+        # Transform base points
+        points = cv2.transform(base_points.reshape(-1, 1, 2), rotation_matrix).reshape(-1, 2)
+        
+        # Draw segment
+        if len(points) > 1:
+            # Select color based on segment and audio features
+            color_idx = int((segment / num_segments + features['bass']) * len(color_palette))
+            color = color_palette[color_idx % len(color_palette)]
+            
+            # Scale color intensity based on audio
+            color = tuple(int(c * (0.5 + intensity * 0.5)) for c in color)
+            
+            # Draw filled polygon
+            cv2.fillPoly(image, [points], color)
+            
+            # Add glow effect
+            glow = np.zeros_like(image)
+            cv2.fillPoly(glow, [points], color)
+            cv2.GaussianBlur(glow, (15, 15), 5, dst=glow)
+            image = cv2.addWeighted(image, 1, glow, 0.3, 0)
+    
+    # Add central effect
+    if features['bass'] > 0.5:
+        center_radius = int(base_radius * 0.2 * features['bass'])
+        center_color = color_palette[0]
+        
+        # Draw center circle with glow
+        cv2.circle(image, center, center_radius, center_color, -1)
+        
+        # Add glow to center
+        center_glow = np.zeros_like(image)
+        cv2.circle(center_glow, center, center_radius * 2, center_color, -1)
+        cv2.GaussianBlur(center_glow, (21, 21), 7, dst=center_glow)
+        image = cv2.addWeighted(image, 1, center_glow, 0.5 * features['bass'], 0)
+    
+    # Add subtle motion trails
+    if state['prev_points'] is not None:
+        trail = np.zeros_like(image)
+        cv2.fillPoly(trail, [state['prev_points']], (20, 20, 20))
+        image = cv2.addWeighted(image, 1, trail, 0.3, 0)
+    
+    # Store current points for next frame's trails
+    state['prev_points'] = base_points
+    
+    return image, state

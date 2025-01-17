@@ -1,0 +1,110 @@
+import numpy as np
+import cv2
+
+def render(features, width, height, color_palette, state=None):
+    """
+    Renders a starfield that pulses and moves with the music.
+    Stars move faster and glow brighter with audio intensity.
+    
+    Args:
+        features (dict): Audio features
+        width (int): Output image width
+        height (int): Output image height
+        color_palette (list): List of (R,G,B) tuples for colors
+        state (dict, optional): Previous frame state
+        
+    Returns:
+        tuple: (numpy.ndarray, dict) - RGB image and updated state
+    """
+    # Initialize or get state
+    if state is None:
+        state = {
+            'stars': np.random.rand(100, 3),  # x, y, z coordinates
+            'speeds': np.random.rand(100) * 0.1 + 0.1  # Base speeds
+        }
+    
+    # Create black background
+    image = np.zeros((height, width, 3), dtype=np.uint8)
+    
+    # Calculate audio reactivity
+    intensity = (features['bass'] + features['mids'] + features['highs']) / 3
+    bass_influence = features['bass'] * 2  # Bass affects movement direction
+    speed_multiplier = 1 + intensity * 2  # Intensity affects speed
+    
+    # Update star positions
+    center_x = width / 2
+    center_y = height / 2
+    
+    # Create rotation matrix based on bass
+    angle = bass_influence * 0.1
+    rotation = np.array([
+        [np.cos(angle), -np.sin(angle)],
+        [np.sin(angle), np.cos(angle)]
+    ])
+    
+    # Update and draw stars
+    for i in range(len(state['stars'])):
+        # Get star position
+        x, y, z = state['stars'][i]
+        
+        # Update z position (depth)
+        z -= state['speeds'][i] * speed_multiplier
+        if z <= 0:
+            # Reset star if it's too close
+            x = np.random.rand()
+            y = np.random.rand()
+            z = 1
+        
+        # Store updated position
+        state['stars'][i] = [x, y, z]
+        
+        # Project 3D position to 2D screen space
+        if z < 1:
+            # Calculate projected position
+            px = (x - 0.5) / z
+            py = (y - 0.5) / z
+            
+            # Apply rotation
+            px, py = np.dot(rotation, [px, py])
+            
+            # Convert to screen coordinates
+            screen_x = int(center_x + px * width)
+            screen_y = int(center_y + py * height)
+            
+            # Check if star is on screen
+            if 0 <= screen_x < width and 0 <= screen_y < height:
+                # Calculate star size and brightness based on z and audio
+                size = int(max(1, min(5, (1 - z) * 5)))
+                brightness = min(1.0, (1 - z) * (1 + intensity))
+                
+                # Select color based on z-depth
+                color_idx = int(z * len(color_palette)) % len(color_palette)
+                base_color = color_palette[color_idx]
+                
+                # Scale color by brightness
+                color = tuple(int(c * brightness) for c in base_color)
+                
+                # Draw star with glow effect
+                if size > 1:
+                    # Main star
+                    cv2.circle(image, (screen_x, screen_y), size, color, -1)
+                    
+                    # Glow effect
+                    glow = np.zeros_like(image)
+                    cv2.circle(glow, (screen_x, screen_y), size * 3, color, -1)
+                    cv2.GaussianBlur(glow, (15, 15), 5, dst=glow)
+                    image = cv2.addWeighted(image, 1, glow, 0.3 * brightness, 0)
+                else:
+                    # Small stars just get a single pixel
+                    image[screen_y, screen_x] = color
+    
+    # Add central burst effect on strong beats
+    if features['bass'] > 0.8:
+        burst = np.zeros_like(image)
+        cv2.circle(burst, (width//2, height//2), 
+                  int(min(width, height) * 0.3 * features['bass']),
+                  color_palette[0], -1)
+        cv2.GaussianBlur(burst, (31, 31), 15, dst=burst)
+        image = cv2.addWeighted(image, 1, burst, 0.3, 0)
+    
+    return image, state

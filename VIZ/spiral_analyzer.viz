@@ -1,0 +1,104 @@
+import numpy as np
+import cv2
+
+def render(features, width, height, color_palette, state=None):
+    """
+    Renders a spiral spectrum analyzer that rotates and reacts to the music.
+    The spiral arms represent different frequency bands and pulse with the audio.
+    
+    Args:
+        features (dict): Audio features
+        width (int): Output image width
+        height (int): Output image height
+        color_palette (list): List of (R,G,B) tuples for colors
+        state (dict, optional): Previous frame state
+        
+    Returns:
+        tuple: (numpy.ndarray, dict) - RGB image and updated state
+    """
+    # Initialize or get state
+    if state is None:
+        state = {
+            'rotation': 0,
+            'prev_spectrum': np.zeros_like(features['spectrum'])
+        }
+    
+    # Create black background
+    image = np.zeros((height, width, 3), dtype=np.uint8)
+    center = (width // 2, height // 2)
+    
+    # Get spectrum data and apply smoothing
+    spectrum = features['spectrum']
+    smoothed_spectrum = spectrum * 0.7 + state['prev_spectrum'] * 0.3
+    state['prev_spectrum'] = smoothed_spectrum
+    
+    # Calculate rotation based on bass
+    rotation_speed = 0.1 * (1 + features['bass'] * 2)
+    state['rotation'] = (state['rotation'] + rotation_speed) % (2 * np.pi)
+    
+    # Parameters for spiral
+    num_bands = min(64, len(spectrum))
+    max_radius = min(width, height) * 0.45
+    num_spirals = 2  # Number of spiral arms
+    spiral_density = 3  # Number of complete rotations from center to edge
+    
+    # Draw spiral arms
+    for spiral in range(num_spirals):
+        spiral_phase = spiral * (2 * np.pi / num_spirals)
+        
+        for i in range(num_bands):
+            # Calculate position along spiral
+            t = i / num_bands
+            
+            # Get frequency amplitude
+            amp = smoothed_spectrum[i]
+            
+            # Calculate radius and angle
+            radius = t * max_radius
+            angle = state['rotation'] + spiral_phase + t * spiral_density * 2 * np.pi
+            
+            # Calculate point position
+            x = int(center[0] + radius * np.cos(angle))
+            y = int(center[1] + radius * np.sin(angle))
+            
+            # Skip if point is outside image
+            if not (0 <= x < width and 0 <= y < height):
+                continue
+            
+            # Calculate color based on frequency and amplitude
+            color_idx = int((i / num_bands) * len(color_palette))
+            base_color = color_palette[color_idx % len(color_palette)]
+            
+            # Calculate segment size based on amplitude
+            segment_size = int(max(2, 20 * amp))
+            
+            # Draw main segment
+            cv2.circle(image, (x, y), segment_size, base_color, -1)
+            
+            # Add glow effect
+            glow = np.zeros_like(image)
+            cv2.circle(glow, (x, y), segment_size * 2, base_color, -1)
+            cv2.GaussianBlur(glow, (15, 15), 5, dst=glow)
+            image = cv2.addWeighted(image, 1, glow, 0.3 * amp, 0)
+            
+            # Draw connecting line to previous point if not first point
+            if i > 0:
+                prev_radius = ((i-1) / num_bands) * max_radius
+                prev_angle = state['rotation'] + spiral_phase + ((i-1) / num_bands) * spiral_density * 2 * np.pi
+                prev_x = int(center[0] + prev_radius * np.cos(prev_angle))
+                prev_y = int(center[1] + prev_radius * np.sin(prev_angle))
+                
+                # Draw line with alpha based on amplitude
+                line_color = tuple(int(c * amp) for c in base_color)
+                cv2.line(image, (prev_x, prev_y), (x, y), line_color, max(1, int(segment_size/2)))
+    
+    # Add central effect that pulses with overall intensity
+    intensity = (features['bass'] + features['mids'] + features['highs']) / 3
+    if intensity > 0.2:
+        center_glow = np.zeros_like(image)
+        radius = int(max_radius * 0.15 * (1 + intensity))
+        cv2.circle(center_glow, center, radius, color_palette[0], -1)
+        cv2.GaussianBlur(center_glow, (21, 21), 7, dst=center_glow)
+        image = cv2.addWeighted(image, 1, center_glow, 0.5 * intensity, 0)
+    
+    return image, state

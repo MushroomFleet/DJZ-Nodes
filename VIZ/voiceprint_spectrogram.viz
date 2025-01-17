@@ -1,0 +1,96 @@
+import numpy as np
+import cv2
+
+def render(features, width, height, color_palette, state=None):
+    """
+    Renders a scrolling spectrogram visualization similar to classic voiceprint displays.
+    The spectrum data scrolls from right to left, with color intensity based on frequency amplitude.
+    
+    Args:
+        features (dict): Audio features
+        width (int): Output image width
+        height (int): Output image height
+        color_palette (list): List of (R,G,B) tuples for colors
+        state (dict, optional): Previous frame state
+        
+    Returns:
+        tuple: (numpy.ndarray, dict) - RGB image and updated state
+    """
+    # Initialize or get state
+    if state is None:
+        state = {
+            'history': np.zeros((height, width, 3), dtype=np.uint8)
+        }
+    
+    # Get spectrum data and reshape for vertical display
+    spectrum = features['spectrum']
+    num_bands = min(height, len(spectrum))
+    spectrum_resized = np.interp(
+        np.linspace(0, 1, height),
+        np.linspace(0, 1, len(spectrum)),
+        spectrum
+    )
+    
+    # Create color gradient based on spectrum intensity
+    colors = np.zeros((height, 1, 3), dtype=np.uint8)
+    for i in range(height):
+        # Map amplitude to color palette
+        amp = spectrum_resized[i]
+        color_idx = int(amp * (len(color_palette) - 1))
+        color_idx = min(max(0, color_idx), len(color_palette) - 1)
+        base_color = color_palette[color_idx]
+        
+        # Scale color by amplitude for brightness
+        color = tuple(int(c * amp) for c in base_color)
+        colors[i, 0] = color
+    
+    # Scroll history to the left
+    state['history'] = np.roll(state['history'], -1, axis=1)
+    
+    # Add new column
+    state['history'][:, -1:] = colors
+    
+    # Apply temporal blur for smoother transitions
+    image = cv2.GaussianBlur(state['history'], (3, 3), 0)
+    
+    # Add frequency grid lines
+    grid_spacing = height // 8
+    grid_color = (40, 40, 40)  # Dark grey
+    for y in range(0, height, grid_spacing):
+        cv2.line(image, (0, y), (width, y), grid_color, 1)
+    
+    # Add time markers
+    marker_spacing = width // 8
+    for x in range(0, width, marker_spacing):
+        cv2.line(image, (x, 0), (x, height), grid_color, 1)
+    
+    # Add glow effect to high intensity areas
+    mask = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    _, bright_areas = cv2.threshold(mask, 100, 255, cv2.THRESH_BINARY)
+    bright_areas = cv2.dilate(bright_areas, np.ones((3, 3)))
+    glow = cv2.GaussianBlur(image, (7, 7), 3)
+    glow_mask = bright_areas.astype(bool)
+    image[glow_mask] = cv2.addWeighted(image[glow_mask], 0.7, 
+                                      glow[glow_mask], 0.3, 0)
+    
+    # Add intensity markers on the right edge
+    intensity_bar_width = 20
+    for i in range(height):
+        amp = spectrum_resized[i]
+        if amp > 0.1:  # Only show significant amplitudes
+            marker_color = colors[i, 0].tolist()
+            marker_width = int(amp * intensity_bar_width)
+            cv2.line(image, 
+                    (width - intensity_bar_width, i),
+                    (width - intensity_bar_width + marker_width, i),
+                    marker_color, 1)
+    
+    # Add frequency labels (in Hz) on the left side
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    font_scale = 0.3
+    freq_ranges = ['16k', '8k', '4k', '2k', '1k', '500', '250', '125']
+    for i, label in enumerate(freq_ranges):
+        y = (i * height // 8) + 10
+        cv2.putText(image, label, (5, y), font, font_scale, (150, 150, 150), 1)
+    
+    return image, state
