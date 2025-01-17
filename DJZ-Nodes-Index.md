@@ -344,6 +344,10 @@
 - [Documentation](ZenkaiPromptV3.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-ZENKAIV3-Interpolation-v1.json)
 
+## ZenkaiPromptV4
+- [Documentation](ZenkaiPromptV4.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Zenkai-Prompt-V4.json)
+
 ## ZenkaiWildcard
 - [Documentation](ZenkaiWildcard.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Zenkai-Wildcards.json)

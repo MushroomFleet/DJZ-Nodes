@@ -620,4 +620,11 @@ try:
 except ImportError:
     print("Unable to import VideoNoiseFactory. This node will not be available.")
 
+try:
+    from .ZenkaiPromptV4 import ZenkaiPromptV4
+    NODE_CLASS_MAPPINGS["ZenkaiPromptV4"] = ZenkaiPromptV4
+    NODE_DISPLAY_NAME_MAPPINGS["ZenkaiPromptV4"] = "Zenkai Prompt V4"
+except ImportError:
+    print("Unable to import ZenkaiPromptV4. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
