@@ -641,5 +641,11 @@ try:
 except ImportError:
     print("Unable to import UncleanSpeech. This node will not be available.")
 
+try:
+    from .LoadVideoDirectoryV2 import LoadVideoDirectoryV2
+    NODE_CLASS_MAPPINGS["LoadVideoDirectoryV2"] = LoadVideoDirectoryV2
+    NODE_DISPLAY_NAME_MAPPINGS["LoadVideoDirectoryV2"] = "Load Video Directory V2"
+except ImportError:
+    print("Unable to import LoadVideoDirectoryV2. This node will not be available.")
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
