@@ -1,0 +1,61 @@
+{
+    "name": "Walkie-Talkie",
+    "description": "Emulates characteristics of two-way radio communication systems including squelch noise and heavy compression",
+    
+    "compression_ratio": 10.0,
+    "compression_threshold": -10.0,
+    
+    "low_cut": 400.0,
+    "high_cut": 2500.0,
+    
+    "distortion_amount": 0.30,
+    
+    "noise_level": 0.12,
+    "noise_color": "white",
+    
+    "reverb_amount": 0.0,
+    "room_size": 0.0,
+    
+    "metadata": {
+        "category": "Communication",
+        "era": "Modern",
+        "quality": "Two-way Radio",
+        "variants": [
+            {
+                "name": "Consumer FRS/GMRS",
+                "bandwidth": "400Hz-2.5kHz",
+                "power": "Low",
+                "noise_level": 0.15
+            },
+            {
+                "name": "Professional",
+                "bandwidth": "300Hz-3kHz",
+                "power": "High",
+                "noise_level": 0.10
+            },
+            {
+                "name": "Emergency Services",
+                "bandwidth": "350Hz-3kHz",
+                "power": "High",
+                "noise_level": 0.08
+            }
+        ],
+        "characteristics": [
+            "squelch noise",
+            "static bursts",
+            "signal fade",
+            "PTT clicks",
+            "background noise"
+        ],
+        "technical_specs": {
+            "frequency_response": "400Hz-2.5kHz",
+            "dynamic_range": "30dB",
+            "modulation": "FM Narrowband",
+            "artifacts": [
+                "squelch tail",
+                "transmission start/stop noise",
+                "interference"
+            ]
+        }
+    }
+}

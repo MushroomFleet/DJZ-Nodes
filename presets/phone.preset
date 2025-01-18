@@ -1,0 +1,46 @@
+{
+    "name": "Phone Call",
+    "description": "Emulates telephone audio characteristics for both cellular and landline systems",
+    
+    "compression_ratio": 5.0,
+    "compression_threshold": -16.0,
+    
+    "low_cut": 300.0,
+    "high_cut": 3400.0,
+    
+    "distortion_amount": 0.18,
+    
+    "noise_level": 0.05,
+    "noise_color": "white",
+    
+    "reverb_amount": 0.02,
+    "room_size": 0.1,
+    
+    "metadata": {
+        "category": "Communication",
+        "era": "Modern",
+        "quality": "Telephone",
+        "variants": [
+            {
+                "name": "Landline",
+                "bandwidth": "300Hz-3.4kHz",
+                "noise_profile": "constant"
+            },
+            {
+                "name": "Cellular",
+                "bandwidth": "300Hz-3.4kHz",
+                "noise_profile": "variable",
+                "artifacts": [
+                    "digital compression",
+                    "packet loss",
+                    "signal fade"
+                ]
+            }
+        ],
+        "technical_specs": {
+            "sampling_rate": "8kHz",
+            "bit_depth": "8-bit",
+            "codec": "G.711"
+        }
+    }
+}

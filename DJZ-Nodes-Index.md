@@ -280,6 +280,10 @@
 - [Documentation](TrianglesPlusV2.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Triangles-Plus-V2.json)
 
+## UncleanSpeech
+- [Documentation](UncleanSpeech.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Unclean-Speech.json)
+
 ## VHS_Effect_v1
 - [Documentation](VHS_Effect_v1.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-VHS-Effect-V1.json)

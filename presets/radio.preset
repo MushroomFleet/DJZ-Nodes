@@ -1,0 +1,25 @@
+{
+    "name": "Radio Broadcast",
+    "description": "Emulates AM/FM radio characteristics with heavy compression and bandwidth restrictions",
+    
+    "compression_ratio": 6.0,
+    "compression_threshold": -15.0,
+    
+    "low_cut": 150.0,
+    "high_cut": 4500.0,
+    
+    "distortion_amount": 0.15,
+    
+    "noise_level": 0.04,
+    "noise_color": "pink",
+    
+    "reverb_amount": 0.05,
+    "room_size": 0.2,
+    
+    "metadata": {
+        "category": "Broadcast",
+        "era": "Modern",
+        "quality": "AM/FM Radio",
+        "variants": ["AM", "FM"]
+    }
+}

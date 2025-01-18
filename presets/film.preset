@@ -1,0 +1,33 @@
+{
+    "name": "Vintage Film Audio",
+    "description": "Emulates characteristics of classic motion picture optical sound and early magnetic film sound systems",
+    
+    "compression_ratio": 2.5,
+    "compression_threshold": -24.0,
+    
+    "low_cut": 80.0,
+    "high_cut": 12000.0,
+    
+    "distortion_amount": 0.12,
+    
+    "noise_level": 0.06,
+    "noise_color": "pink",
+    
+    "reverb_amount": 0.25,
+    "room_size": 0.8,
+    
+    "metadata": {
+        "category": "Film",
+        "era": "Classic",
+        "quality": "Vintage Theater",
+        "variants": [
+            "Optical Sound",
+            "Magnetic Sound",
+            "Early Dolby"
+        ],
+        "historical_references": {
+            "optical_era": "1930s-1960s",
+            "magnetic_era": "1950s-1970s"
+        }
+    }
+}

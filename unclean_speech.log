@@ -1,0 +1,444 @@
+Error in reverb: volume and kernel should have the same dimensionality
+Error processing audio: volume and kernel should have the same dimensionality
+Error in reverb: volume and kernel should have the same dimensionality
+Error processing audio: volume and kernel should have the same dimensionality
+Error in reverb: volume and kernel should have the same dimensionality
+Error processing audio: volume and kernel should have the same dimensionality
+
+=== Initializing UncleanSpeech ===
+
+=== Loading Presets ===
+Node directory: K:\MACHINES10\ComfyUI_windows_portable_nvidia\ComfyUI_windows_portable\ComfyUI\custom_nodes\DJZ-Nodes
+Found preset files: ['K:\\MACHINES10\\ComfyUI_windows_portable_nvidia\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\DJZ-Nodes\\presets\\cassette.preset', 'K:\\MACHINES10\\ComfyUI_windows_portable_nvidia\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\DJZ-Nodes\\presets\\film.preset', 'K:\\MACHINES10\\ComfyUI_windows_portable_nvidia\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\DJZ-Nodes\\presets\\intercom.preset', 'K:\\MACHINES10\\ComfyUI_windows_portable_nvidia\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\DJZ-Nodes\\presets\\phone.preset', 'K:\\MACHINES10\\ComfyUI_windows_portable_nvidia\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\DJZ-Nodes\\presets\\radio.preset', 'K:\\MACHINES10\\ComfyUI_windows_portable_nvidia\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\DJZ-Nodes\\presets\\tv.preset', 'K:\\MACHINES10\\ComfyUI_windows_portable_nvidia\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\DJZ-Nodes\\presets\\vinyl.preset', 'K:\\MACHINES10\\ComfyUI_windows_portable_nvidia\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\DJZ-Nodes\\presets\\walkie_talkie.preset']
+Successfully loaded preset: cassette
+Preset parameters: {'name': 'Cassette Tape', 'description': 'Emulates characteristics of analog cassette tape recording and playback including tape saturation and hiss', 'compression_ratio': 2.0, 'compression_threshold': -12.0, 'low_cut': 50.0, 'high_cut': 14000.0, 'distortion_amount': 0.15, 'noise_level': 0.07, 'noise_color': 'white', 'reverb_amount': 0.0, 'room_size': 0.0, 'metadata': {'category': 'Analog', 'era': '1970s-1990s', 'quality': 'Consumer Audio', 'variants': [{'name': 'Type I (Normal)', 'low_cut': 50.0, 'high_cut': 12000.0, 'noise_level': 0.09, 'distortion': 0.18}, {'name': 'Type II (Chrome)', 'low_cut': 50.0, 'high_cut': 14000.0, 'noise_level': 0.06, 'distortion': 0.15}, {'name': 'Type IV (Metal)', 'low_cut': 50.0, 'high_cut': 15000.0, 'noise_level': 0.04, 'distortion': 0.12}], 'characteristics': ['tape hiss', 'wow and flutter', 'tape saturation', 'head bumps', 'azimuth errors'], 'technical_specs': {'frequency_response': '50Hz-14kHz', 'dynamic_range': '50-60dB', 'wow_and_flutter': '0.1-0.2%'}}}
+Successfully loaded preset: film
+Preset parameters: {'name': 'Vintage Film Audio', 'description': 'Emulates characteristics of classic motion picture optical sound and early magnetic film sound systems', 'compression_ratio': 2.5, 'compression_threshold': -24.0, 'low_cut': 80.0, 'high_cut': 12000.0, 'distortion_amount': 0.12, 'noise_level': 0.06, 'noise_color': 'pink', 'reverb_amount': 0.25, 'room_size': 0.8, 'metadata': {'category': 'Film', 'era': 'Classic', 'quality': 'Vintage Theater', 'variants': ['Optical Sound', 'Magnetic Sound', 'Early Dolby'], 'historical_references': {'optical_era': '1930s-1960s', 'magnetic_era': '1950s-1970s'}}}
+Successfully loaded preset: intercom
+Preset parameters: {'name': 'Intercom System', 'description': 'Emulates typical intercom and public address system characteristics with heavy bandwidth limiting and system noise', 'compression_ratio': 8.0, 'compression_threshold': -12.0, 'low_cut': 300.0, 'high_cut': 3400.0, 'distortion_amount': 0.25, 'noise_level': 0.08, 'noise_color': 'brown', 'reverb_amount': 0.3, 'room_size': 0.6, 'metadata': {'category': 'Communication', 'era': 'Modern', 'quality': 'Low-Fi', 'variants': ['PA System', 'Security Intercom', 'Building Intercom']}}
+Successfully loaded preset: phone
+Preset parameters: {'name': 'Phone Call', 'description': 'Emulates telephone audio characteristics for both cellular and landline systems', 'compression_ratio': 5.0, 'compression_threshold': -16.0, 'low_cut': 300.0, 'high_cut': 3400.0, 'distortion_amount': 0.18, 'noise_level': 0.05, 'noise_color': 'white', 'reverb_amount': 0.02, 'room_size': 0.1, 'metadata': {'category': 'Communication', 'era': 'Modern', 'quality': 'Telephone', 'variants': [{'name': 'Landline', 'bandwidth': '300Hz-3.4kHz', 'noise_profile': 'constant'}, {'name': 'Cellular', 'bandwidth': '300Hz-3.4kHz', 'noise_profile': 'variable', 'artifacts': ['digital compression', 'packet loss', 'signal fade']}], 'technical_specs': {'sampling_rate': '8kHz', 'bit_depth': '8-bit', 'codec': 'G.711'}}}
+Successfully loaded preset: radio
+Preset parameters: {'name': 'Radio Broadcast', 'description': 'Emulates AM/FM radio characteristics with heavy compression and bandwidth restrictions', 'compression_ratio': 6.0, 'compression_threshold': -15.0, 'low_cut': 150.0, 'high_cut': 4500.0, 'distortion_amount': 0.15, 'noise_level': 0.04, 'noise_color': 'pink', 'reverb_amount': 0.05, 'room_size': 0.2, 'metadata': {'category': 'Broadcast', 'era': 'Modern', 'quality': 'AM/FM Radio', 'variants': ['AM', 'FM']}}
+Successfully loaded preset: tv
+Preset parameters: {'name': 'TV Broadcast', 'description': 'Emulates typical television broadcast audio characteristics with compression and bandwidth limiting', 'compression_ratio': 4.0, 'compression_threshold': -18.0, 'low_cut': 100.0, 'high_cut': 8000.0, 'distortion_amount': 0.05, 'noise_level': 0.02, 'noise_color': 'white', 'reverb_amount': 0.1, 'room_size': 0.3, 'metadata': {'category': 'Broadcast', 'era': 'Modern', 'quality': 'Standard Definition'}}
+Successfully loaded preset: vinyl
+Preset parameters: {'name': 'Vinyl Record', 'description': 'Emulates characteristics of vinyl record playback systems including surface noise and tonal warmth', 'compression_ratio': 1.5, 'compression_threshold': -20.0, 'low_cut': 30.0, 'high_cut': 16000.0, 'distortion_amount': 0.08, 'noise_level': 0.03, 'noise_color': 'pink', 'reverb_amount': 0.0, 'room_size': 0.0, 'metadata': {'category': 'Analog', 'era': 'Classic', 'quality': 'Hi-Fi', 'variants': [{'name': 'New Pressing', 'noise_level': 0.02, 'distortion': 0.05}, {'name': 'Vintage', 'noise_level': 0.06, 'distortion': 0.12}, {'name': 'Worn', 'noise_level': 0.09, 'distortion': 0.15}], 'characteristics': ['surface noise', 'inner groove distortion', 'rumble', 'wow and flutter'], 'technical_specs': {'frequency_response': '30Hz-16kHz', 'dynamic_range': '60dB', 'channel_separation': '30dB'}}}
+Successfully loaded preset: walkie_talkie
+Preset parameters: {'name': 'Walkie-Talkie', 'description': 'Emulates characteristics of two-way radio communication systems including squelch noise and heavy compression', 'compression_ratio': 10.0, 'compression_threshold': -10.0, 'low_cut': 400.0, 'high_cut': 2500.0, 'distortion_amount': 0.3, 'noise_level': 0.12, 'noise_color': 'white', 'reverb_amount': 0.0, 'room_size': 0.0, 'metadata': {'category': 'Communication', 'era': 'Modern', 'quality': 'Two-way Radio', 'variants': [{'name': 'Consumer FRS/GMRS', 'bandwidth': '400Hz-2.5kHz', 'power': 'Low', 'noise_level': 0.15}, {'name': 'Professional', 'bandwidth': '300Hz-3kHz', 'power': 'High', 'noise_level': 0.1}, {'name': 'Emergency Services', 'bandwidth': '350Hz-3kHz', 'power': 'High', 'noise_level': 0.08}], 'characteristics': ['squelch noise', 'static bursts', 'signal fade', 'PTT clicks', 'background noise'], 'technical_specs': {'frequency_response': '400Hz-2.5kHz', 'dynamic_range': '30dB', 'modulation': 'FM Narrowband', 'artifacts': ['squelch tail', 'transmission start/stop noise', 'interference']}}}
+
+=== Starting Audio Processing ===
+Input audio type: <class 'dict'>
+Selected preset: phone
+Audio dict keys: dict_keys(['waveform', 'sample_rate'])
+Waveform type: <class 'torch.Tensor'>
+Waveform shape: torch.Size([1, 2, 175121])
+Waveform device: cpu
+Waveform dtype: torch.float32
+Waveform contains NaN: False
+Waveform range: [-0.394744873046875, 0.362060546875]
+Sample rate: 44100
+
+=== Processing Waveform ===
+Converting torch.Tensor to numpy array
+Input tensor has 3 dimensions, taking first batch
+Numpy array shape: (2, 175121)
+Numpy array dtype: float32
+Contains NaN: False
+Array range: [-0.394744873046875, 0.362060546875]
+
+=== Loading Preset: phone ===
+Preset parameters: {'name': 'Phone Call', 'description': 'Emulates telephone audio characteristics for both cellular and landline systems', 'compression_ratio': 5.0, 'compression_threshold': -16.0, 'low_cut': 300.0, 'high_cut': 3400.0, 'distortion_amount': 0.18, 'noise_level': 0.05, 'noise_color': 'white', 'reverb_amount': 0.02, 'room_size': 0.1, 'metadata': {'category': 'Communication', 'era': 'Modern', 'quality': 'Telephone', 'variants': [{'name': 'Landline', 'bandwidth': '300Hz-3.4kHz', 'noise_profile': 'constant'}, {'name': 'Cellular', 'bandwidth': '300Hz-3.4kHz', 'noise_profile': 'variable', 'artifacts': ['digital compression', 'packet loss', 'signal fade']}], 'technical_specs': {'sampling_rate': '8kHz', 'bit_depth': '8-bit', 'codec': 'G.711'}}}
+
+=== Applying Effects Chain ===
+
+Applying Compression
+Input shape: (2, 175121)
+Input range: [-0.394744873046875, 0.362060546875]
+Input contains NaN: False
+
+=== Compression Effect Details ===
+Input audio shape: (2, 175121)
+Compression ratio: 5.0
+Threshold: -16.0 dB
+Linear threshold: 0.15848931924611134
+Gain reduction range: [0.4818887412548065, 1.0]
+
+=== Compression Output ===
+Output shape: (2, 175121)
+Output range: [-0.1902231127023697, 0.1869632452726364]
+Output contains NaN: False
+Output shape: (2, 175121)
+Output range: [-0.1902231127023697, 0.1869632452726364]
+Output contains NaN: False
+
+Applying EQ
+Input shape: (2, 175121)
+Input range: [-0.1902231127023697, 0.1869632452726364]
+Input contains NaN: False
+
+=== EQ Effect Details ===
+Input audio shape: (2, 175121)
+Sample rate: 44100
+Low cut: 300.0 Hz
+High cut: 3400.0 Hz
+Normalized frequencies: low=0.013605442176870748, high=0.15419501133786848
+Filter coefficients: b=[  0.0014184           0  -0.0056737           0   0.0085105           0  -0.0056737           0   0.0014184], a=[          1     -6.7781      20.197     -34.578      37.222     -25.806      11.255     -2.8231     0.31181]
+
+=== EQ Output ===
+Output shape: (2, 175121)
+Output range: [-0.21674875734329035, 0.22610545141523636]
+Output contains NaN: False
+Output shape: (2, 175121)
+Output range: [-0.21674875734329035, 0.22610545141523636]
+Output contains NaN: False
+
+Applying Distortion
+Input shape: (2, 175121)
+Input range: [-0.21674875734329035, 0.22610545141523636]
+Input contains NaN: False
+
+=== Distortion Effect Details ===
+Input audio shape: (2, 175121)
+Distortion amount: 0.18
+
+=== Distortion Output ===
+Output shape: (2, 175121)
+Output range: [-0.4592701623519171, 0.47472869784339616]
+Output contains NaN: False
+Output shape: (2, 175121)
+Output range: [-0.4592701623519171, 0.47472869784339616]
+Output contains NaN: False
+
+Applying Noise
+Input shape: (2, 175121)
+Input range: [-0.4592701623519171, 0.47472869784339616]
+Input contains NaN: False
+
+=== Noise Generation Details ===
+Target shape: (2, 175121)
+Noise type: white
+Noise level: 0.05
+Generating noise for 2 channels, 175121 samples
+Normalizing noise per channel
+
+=== Noise Output ===
+Output shape: (2, 175121)
+Output range: [-0.04893691135745295, 0.05]
+Output contains NaN: False
+Output shape: (2, 175121)
+Output range: [-0.4754035189253914, 0.47934155353621277]
+Output contains NaN: False
+
+Applying Reverb
+Input shape: (2, 175121)
+Input range: [-0.4754035189253914, 0.47934155353621277]
+Input contains NaN: False
+
+=== Reverb Effect Details ===
+Input audio shape: (2, 175121)
+Sample rate: 44100
+Reverb amount: 0.02
+Room size: 0.1
+Delay samples: 441
+Impulse response shape: (441,)
+Impulse response range: [0.0, 1.0]
+IR sum before normalization: 3.1411732999999997
+IR normalized
+Processing 2 channels
+
+Processing channel 0
+Channel shape: (175121,)
+Channel range: [-0.4754035189253914, 0.47934155353621277]
+Processed channel range: [-0.2563922037750719, 0.2647856682054041]
+
+Processing channel 1
+Channel shape: (175121,)
+Channel range: [-0.4450985064477629, 0.4735489219396024]
+Processed channel range: [-0.2031320629770505, 0.18775243298509767]
+
+=== Reverb Output ===
+Output shape: (2, 175121)
+Output range: [-0.46604516665940626, 0.4699406082998917]
+Output contains NaN: False
+Output shape: (2, 175121)
+Output range: [-0.46604516665940626, 0.4699406082998917]
+Output contains NaN: False
+
+=== Final Processing ===
+Max value before normalization: 0.4699406082998917
+Normalization applied
+
+=== Converting to Tensor ===
+Tensor shape: torch.Size([2, 175121])
+Tensor device: cpu
+Tensor dtype: torch.float32
+Final tensor shape with batch: torch.Size([1, 2, 175121])
+
+=== Returning Result ===
+Result dict keys: dict_keys(['waveform', 'sample_rate'])
+Final waveform shape: torch.Size([1, 2, 175121])
+
+Validating input audio...
+Input audio keys: ['waveform', 'sample_rate']
+Using sample rate: 44100
+
+Processing waveform...
+Waveform type: <class 'torch.Tensor'>
+Tensor shape: torch.Size([1, 2, 175121]), dimensions: 3
+Taking first batch from waveform
+Converting tensor to numpy array
+Audio data shape after conversion: (2, 175121)
+Audio data type: <class 'numpy.ndarray'>, shape: (2, 175121)
+
+Loading preset: phone
+Found preset data: {'name': 'Phone Call', 'description': 'Emulates telephone audio characteristics for both cellular and landline systems', 'compression_ratio': 5.0, 'compression_threshold': -16.0, 'low_cut': 300.0, 'high_cut': 3400.0, 'distortion_amount': 0.18, 'noise_level': 0.05, 'noise_color': 'white', 'reverb_amount': 0.02, 'room_size': 0.1, 'metadata': {'category': 'Communication', 'era': 'Modern', 'quality': 'Telephone', 'variants': [{'name': 'Landline', 'bandwidth': '300Hz-3.4kHz', 'noise_profile': 'constant'}, {'name': 'Cellular', 'bandwidth': '300Hz-3.4kHz', 'noise_profile': 'variable', 'artifacts': ['digital compression', 'packet loss', 'signal fade']}], 'technical_specs': {'sampling_rate': '8kHz', 'bit_depth': '8-bit', 'codec': 'G.711'}}}
+Parameter compression_ratio changed from 1.0 to 5.0
+Parameter compression_threshold changed from -20.0 to -16.0
+Parameter low_cut changed from 20.0 to 300.0
+Parameter high_cut changed from 20000.0 to 3400.0
+Parameter distortion_amount changed from 0.0 to 0.18
+Parameter noise_level changed from 0.0 to 0.05
+Parameter reverb_amount changed from 0.0 to 0.02
+Parameter room_size changed from 0.5 to 0.1
+Applying effect: Compression
+Audio shape before Compression: (2, 175121)
+Audio shape after Compression: (2, 175121)
+Applying effect: EQ
+Audio shape before EQ: (2, 175121)
+Audio shape after EQ: (2, 175121)
+Applying effect: Distortion
+Audio shape before Distortion: (2, 175121)
+Audio shape after Distortion: (2, 175121)
+Applying effect: Noise
+Audio shape before Noise: (2, 175121)
+Audio shape after Noise: (2, 175121)
+Applying effect: Reverb
+Audio shape before Reverb: (2, 175121)
+Audio shape after Reverb: (2, 175121)
+
+Normalizing output...
+Maximum absolute value: 0.47029897832078604
+Normalizing audio
+
+Converting to tensor...
+Tensor conversion successful. Shape: torch.Size([2, 175121]), dtype: torch.float32
+
+Preparing final output...
+Added batch dimension. Final shape: torch.Size([1, 2, 175121])
+Successfully created final output
+
+Validating input audio...
+Input audio keys: ['waveform', 'sample_rate']
+Using sample rate: 44100
+
+Processing waveform...
+Waveform type: <class 'torch.Tensor'>
+Tensor shape: torch.Size([1, 2, 175121]), dimensions: 3
+Taking first batch from waveform
+Converting tensor to numpy array
+Audio data shape after conversion: (2, 175121)
+Audio data type: <class 'numpy.ndarray'>, shape: (2, 175121)
+
+Loading preset: phone
+Found preset data: {'name': 'Phone Call', 'description': 'Emulates telephone audio characteristics for both cellular and landline systems', 'compression_ratio': 5.0, 'compression_threshold': -16.0, 'low_cut': 300.0, 'high_cut': 3400.0, 'distortion_amount': 0.18, 'noise_level': 0.05, 'noise_color': 'white', 'reverb_amount': 0.02, 'room_size': 0.1, 'metadata': {'category': 'Communication', 'era': 'Modern', 'quality': 'Telephone', 'variants': [{'name': 'Landline', 'bandwidth': '300Hz-3.4kHz', 'noise_profile': 'constant'}, {'name': 'Cellular', 'bandwidth': '300Hz-3.4kHz', 'noise_profile': 'variable', 'artifacts': ['digital compression', 'packet loss', 'signal fade']}], 'technical_specs': {'sampling_rate': '8kHz', 'bit_depth': '8-bit', 'codec': 'G.711'}}}
+Parameter compression_ratio changed from 1.0 to 5.0
+Parameter compression_threshold changed from -20.0 to -16.0
+Parameter low_cut changed from 20.0 to 300.0
+Parameter high_cut changed from 20000.0 to 3400.0
+Parameter distortion_amount changed from 0.0 to 0.18
+Parameter noise_level changed from 0.0 to 0.05
+Parameter reverb_amount changed from 0.0 to 0.02
+Parameter room_size changed from 0.5 to 0.1
+Applying effect: Compression
+Audio shape before Compression: (2, 175121)
+Audio shape after Compression: (2, 175121)
+Applying effect: EQ
+Audio shape before EQ: (2, 175121)
+Audio shape after EQ: (2, 175121)
+Applying effect: Distortion
+Audio shape before Distortion: (2, 175121)
+Audio shape after Distortion: (2, 175121)
+Applying effect: Noise
+Audio shape before Noise: (2, 175121)
+Audio shape after Noise: (2, 175121)
+Applying effect: Reverb
+Audio shape before Reverb: (2, 175121)
+Audio shape after Reverb: (2, 175121)
+
+Normalizing output...
+Maximum absolute value: 0.46867682562135676
+Normalizing audio
+
+Converting to tensor...
+Tensor conversion successful. Shape: torch.Size([2, 175121]), dtype: torch.float32
+
+Preparing final output...
+Added batch dimension. Final shape: torch.Size([1, 2, 175121])
+Successfully created final output
+
+Validating input audio...
+Input audio keys: ['waveform', 'sample_rate']
+Using sample rate: 44100
+
+Processing waveform...
+Waveform type: <class 'torch.Tensor'>
+Tensor shape: torch.Size([1, 2, 175121]), dimensions: 3
+Converting tensor to numpy array
+Tensor shape after reshaping: torch.Size([1, 2, 175121]) [batch, channels, samples]
+Audio data shape after conversion: (1, 2, 175121)
+Audio data shape after conversion and reshaping: (1, 2, 175121)
+Audio data type: <class 'numpy.ndarray'>, shape: (1, 2, 175121)
+
+Loading preset: phone
+Found preset data: {'name': 'Phone Call', 'description': 'Emulates telephone audio characteristics for both cellular and landline systems', 'compression_ratio': 5.0, 'compression_threshold': -16.0, 'low_cut': 300.0, 'high_cut': 3400.0, 'distortion_amount': 0.18, 'noise_level': 0.05, 'noise_color': 'white', 'reverb_amount': 0.02, 'room_size': 0.1, 'metadata': {'category': 'Communication', 'era': 'Modern', 'quality': 'Telephone', 'variants': [{'name': 'Landline', 'bandwidth': '300Hz-3.4kHz', 'noise_profile': 'constant'}, {'name': 'Cellular', 'bandwidth': '300Hz-3.4kHz', 'noise_profile': 'variable', 'artifacts': ['digital compression', 'packet loss', 'signal fade']}], 'technical_specs': {'sampling_rate': '8kHz', 'bit_depth': '8-bit', 'codec': 'G.711'}}}
+Parameter compression_ratio changed from 1.0 to 5.0
+Parameter compression_threshold changed from -20.0 to -16.0
+Parameter low_cut changed from 20.0 to 300.0
+Parameter high_cut changed from 20000.0 to 3400.0
+Parameter distortion_amount changed from 0.0 to 0.18
+Parameter noise_level changed from 0.0 to 0.05
+Parameter reverb_amount changed from 0.0 to 0.02
+Parameter room_size changed from 0.5 to 0.1
+Applying effect: Compression
+Audio shape before Compression: (1, 2, 175121)
+Processed shape: (1, 2, 175121)
+Audio shape after Compression: (1, 2, 175121)
+Applying effect: EQ
+Audio shape before EQ: (1, 2, 175121)
+Processed shape: (1, 2, 175121)
+Audio shape after EQ: (1, 2, 175121)
+Applying effect: Distortion
+Audio shape before Distortion: (1, 2, 175121)
+Processed shape: (1, 2, 175121)
+Audio shape after Distortion: (1, 2, 175121)
+Applying effect: Noise
+Audio shape before Noise: (1, 2, 175121)
+Processed shape: (1, 2, 175121)
+Audio shape after Noise: (1, 2, 175121)
+Applying effect: Reverb
+Audio shape before Reverb: (1, 2, 175121)
+Processed shape: (1, 2, 175121)
+Audio shape after Reverb: (1, 2, 175121)
+
+Normalizing output...
+Maximum absolute value: 0.48577688435952393
+Normalizing audio
+
+Converting to tensor...
+Tensor conversion successful. Shape: torch.Size([1, 2, 175121]), dtype: torch.float32
+
+Preparing final output...
+Final tensor shape: torch.Size([1, 2, 175121]), device: cpu, contiguous: True
+Successfully created final output
+
+Validating input audio...
+Input audio keys: ['waveform', 'sample_rate']
+Using sample rate: 44100
+
+Processing waveform...
+Waveform type: <class 'torch.Tensor'>
+Tensor shape: torch.Size([1, 2, 175121]), dimensions: 3
+Converting tensor to numpy array
+Tensor shape after reshaping: torch.Size([1, 2, 175121]) [batch, channels, samples]
+Audio data shape after conversion: (1, 2, 175121)
+Audio data shape after conversion and reshaping: (1, 2, 175121)
+Audio data type: <class 'numpy.ndarray'>, shape: (1, 2, 175121)
+
+Loading preset: radio
+Found preset data: {'name': 'Radio Broadcast', 'description': 'Emulates AM/FM radio characteristics with heavy compression and bandwidth restrictions', 'compression_ratio': 6.0, 'compression_threshold': -15.0, 'low_cut': 150.0, 'high_cut': 4500.0, 'distortion_amount': 0.15, 'noise_level': 0.04, 'noise_color': 'pink', 'reverb_amount': 0.05, 'room_size': 0.2, 'metadata': {'category': 'Broadcast', 'era': 'Modern', 'quality': 'AM/FM Radio', 'variants': ['AM', 'FM']}}
+Parameter compression_ratio changed from 1.0 to 6.0
+Parameter compression_threshold changed from -20.0 to -15.0
+Parameter low_cut changed from 20.0 to 150.0
+Parameter high_cut changed from 20000.0 to 4500.0
+Parameter distortion_amount changed from 0.0 to 0.15
+Parameter noise_level changed from 0.0 to 0.04
+Parameter noise_color changed from white to pink
+Parameter reverb_amount changed from 0.0 to 0.05
+Parameter room_size changed from 0.5 to 0.2
+Applying effect: Compression
+Audio shape before Compression: (1, 2, 175121)
+Processed shape: (1, 2, 175121)
+Audio shape after Compression: (1, 2, 175121)
+Applying effect: EQ
+Audio shape before EQ: (1, 2, 175121)
+Processed shape: (1, 2, 175121)
+Audio shape after EQ: (1, 2, 175121)
+Applying effect: Distortion
+Audio shape before Distortion: (1, 2, 175121)
+Processed shape: (1, 2, 175121)
+Audio shape after Distortion: (1, 2, 175121)
+Applying effect: Noise
+Audio shape before Noise: (1, 2, 175121)
+Processed shape: (1, 2, 175121)
+Audio shape after Noise: (1, 2, 175121)
+Applying effect: Reverb
+Audio shape before Reverb: (1, 2, 175121)
+Processed shape: (1, 2, 175121)
+Audio shape after Reverb: (1, 2, 175121)
+
+Normalizing output...
+Maximum absolute value: 0.42619192452250015
+Normalizing audio
+
+Converting to tensor...
+Tensor conversion successful. Shape: torch.Size([1, 2, 175121]), dtype: torch.float32
+
+Preparing final output...
+Final tensor shape: torch.Size([1, 2, 175121]), device: cpu, contiguous: True
+Successfully created final output
+
+Validating input audio...
+Input audio keys: ['waveform', 'sample_rate']
+Using sample rate: 44100
+
+Processing waveform...
+Waveform type: <class 'torch.Tensor'>
+Tensor shape: torch.Size([1, 2, 175121]), dimensions: 3
+Converting tensor to numpy array
+Tensor shape after reshaping: torch.Size([1, 2, 175121]) [batch, channels, samples]
+Audio data shape after conversion: (1, 2, 175121)
+Audio data shape after conversion and reshaping: (1, 2, 175121)
+Audio data type: <class 'numpy.ndarray'>, shape: (1, 2, 175121)
+
+Loading preset: tv
+Found preset data: {'name': 'TV Broadcast', 'description': 'Emulates typical television broadcast audio characteristics with compression and bandwidth limiting', 'compression_ratio': 4.0, 'compression_threshold': -18.0, 'low_cut': 100.0, 'high_cut': 8000.0, 'distortion_amount': 0.05, 'noise_level': 0.02, 'noise_color': 'white', 'reverb_amount': 0.1, 'room_size': 0.3, 'metadata': {'category': 'Broadcast', 'era': 'Modern', 'quality': 'Standard Definition'}}
+Parameter compression_ratio changed from 1.0 to 4.0
+Parameter compression_threshold changed from -20.0 to -18.0
+Parameter low_cut changed from 20.0 to 100.0
+Parameter high_cut changed from 20000.0 to 8000.0
+Parameter distortion_amount changed from 0.0 to 0.05
+Parameter noise_level changed from 0.0 to 0.02
+Parameter reverb_amount changed from 0.0 to 0.1
+Parameter room_size changed from 0.5 to 0.3
+Applying effect: Compression
+Audio shape before Compression: (1, 2, 175121)
+Processed shape: (1, 2, 175121)
+Audio shape after Compression: (1, 2, 175121)
+Applying effect: EQ
+Audio shape before EQ: (1, 2, 175121)
+Processed shape: (1, 2, 175121)
+Audio shape after EQ: (1, 2, 175121)
+Applying effect: Distortion
+Audio shape before Distortion: (1, 2, 175121)
+Processed shape: (1, 2, 175121)
+Audio shape after Distortion: (1, 2, 175121)
+Applying effect: Noise
+Audio shape before Noise: (1, 2, 175121)
+Processed shape: (1, 2, 175121)
+Audio shape after Noise: (1, 2, 175121)
+Applying effect: Reverb
+Audio shape before Reverb: (1, 2, 175121)
+Processed shape: (1, 2, 175121)
+Audio shape after Reverb: (1, 2, 175121)
+
+Normalizing output...
+Maximum absolute value: 0.2308452840897186
+Normalizing audio
+
+Converting to tensor...
+Tensor conversion successful. Shape: torch.Size([1, 2, 175121]), dtype: torch.float32
+
+Preparing final output...
+Final tensor shape: torch.Size([1, 2, 175121]), device: cpu, contiguous: True
+Successfully created final output

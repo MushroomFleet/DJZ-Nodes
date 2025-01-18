@@ -1,0 +1,24 @@
+{
+    "name": "TV Broadcast",
+    "description": "Emulates typical television broadcast audio characteristics with compression and bandwidth limiting",
+    
+    "compression_ratio": 4.0,
+    "compression_threshold": -18.0,
+    
+    "low_cut": 100.0,
+    "high_cut": 8000.0,
+    
+    "distortion_amount": 0.05,
+    
+    "noise_level": 0.02,
+    "noise_color": "white",
+    
+    "reverb_amount": 0.1,
+    "room_size": 0.3,
+    
+    "metadata": {
+        "category": "Broadcast",
+        "era": "Modern",
+        "quality": "Standard Definition"
+    }
+}
