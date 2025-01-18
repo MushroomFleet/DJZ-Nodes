@@ -641,18 +641,5 @@ try:
 except ImportError:
     print("Unable to import UncleanSpeech. This node will not be available.")
 
-try:
-    from .ImageMorph import ImageMorph
-    NODE_CLASS_MAPPINGS["ImageMorph"] = ImageMorph
-    NODE_DISPLAY_NAME_MAPPINGS["ImageMorph"] = "Image Morph"
-except ImportError:
-    print("Unable to import ImageMorph. This node will not be available.")
-
-try:
-    from .ImageMorphV2 import ImageMorphV2
-    NODE_CLASS_MAPPINGS["ImageMorphV2"] = ImageMorphV2
-    NODE_DISPLAY_NAME_MAPPINGS["ImageMorphV2"] = "Image Morph V2"
-except ImportError:
-    print("Unable to import ImageMorphV2. This node will not be available.")
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
