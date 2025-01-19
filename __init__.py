@@ -648,4 +648,88 @@ try:
 except ImportError:
     print("Unable to import LoadVideoDirectoryV2. This node will not be available.")
 
+try:
+    from .VGA_Effect_v1 import VGA_Effect_v1
+    NODE_CLASS_MAPPINGS["VGA_Effect_v1"] = VGA_Effect_v1
+    NODE_DISPLAY_NAME_MAPPINGS["VGA_Effect_v1"] = "VGA Effect v1"
+except ImportError:
+    print("Unable to import VGA_Effect_v1. This node will not be available.")
+
+try:
+    from .VideoChromaticAberration import VideoChromaticAberration
+    NODE_CLASS_MAPPINGS["VideoChromaticAberration"] = VideoChromaticAberration
+    NODE_DISPLAY_NAME_MAPPINGS["VideoChromaticAberration"] = "Video Chromatic Aberration"
+except ImportError:
+    print("Unable to import VideoChromaticAberration. This node will not be available.")
+
+try:
+    from .CRT_Effect_v1 import CRT_Effect_v1
+    NODE_CLASS_MAPPINGS["CRT_Effect_v1"] = CRT_Effect_v1
+    NODE_DISPLAY_NAME_MAPPINGS["CRT_Effect_v1"] = "CRT Effect v1"
+except ImportError:
+    print("Unable to import CRT_Effect_v1. This node will not be available.")
+
+try:
+    from .MotionBlending import MotionBlending
+    NODE_CLASS_MAPPINGS["MotionBlending"] = MotionBlending
+    NODE_DISPLAY_NAME_MAPPINGS["MotionBlending"] = "Motion Blending"
+except ImportError:
+    print("Unable to import MotionBlending. This node will not be available.")
+
+try:
+    from .HalationBloom import HalationBloom
+    NODE_CLASS_MAPPINGS["HalationBloom"] = HalationBloom
+    NODE_DISPLAY_NAME_MAPPINGS["HalationBloom"] = "Halation Bloom"
+except ImportError:
+    print("Unable to import HalationBloom. This node will not be available.")
+
+try:
+    from .VideoFilmDamage import VideoFilmDamage
+    NODE_CLASS_MAPPINGS["VideoFilmDamage"] = VideoFilmDamage
+    NODE_DISPLAY_NAME_MAPPINGS["VideoFilmDamage"] = "Video Film Damage"
+except ImportError:
+    print("Unable to import VideoFilmDamage. This node will not be available.")
+
+try:
+    from .FilmGateWeave import FilmGateWeave
+    NODE_CLASS_MAPPINGS["FilmGateWeave"] = FilmGateWeave
+    NODE_DISPLAY_NAME_MAPPINGS["FilmGateWeave"] = "Film Gate Weave"
+except ImportError:
+    print("Unable to import FilmGateWeave. This node will not be available.")
+
+try:
+    from .VideoVignettingV1 import VideoVignettingV1
+    NODE_CLASS_MAPPINGS["VideoVignettingV1"] = VideoVignettingV1
+    NODE_DISPLAY_NAME_MAPPINGS["VideoVignettingV1"] = "Video VignettingV1"
+except ImportError:
+    print("Unable to import VideoVignettingV1. This node will not be available.")
+
+try:
+    from .VideoTemperatureV1 import VideoTemperatureV1
+    NODE_CLASS_MAPPINGS["VideoTemperatureV1"] = VideoTemperatureV1
+    NODE_DISPLAY_NAME_MAPPINGS["VideoTemperatureV1"] = "Video Temperature V1"
+except ImportError:
+    print("Unable to import VideoTemperatureV1. This node will not be available.")
+
+try:
+    from .KeyframeBasedUpscalerV1 import KeyframeBasedUpscalerV1
+    NODE_CLASS_MAPPINGS["KeyframeBasedUpscalerV1"] = KeyframeBasedUpscalerV1
+    NODE_DISPLAY_NAME_MAPPINGS["KeyframeBasedUpscalerV1"] = "Keyframe Based Upscaler V1"
+except ImportError:
+    print("Unable to import KeyframeBasedUpscalerV1. This node will not be available.")
+
+try:
+    from .VideoRingPainter import VideoRingPainter
+    NODE_CLASS_MAPPINGS["VideoRingPainter"] = VideoRingPainter
+    NODE_DISPLAY_NAME_MAPPINGS["VideoRingPainter"] = "Video Ring Painter"
+except ImportError:
+    print("Unable to import VideoRingPainter. This node will not be available.")
+
+try:
+    from .LensLeaks import LensLeaks
+    NODE_CLASS_MAPPINGS["LensLeaks"] = LensLeaks
+    NODE_DISPLAY_NAME_MAPPINGS["LensLeaks"] = "Lens Leaks"
+except ImportError:
+    print("Unable to import LensLeaks. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
