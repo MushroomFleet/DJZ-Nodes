@@ -54,7 +54,7 @@
 
 ## CRT_Effect_v1
 - [Documentation](CRT_Effect_v1.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-CRT-Effect-V1.json)
 
 ## DatasetWordcloud
 - [Documentation](DatasetWordcloud.md)
@@ -110,7 +110,7 @@
 
 ## FilmGateWeave
 - [Documentation](FilmGateWeave.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Film-Gate-Weave.json)
 
 ## FFXFADEORAMA
 - [Documentation](FFXFADEORAMA.md)
@@ -146,7 +146,7 @@
 
 ## HalationBloom
 - [Documentation](HalationBloom.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Halation-Bloom.json)
 
 ## ImageInterleavedUpscaler
 - [Documentation](ImageInterleavedUpscaler.md)
@@ -174,7 +174,7 @@
 
 ## KeyframeBasedUpscalerV1
 - [Documentation](KeyframeBasedUpscalerV1.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Keyframe-Based-Upscaler-V1.json)
 
 ## KinescopeEffectV1
 - [Documentation](KinescopeEffectV1.md)
@@ -182,7 +182,7 @@
 
 ## LensLeaks
 - [Documentation](LensLeaks.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Lens-Leaks.json)
 
 ## LoadTextDirectory
 - [Documentation](LoadTextDirectory.md)
@@ -202,7 +202,7 @@
 
 ## MotionBlending
 - [Documentation](MotionBlending.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Motion-Blending-V1.json)
 
 ## NonSquarePixelsV1
 - [Documentation](NonSquarePixelsV1.md)
@@ -322,7 +322,7 @@
 
 ## VGA_Effect_v1
 - [Documentation](VGA_Effect_v1.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-VGA-Effect.json)
 
 ## VHS_Effect_V3
 - [Documentation](VHS_Effect_V3.md)
@@ -334,11 +334,11 @@
 
 ## VideoChromaticAberration
 - [Documentation](VideoChromaticAberration.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Chromatic-Aberration.json)
 
 ## VideoFilmDamage
 - [Documentation](VideoFilmDamage.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Damage-Effect.json)
 
 ## VideoInterlaced
 - [Documentation](VideoInterlaced.md)
@@ -358,7 +358,7 @@
 
 ## VideoRingPainter
 - [Documentation](VideoRingPainter.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Ringpainting-V1.json)
 
 ## VideoNoiseFactory
 - [Documentation](VideoNoiseFactory.md)
@@ -366,7 +366,7 @@
 
 ## VideoVignettingV1
 - [Documentation](VideoVignettingV1.md)
-- [Example Workflow](#)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-VignettingV1.json)
 
 ## VideoTimecode
 - [Documentation](VideoTimecode.md)
