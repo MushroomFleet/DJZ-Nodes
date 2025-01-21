@@ -68,6 +68,10 @@
 - [Documentation](DinskyPlusV2.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Dinsky-Plus-V2.json)
 
+## DjzDatabendingV1
+- [Documentation](DjzDatabendingV1.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-DatabendingV1.json)
+
 ## DjzDatamosh
 - [Documentation](DjzDatamosh.md)
 - [Example Workflow](#)
@@ -268,6 +272,10 @@
 - [Documentation](SaveText.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Save-Text.json)
 
+## ScreensaverGenerator
+- [Documentation](ScreensaverGenerator.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Screensaver-generator.json)
+
 ## SequentialNumberGenerator
 - [Documentation](SequentialNumberGenerator.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DjzDatamosh/DJZ-Nodes-Examples-Sequential-Selection.json)
@@ -363,6 +371,14 @@
 ## VideoNoiseFactory
 - [Documentation](VideoNoiseFactory.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Noise-Factory.json)
+
+## VideoTrails
+- [Documentation](VideoTrails.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Trails.json)
+
+## VideoTrailsV2
+- [Documentation](VideoTrailsV2.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Trails-V2.json)
 
 ## VideoVignettingV1
 - [Documentation](VideoVignettingV1.md)

@@ -732,4 +732,32 @@ try:
 except ImportError:
     print("Unable to import LensLeaks. This node will not be available.")
 
+try:
+    from .ScreensaverGenerator import ScreensaverGenerator
+    NODE_CLASS_MAPPINGS["ScreensaverGenerator"] = ScreensaverGenerator
+    NODE_DISPLAY_NAME_MAPPINGS["ScreensaverGenerator"] = "Screensaver Generator"
+except ImportError:
+    print("Unable to import ScreensaverGenerator. This node will not be available.")
+
+try:
+    from .DjzDatabendingV1 import DjzDatabendingV1
+    NODE_CLASS_MAPPINGS["DjzDatabendingV1"] = DjzDatabendingV1
+    NODE_DISPLAY_NAME_MAPPINGS["DjzDatabendingV1"] = "Djz Databending V1"
+except ImportError:
+    print("Unable to import DjzDatabendingV1. This node will not be available.")
+
+try:
+    from .VideoTrails import VideoTrails
+    NODE_CLASS_MAPPINGS["VideoTrails"] = VideoTrails
+    NODE_DISPLAY_NAME_MAPPINGS["VideoTrails"] = "Video Trails"
+except ImportError:
+    print("Unable to import VideoTrails. This node will not be available.")
+
+try:
+    from .VideoTrailsV2 import VideoTrailsV2
+    NODE_CLASS_MAPPINGS["VideoTrailsV2"] = VideoTrailsV2
+    NODE_DISPLAY_NAME_MAPPINGS["VideoTrailsV2"] = "Video Trails V2"
+except ImportError:
+    print("Unable to import VideoTrailsV2. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
