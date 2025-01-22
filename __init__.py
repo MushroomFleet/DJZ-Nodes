@@ -774,4 +774,12 @@ try:
 except ImportError:
     print("Unable to import VideoMazeV1. This node will not be available.")
 
+try:
+    from .VideoMazeV2 import VideoMazeV2
+    NODE_CLASS_MAPPINGS["VideoMazeV2"] = VideoMazeV2
+    NODE_DISPLAY_NAME_MAPPINGS["VideoMazeV2"] = "Video Maze V2"
+except ImportError:
+    print("Unable to import VideoMazeV2. This node will not be available.")
+
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

@@ -364,6 +364,10 @@
 - [Documentation](VideoMazeV1.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Maze-Generator-V1.json)
 
+## VideoMazeV2
+- [Documentation](VideoMazeV2.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Maze-Generator-V2.json)
+
 ## VideoInterlaceFastV4
 - [Documentation](VideoInterlaceFastV4.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-FAST-Video-Interlaced-Upscaler-V4.json)
