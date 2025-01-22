@@ -276,6 +276,10 @@
 - [Documentation](ScreensaverGenerator.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Screensaver-generator.json)
 
+## ScreensaverGeneratorV2
+- [Documentation](ScreensaverGeneratorV2.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Screensaver-Generator-V2.json)
+
 ## SequentialNumberGenerator
 - [Documentation](SequentialNumberGenerator.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DjzDatamosh/DJZ-Nodes-Examples-Sequential-Selection.json)
@@ -355,6 +359,10 @@
 ## VideoInterlacedV2
 - [Documentation](VideoInterlacedV2.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Interlaced-Upscaler-V2.json)
+
+## VideoMazeV1
+- [Documentation](VideoMazeV1.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Maze-Generator-V1.json)
 
 ## VideoInterlaceFastV4
 - [Documentation](VideoInterlaceFastV4.md)

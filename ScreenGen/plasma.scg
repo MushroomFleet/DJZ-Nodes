@@ -1,0 +1,100 @@
+import cv2
+import numpy as np
+
+class PlasmaScreensaver:
+    def __init__(self):
+        self.name = "Plasma"
+        self.description = "Classic plasma effect screensaver"
+        self.parameters = {
+            "wave_count_x": {
+                "type": "FLOAT",
+                "default": 10.0,
+                "min": 1.0,
+                "max": 30.0,
+                "step": 0.5
+            },
+            "wave_count_y": {
+                "type": "FLOAT",
+                "default": 10.0,
+                "min": 1.0,
+                "max": 30.0,
+                "step": 0.5
+            },
+            "circle_count": {
+                "type": "FLOAT",
+                "default": 20.0,
+                "min": 1.0,
+                "max": 50.0,
+                "step": 0.5
+            },
+            "radial_count": {
+                "type": "FLOAT",
+                "default": 10.0,
+                "min": 1.0,
+                "max": 30.0,
+                "step": 0.5
+            },
+            "time_scale": {
+                "type": "FLOAT",
+                "default": 0.1,
+                "min": 0.01,
+                "max": 1.0,
+                "step": 0.01
+            },
+            "color_shift": {
+                "type": "FLOAT",
+                "default": 0.0,
+                "min": 0.0,
+                "max": 1.0,
+                "step": 0.1
+            },
+            "distortion": {
+                "type": "FLOAT",
+                "default": 0.0,
+                "min": 0.0,
+                "max": 5.0,
+                "step": 0.1
+            }
+        }
+        
+    def init_state(self):
+        return {
+            'time': 0
+        }
+        
+    def render(self, width, height, frame, colors, speed, state, params):
+        """Render plasma effect screensaver"""
+        if not state:
+            state = self.init_state()
+        
+        img = np.zeros((height, width, 3), dtype=np.uint8)
+        x = np.linspace(0, 1, width)
+        y = np.linspace(0, 1, height)
+        X, Y = np.meshgrid(x, y)
+        
+        # Add distortion to coordinates
+        if params['distortion'] > 0:
+            X += np.sin(Y * 10 + state['time']) * params['distortion'] * 0.1
+            Y += np.cos(X * 10 + state['time']) * params['distortion'] * 0.1
+        
+        # Generate plasma effect with customizable parameters
+        plasma = (
+            np.sin(X * params['wave_count_x'] + state['time'] * speed) + 
+            np.sin(Y * params['wave_count_y'] + state['time'] * speed) + 
+            np.sin(np.sqrt((X-0.5)**2 + (Y-0.5)**2) * params['circle_count']) +
+            np.sin(np.sqrt(X**2 + Y**2) * params['radial_count'])
+        ) / 4
+        
+        # Apply time-based color shift if enabled
+        if params['color_shift'] > 0:
+            color_offset = (state['time'] * params['color_shift']) % 1.0
+            plasma = (plasma + color_offset) % 1.0
+        
+        # Map plasma values to colors
+        plasma = ((plasma + 1) / 2 * (len(colors)-1)).astype(int)
+        for i in range(len(colors)):
+            mask = plasma == i
+            img[mask] = colors[i]
+        
+        state['time'] += params['time_scale']
+        return img, state

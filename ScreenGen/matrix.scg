@@ -1,0 +1,107 @@
+import cv2
+import numpy as np
+
+class MatrixScreensaver:
+    def __init__(self):
+        self.name = "Matrix"
+        self.description = "Matrix-style falling characters effect"
+        self.parameters = {
+            "char_size": {
+                "type": "FLOAT",
+                "default": 0.5,
+                "min": 0.1,
+                "max": 2.0,
+                "step": 0.1
+            },
+            "char_spacing": {
+                "type": "INT",
+                "default": 20,
+                "min": 10,
+                "max": 50,
+                "step": 1
+            },
+            "stream_length": {
+                "type": "INT",
+                "default": 10,
+                "min": 3,
+                "max": 30,
+                "step": 1
+            },
+            "spawn_rate": {
+                "type": "INT",
+                "default": 10,
+                "min": 1,
+                "max": 30,
+                "step": 1
+            },
+            "fade_rate": {
+                "type": "INT",
+                "default": 20,
+                "min": 5,
+                "max": 50,
+                "step": 1
+            },
+            "char_set": {
+                "type": "STRING",
+                "default": "matrix",
+                "choices": ["matrix", "binary", "ascii", "katakana"]
+            }
+        }
+        
+    def init_state(self):
+        return {
+            'streams': [],
+            'next_stream': 0
+        }
+        
+    def get_char_set(self, char_set_name):
+        """Get character set based on selection"""
+        if char_set_name == "matrix":
+            # Mix of characters for matrix-like effect
+            return [chr(i) for i in range(33, 127)] + [chr(i) for i in range(0x30A0, 0x30FF)]
+        elif char_set_name == "binary":
+            return ['0', '1']
+        elif char_set_name == "ascii":
+            return [chr(i) for i in range(33, 127)]
+        elif char_set_name == "katakana":
+            return [chr(i) for i in range(0x30A0, 0x30FF)]
+        return [chr(i) for i in range(33, 127)]  # default to ASCII
+        
+    def render(self, width, height, frame, colors, speed, state, params):
+        """Render Matrix-style falling characters"""
+        if not state:
+            state = self.init_state()
+        
+        img = np.zeros((height, width, 3), dtype=np.uint8)
+        char_set = self.get_char_set(params['char_set'])
+        
+        # Update existing streams
+        for stream in state['streams']:
+            pos = stream['pos']
+            for i, char in enumerate(stream['chars']):
+                y = int(pos + i * params['char_spacing'])
+                if 0 <= y < height:
+                    color_intensity = 255 - i * params['fade_rate']
+                    if color_intensity > 0:
+                        cv2.putText(img, char, 
+                                  (stream['x'], y), 
+                                  cv2.FONT_HERSHEY_SIMPLEX, 
+                                  params['char_size'],
+                                  (0, color_intensity, 0), 1)
+            stream['pos'] += speed * 5
+        
+        # Add new stream
+        state['next_stream'] -= 1
+        if state['next_stream'] <= 0:
+            chars = [np.random.choice(char_set) for _ in range(params['stream_length'])]
+            state['streams'].append({
+                'x': np.random.randint(0, width),
+                'pos': 0,
+                'chars': chars
+            })
+            state['next_stream'] = params['spawn_rate']
+        
+        # Remove old streams
+        state['streams'] = [s for s in state['streams'] if s['pos'] < height + params['char_spacing'] * params['stream_length']]
+        
+        return img, state

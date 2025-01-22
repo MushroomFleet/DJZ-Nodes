@@ -1,0 +1,192 @@
+import cv2
+import numpy as np
+from math import sin, cos, pi, floor
+
+class MazeScreensaver:
+    def __init__(self):
+        self.name = "Windows Maze"
+        self.description = "3D maze screensaver with ray-casting"
+        self.parameters = {
+            "wall_height": {
+                "type": "FLOAT",
+                "default": 1.0,
+                "min": 0.5,
+                "max": 2.0,
+                "step": 0.1
+            },
+            "fov": {
+                "type": "FLOAT",
+                "default": 60.0,
+                "min": 30.0,
+                "max": 90.0,
+                "step": 5.0
+            },
+            "movement_speed": {
+                "type": "FLOAT",
+                "default": 0.05,
+                "min": 0.01,
+                "max": 0.1,
+                "step": 0.01
+            },
+            "rotation_speed": {
+                "type": "FLOAT",
+                "default": 0.03,
+                "min": 0.01,
+                "max": 0.1,
+                "step": 0.01
+            },
+            "maze_size": {
+                "type": "INT",
+                "default": 20,
+                "min": 10,
+                "max": 50,
+                "step": 5
+            }
+        }
+
+    def init_state(self):
+        """Initialize maze and player state"""
+        return {
+            'maze': None,
+            'pos_x': 1.5,
+            'pos_y': 1.5,
+            'angle': 0,
+            'maze_size': None
+        }
+
+    def generate_maze(self, size):
+        """Generate random maze using recursive backtracking"""
+        maze = np.ones((size, size), dtype=np.uint8)
+        
+        def carve_path(x, y):
+            maze[y, x] = 0
+            directions = [(0, 2), (2, 0), (0, -2), (-2, 0)]
+            np.random.shuffle(directions)
+            
+            for dx, dy in directions:
+                new_x, new_y = x + dx, y + dy
+                if (0 <= new_x < size and 0 <= new_y < size and 
+                    maze[new_y, new_x] == 1):
+                    maze[y + dy//2, x + dx//2] = 0
+                    carve_path(new_x, new_y)
+        
+        carve_path(1, 1)
+        return maze
+
+    def cast_ray(self, maze, pos_x, pos_y, angle, max_depth):
+        """Cast a single ray and return distance to wall using DDA algorithm"""
+        ray_x = cos(angle)
+        ray_y = sin(angle)
+        
+        map_x = int(pos_x)
+        map_y = int(pos_y)
+        
+        delta_dist_x = abs(1 / ray_x) if ray_x != 0 else float('inf')
+        delta_dist_y = abs(1 / ray_y) if ray_y != 0 else float('inf')
+        
+        if ray_x < 0:
+            step_x = -1
+            side_dist_x = (pos_x - map_x) * delta_dist_x
+        else:
+            step_x = 1
+            side_dist_x = (map_x + 1.0 - pos_x) * delta_dist_x
+            
+        if ray_y < 0:
+            step_y = -1
+            side_dist_y = (pos_y - map_y) * delta_dist_y
+        else:
+            step_y = 1
+            side_dist_y = (map_y + 1.0 - pos_y) * delta_dist_y
+            
+        # Perform DDA
+        dist = 0.0
+        while dist < max_depth:
+            if side_dist_x < side_dist_y:
+                side_dist_x += delta_dist_x
+                map_x += step_x
+                dist = side_dist_x
+            else:
+                side_dist_y += delta_dist_y
+                map_y += step_y
+                dist = side_dist_y
+                
+            # Check bounds
+            if map_x < 0 or map_x >= maze.shape[1] or map_y < 0 or map_y >= maze.shape[0]:
+                break
+                
+            # Hit wall
+            if maze[map_y, map_x] == 1:
+                break
+                
+        return dist
+
+    def render(self, width, height, frame, colors, speed, state, params):
+        """Render one frame of the maze screensaver"""
+        if not state:
+            state = self.init_state()
+        
+        # Create empty image
+        img = np.zeros((height, width, 3), dtype=np.uint8)
+        
+        # Initialize maze if needed
+        if state['maze'] is None or state['maze_size'] != params['maze_size']:
+            state['maze_size'] = params['maze_size']
+            state['maze'] = self.generate_maze(params['maze_size'])
+            state['pos_x'] = 1.5
+            state['pos_y'] = 1.5
+            
+        # Update player position with collision check
+        new_x = state['pos_x'] + cos(state['angle']) * params['movement_speed'] * speed
+        new_y = state['pos_y'] + sin(state['angle']) * params['movement_speed'] * speed
+        
+        # Check collision before updating position
+        if (state['maze'][int(new_y), int(new_x)] == 1 or
+            state['maze'][int(state['pos_y']), int(new_x)] == 1 or
+            state['maze'][int(new_y), int(state['pos_x'])] == 1):
+            # Collision detected, reverse direction
+            state['angle'] += pi
+        else:
+            # No collision, update position
+            state['pos_x'] = new_x
+            state['pos_y'] = new_y
+            state['angle'] += params['rotation_speed'] * speed
+        
+        # Ray casting
+        fov = params['fov'] * pi / 180.0
+        for x in range(width):
+            # Calculate ray angle
+            ray_angle = (state['angle'] - fov/2.0) + (x / float(width)) * fov
+            
+            # Cast ray
+            dist = self.cast_ray(state['maze'], 
+                               state['pos_x'], 
+                               state['pos_y'], 
+                               ray_angle, 
+                               20.0)
+            
+            # Calculate wall height
+            wall_height = min(int((height * params['wall_height']) / (dist + 0.0001)), height)
+            wall_top = (height - wall_height) // 2
+            
+            # Draw wall slice
+            color_idx = int((dist / 20.0) * (len(colors) - 1))
+            color_idx = max(0, min(color_idx, len(colors) - 1))
+            color = colors[color_idx]
+            
+            # Draw ceiling
+            cv2.line(img, (x, 0), (x, wall_top), (20, 20, 20), 1)
+            
+            # Draw wall
+            cv2.line(img, (x, wall_top), (x, wall_top + wall_height), color, 1)
+            
+            # Draw floor
+            cv2.line(img, (x, wall_top + wall_height), (x, height), (40, 40, 40), 1)
+        
+        # Generate new maze if player reaches edge
+        if (int(state['pos_x']) >= state['maze_size'] - 2 or 
+            int(state['pos_y']) >= state['maze_size'] - 2):
+            state['maze'] = self.generate_maze(state['maze_size'])
+            state['pos_x'] = 1.5
+            state['pos_y'] = 1.5
+        
+        return img, state

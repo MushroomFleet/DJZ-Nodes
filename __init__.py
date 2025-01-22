@@ -760,4 +760,18 @@ try:
 except ImportError:
     print("Unable to import VideoTrailsV2. This node will not be available.")
 
+try:
+    from .ScreensaverGeneratorV2 import ScreensaverGeneratorV2
+    NODE_CLASS_MAPPINGS["ScreensaverGeneratorV2"] = ScreensaverGeneratorV2
+    NODE_DISPLAY_NAME_MAPPINGS["ScreensaverGeneratorV2"] = "Screensaver Generator V2"
+except ImportError:
+    print("Unable to import ScreensaverGeneratorV2. This node will not be available.")
+
+try:
+    from .VideoMazeV1 import VideoMazeV1
+    NODE_CLASS_MAPPINGS["VideoMazeV1"] = VideoMazeV1
+    NODE_DISPLAY_NAME_MAPPINGS["VideoMazeV1"] = "Video Maze V1"
+except ImportError:
+    print("Unable to import VideoMazeV1. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
