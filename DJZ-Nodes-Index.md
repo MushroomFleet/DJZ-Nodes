@@ -44,6 +44,10 @@
 - [Documentation](CaptionsToPromptList.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/Caption-to-Proimpt-List.json)
 
+## CathodeRayEffect
+- [Documentation](CathodeRayEffect.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Cathode-Ray-Effect.json)
+
 ## ClassicFilmEffect
 - [Documentation](ClassicFilmEffect.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Classic-Film-Effect-V1.json)
@@ -348,6 +352,14 @@
 - [Documentation](VideoChromaticAberration.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Chromatic-Aberration.json)
 
+## VideoCorridorV1
+- [Documentation](VideoCorridorV1.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-video-corridor.json)
+
+## VideoCubeV1
+- [Documentation](VideoCubeV1.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-video-cube.json)
+
 ## VideoFilmDamage
 - [Documentation](VideoFilmDamage.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Damage-Effect.json)
@@ -398,44 +410,4 @@
 
 ## VideoTimecode
 - [Documentation](VideoTimecode.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Video-Video-Timecode.json)
-
-## WaveletCompose
-- [Documentation](WaveletCompose.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Wavelet-Compose.json)
-
-## WaveletDecompose
-- [Documentation](WaveletDecompose.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Wavelet-Decompose.json)
-
-## WinampViz
-- [Documentation](WinampViz.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Winamp-Viz.json)
-
-## WinampVizV2
-- [Documentation](WinampVizV2.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Winamp-Viz-V2.json)
-
-## ZenkaiPrompt
-- [Documentation](ZenkaiPrompt.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/Zenkai-System.json)
-
-## ZenkaiPromptV2
-- [Documentation](ZenkaiPromptV2.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Zenkai-Prompt-V2.json)
-
-## ZenkaiPromptV3
-- [Documentation](ZenkaiPromptV3.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-ZENKAIV3-Interpolation-v1.json)
-
-## ZenkaiPromptV4
-- [Documentation](ZenkaiPromptV4.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Zenkai-Prompt-V4.json)
-
-## ZenkaiWildcard
-- [Documentation](ZenkaiWildcard.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Zenkai-Wildcards.json)
-
-## ZenkaiWildcardV2
-- [Documentation](ZenkaiWildcardV2.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Zenkai-Prompt-V2.json)
+- [Example Workflow](https://github.com/MushroomFleet/D

@@ -781,5 +781,25 @@ try:
 except ImportError:
     print("Unable to import VideoMazeV2. This node will not be available.")
 
+try:
+    from .VideoCubeV1 import VideoCubeV1
+    NODE_CLASS_MAPPINGS["VideoCubeV1"] = VideoCubeV1
+    NODE_DISPLAY_NAME_MAPPINGS["VideoCubeV1"] = "Video Cube V1"
+except ImportError:
+    print("Unable to import VideoCubeV1. This node will not be available.")
+
+try:
+    from .VideoCorridorV1 import VideoCorridorV1
+    NODE_CLASS_MAPPINGS["VideoCorridorV1"] = VideoCorridorV1
+    NODE_DISPLAY_NAME_MAPPINGS["VideoCorridorV1"] = "Video Corridor V1"
+except ImportError:
+    print("Unable to import VideoCorridorV1. This node will not be available.")
+
+try:
+    from .CathodeRayEffect import CathodeRayEffect
+    NODE_CLASS_MAPPINGS["CathodeRayEffect"] = CathodeRayEffect
+    NODE_DISPLAY_NAME_MAPPINGS["CathodeRayEffect"] = "Cathode Ray Effect"
+except ImportError:
+    print("Unable to import CathodeRayEffect. This node will not be available.")
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
