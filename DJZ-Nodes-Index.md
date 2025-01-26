@@ -12,6 +12,10 @@
 - [Documentation](AspectSizeV2.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-AspectSize-V2.json)
 
+## BatchAlphaComposite
+- [Documentation](BatchAlphaComposite.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Batch-Alpha-COMP-v1.json)
+
 ## BatchOffset
 - [Documentation](BatchOffset.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-BatchOffset.json)
@@ -63,6 +67,10 @@
 ## DatasetWordcloud
 - [Documentation](DatasetWordcloud.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Dataset-Wordcloud.json)
+
+## DeadPixelEffect
+- [Documentation](DeadPixelEffect.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-DEAD-PIXEL-EFFECT-v1.json)
 
 ## DinskyPlus
 - [Documentation](DinskyPlus.md)
@@ -151,6 +159,10 @@
 ## FractalGeneratorV3
 - [Documentation](FractalGeneratorV3.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Fractal-Gen-Cuda-V3.json)
+
+## GSL_Filter_V1
+- [Documentation](GSL_Filter_V1.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-GSL-Filters-v1.json)
 
 ## HalationBloom
 - [Documentation](HalationBloom.md)
@@ -410,4 +422,4 @@
 
 ## VideoTimecode
 - [Documentation](VideoTimecode.md)
-- [Example Workflow](https://github.com/MushroomFleet/D
+- [Example Workflow](#)

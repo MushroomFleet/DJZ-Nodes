@@ -802,4 +802,25 @@ try:
 except ImportError:
     print("Unable to import CathodeRayEffect. This node will not be available.")
 
+try:
+    from .GSL_Filter_V1 import GSL_Filter_V1
+    NODE_CLASS_MAPPINGS["GSL_Filter_V1"] = GSL_Filter_V1
+    NODE_DISPLAY_NAME_MAPPINGS["GSL_Filter_V1"] = "GSL Filter v1"
+except ImportError:
+    print("Unable to import GSL_Filter_V1. This node will not be available.")
+
+try:
+    from .BatchAlphaComposite import BatchAlphaComposite
+    NODE_CLASS_MAPPINGS["BatchAlphaComposite"] = BatchAlphaComposite
+    NODE_DISPLAY_NAME_MAPPINGS["BatchAlphaComposite"] = "Batch Alpha Composite"
+except ImportError:
+    print("Unable to import BatchAlphaComposite. This node will not be available.")
+
+try:
+    from .DeadPixelEffect import DeadPixelEffect
+    NODE_CLASS_MAPPINGS["DeadPixelEffect"] = DeadPixelEffect
+    NODE_DISPLAY_NAME_MAPPINGS["DeadPixelEffect"] = "Dead Pixel Effect"
+except ImportError:
+    print("Unable to import DeadPixelEffect. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
