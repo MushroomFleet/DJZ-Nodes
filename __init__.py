@@ -823,4 +823,33 @@ try:
 except ImportError:
     print("Unable to import DeadPixelEffect. This node will not be available.")
 
+try:
+    from .ScreensaverGeneratorV3 import ScreensaverGeneratorV3
+    NODE_CLASS_MAPPINGS["ScreensaverGeneratorV3"] = ScreensaverGeneratorV3
+    NODE_DISPLAY_NAME_MAPPINGS["ScreensaverGeneratorV3"] = "Screensaver Generator V3"
+except ImportError:
+    print("Unable to import ScreensaverGeneratorV3. This node will not be available.")
+
+try:
+    from .VideoPyramidV1 import VideoPyramidV1
+    NODE_CLASS_MAPPINGS["VideoPyramidV1"] = VideoPyramidV1
+    NODE_DISPLAY_NAME_MAPPINGS["VideoPyramidV1"] = "🎆 Video Pyramid Generator"
+except ImportError:
+    print("Unable to import VideoPyramidV1. This node will not be available.")
+
+try:
+    from .DepthBasedPixelization import DepthBasedPixelization
+    NODE_CLASS_MAPPINGS["DepthBasedPixelization"] = DepthBasedPixelization
+    NODE_DISPLAY_NAME_MAPPINGS["DepthBasedPixelization"] = "Depth-Based Pixelization"
+except ImportError:
+    print("Unable to import DepthBasedPixelization. This node will not be available.")
+
+try:
+    from .ThinkSeeker import ThinkSeeker
+    NODE_CLASS_MAPPINGS["ThinkSeeker"] = ThinkSeeker
+    NODE_DISPLAY_NAME_MAPPINGS["ThinkSeeker"] = "Think Tag Seeker"
+except ImportError:
+    print("Unable to import ThinkSeeker. This node will not be available.")
+
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

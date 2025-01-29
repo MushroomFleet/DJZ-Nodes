@@ -72,6 +72,10 @@
 - [Documentation](DeadPixelEffect.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-DEAD-PIXEL-EFFECT-v1.json)
 
+## DepthBasedPixelization
+- [Documentation](DepthBasedPixelization.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Depth-based-Pixelization.json)
+
 ## DinskyPlus
 - [Documentation](DinskyPlus.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Dinsky-Plus.json)
@@ -296,9 +300,17 @@
 - [Documentation](ScreensaverGeneratorV2.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Screensaver-Generator-V2.json)
 
+## ScreensaverGeneratorV3
+- [Documentation](ScreensaverGeneratorV3.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Screensaver-Generator-V2.json)
+
 ## SequentialNumberGenerator
 - [Documentation](SequentialNumberGenerator.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DjzDatamosh/DJZ-Nodes-Examples-Sequential-Selection.json)
+
+## ThinkSeeker
+- [Documentation](ThinkSeeker.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Think-Seeker-v1.json)
 
 ## StringChaos
 - [Documentation](StringChaos.md)
