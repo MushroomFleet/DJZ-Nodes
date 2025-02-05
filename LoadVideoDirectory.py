@@ -37,7 +37,6 @@ class LoadVideoDirectory:
             raise ValueError(f"Path does not exist: {path}")
             
         vl = self.VideoDirectoryLoader(path, pattern)
-        
         if mode == 'single_video':
             frames_tensor, filename = vl.get_video_frames_by_id(index, skip_frames, max_frames)
             if frames_tensor is None:
@@ -115,9 +114,13 @@ class LoadVideoDirectory:
             return (frames_tensor, os.path.basename(video_path))
 
         def get_next_video_frames(self, index, skip_frames, max_frames):
+            print("=========================================")
+            print(index)
+            print(max_frames)
+            print(self.video_paths)
             if index >= len(self.video_paths):
                 index = 0
-            return self.get_video_frames_by_id(index, max_frames)
+            return self.get_video_frames_by_id(index, skip_frames, max_frames)
 
 # This is required for ComfyUI to recognize and load the node
 NODE_CLASS_MAPPINGS = {
