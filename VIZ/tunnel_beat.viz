@@ -1,0 +1,69 @@
+import numpy as np
+import cv2
+
+def render(features, width, height, color_palette):
+    """
+    Renders a tunnel beat visualization with reactive glow effects.
+    
+    Args:
+        features (dict): Audio features including 'waveform', 'spectrum', 'bass', 'mids', 'highs'
+        width (int): Output image width
+        height (int): Output image height
+        color_palette (list): List of (R,G,B) tuples for colors
+        
+    Returns:
+        numpy.ndarray: RGB image of the visualization
+    """
+    image = np.zeros((height, width, 3), dtype=np.uint8)
+    center_x, center_y = width // 2, height // 2
+    
+    # Create tunnel effect modulated by audio
+    bass_intensity = features['bass'] * 2
+    mids_intensity = features['mids']
+    highs_intensity = features['highs']
+    
+    # Calculate number of rings based on bass intensity
+    num_rings = int(20 + bass_intensity * 10)
+    
+    # Create rings from outer to inner for proper layering
+    for radius in range(min(width, height) // 2, 0, -10):
+        # Modulate radius with bass
+        radius_mod = int(radius * (1 + bass_intensity * np.sin(radius * 0.1)))
+        
+        # Calculate ring properties based on audio
+        thickness = max(1, int(3 + highs_intensity * 5))
+        
+        # Color varies with radius and audio features
+        color_idx = int((radius / (min(width, height) // 2) + mids_intensity) * 
+                       len(color_palette)) % len(color_palette)
+        color = color_palette[color_idx]
+        
+        # Draw the main ring
+        cv2.circle(image, (center_x, center_y), radius_mod, color, thickness)
+        
+        # Add glow effect based on bass intensity
+        if bass_intensity > 0.6:
+            # Inner glow
+            glow_radius = radius_mod - thickness
+            if glow_radius > 0:
+                cv2.circle(image, (center_x, center_y), glow_radius, color, 1)
+            
+            # Outer glow
+            glow_radius = radius_mod + thickness
+            cv2.circle(image, (center_x, center_y), glow_radius, color, 1)
+    
+    # Add overall glow effect based on bass intensity
+    if bass_intensity > 0.6:
+        kernel_size = int(bass_intensity * 10) | 1  # Ensure odd number
+        cv2.GaussianBlur(image, (kernel_size, kernel_size), 
+                        bass_intensity * 3, dst=image)
+    
+    # Add radial motion blur effect based on high frequencies
+    if highs_intensity > 0.5:
+        angle = highs_intensity * 30
+        center = (width//2, height//2)
+        rotation_matrix = cv2.getRotationMatrix2D(center, angle, 1.0)
+        rotated = cv2.warpAffine(image, rotation_matrix, (width, height))
+        image = cv2.addWeighted(image, 0.7, rotated, 0.3, 0)
+    
+    return image

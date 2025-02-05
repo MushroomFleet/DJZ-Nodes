@@ -1,0 +1,59 @@
+{
+    "name": "Cassette Tape",
+    "description": "Emulates characteristics of analog cassette tape recording and playback including tape saturation and hiss",
+    
+    "compression_ratio": 2.0,
+    "compression_threshold": -12.0,
+    
+    "low_cut": 50.0,
+    "high_cut": 14000.0,
+    
+    "distortion_amount": 0.15,
+    
+    "noise_level": 0.07,
+    "noise_color": "white",
+    
+    "reverb_amount": 0.0,
+    "room_size": 0.0,
+    
+    "metadata": {
+        "category": "Analog",
+        "era": "1970s-1990s",
+        "quality": "Consumer Audio",
+        "variants": [
+            {
+                "name": "Type I (Normal)",
+                "low_cut": 50.0,
+                "high_cut": 12000.0,
+                "noise_level": 0.09,
+                "distortion": 0.18
+            },
+            {
+                "name": "Type II (Chrome)",
+                "low_cut": 50.0,
+                "high_cut": 14000.0,
+                "noise_level": 0.06,
+                "distortion": 0.15
+            },
+            {
+                "name": "Type IV (Metal)",
+                "low_cut": 50.0,
+                "high_cut": 15000.0,
+                "noise_level": 0.04,
+                "distortion": 0.12
+            }
+        ],
+        "characteristics": [
+            "tape hiss",
+            "wow and flutter",
+            "tape saturation",
+            "head bumps",
+            "azimuth errors"
+        ],
+        "technical_specs": {
+            "frequency_response": "50Hz-14kHz",
+            "dynamic_range": "50-60dB",
+            "wow_and_flutter": "0.1-0.2%"
+        }
+    }
+}

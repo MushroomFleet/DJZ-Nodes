@@ -1,0 +1,37 @@
+import numpy as np
+
+def render(features, width, height, color_palette):
+    """
+    Renders a spectrum analyzer visualization.
+    
+    Args:
+        features (dict): Audio features including 'waveform', 'spectrum', 'bass', 'mids', 'highs'
+        width (int): Output image width
+        height (int): Output image height
+        color_palette (list): List of (R,G,B) tuples for colors
+        
+    Returns:
+        numpy.ndarray: RGB image of the visualization
+    """
+    image = np.zeros((height, width, 3), dtype=np.uint8)
+    
+    spectrum = features['spectrum']
+    bar_width = max(1, width // len(spectrum))
+    
+    for i, amp in enumerate(spectrum):
+        if i * bar_width >= width:
+            break
+            
+        bar_height = int(amp * height)
+        bar_height = max(1, min(bar_height, height))  # Clamp height
+        color = color_palette[i % len(color_palette)]
+        
+        # Draw rectangle using numpy slicing
+        x_start = i * bar_width
+        x_end = min(x_start + bar_width, width)
+        y_start = height - bar_height
+        y_end = height
+        
+        image[y_start:y_end, x_start:x_end] = color
+        
+    return image

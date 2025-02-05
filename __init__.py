@@ -325,5 +325,531 @@ try:
 except ImportError:
     print("Unable to import PromptInject. This node will not be available.")
 
+try:
+    from .VHS_Effect_v1 import VHS_Effect_v1
+    NODE_CLASS_MAPPINGS["VHS_Effect_v1"] = VHS_Effect_v1
+    NODE_DISPLAY_NAME_MAPPINGS["VHS_Effect_v1"] = "VHS Effect v1"
+except ImportError:
+    print("Unable to import VHS_Effect_v1. This node will not be available.")
+
+try:
+    from .VHS_Effect_v2 import VHS_Effect_v2
+    NODE_CLASS_MAPPINGS["VHS_Effect_v2"] = VHS_Effect_v2
+    NODE_DISPLAY_NAME_MAPPINGS["VHS_Effect_v2"] = "VHS Effect v2"
+except ImportError:
+    print("Unable to import VHS_Effect_v2. This node will not be available.")
+
+try:
+    from .AnamorphicEffect import AnamorphicEffect
+    NODE_CLASS_MAPPINGS["AnamorphicEffect"] = AnamorphicEffect
+    NODE_DISPLAY_NAME_MAPPINGS["AnamorphicEffect"] = "Anamorphic Lens Effect"
+except ImportError:
+    print("Unable to import AnamorphicEffect. This node will not be available.")
+
+try:
+    from .Technicolor3Strip_v1 import Technicolor3Strip_v1
+    NODE_CLASS_MAPPINGS["Technicolor3Strip_v1"] = Technicolor3Strip_v1
+    NODE_DISPLAY_NAME_MAPPINGS["Technicolor3Strip_v1"] = "Technicolor 3-Strip v1"
+except ImportError:
+    print("Unable to import Technicolor3Strip_v1. This node will not be available.")
+
+try:
+    from .Technicolor3Strip_v2 import Technicolor3Strip_v2
+    NODE_CLASS_MAPPINGS["Technicolor3Strip_v2"] = Technicolor3Strip_v2
+    NODE_DISPLAY_NAME_MAPPINGS["Technicolor3Strip_v2"] = "Technicolor 3-Strip v2"
+except ImportError:
+    print("Unable to import Technicolor3Strip_v2. This node will not be available.")
+
+try:
+    from .PanavisionLensV1 import PanavisionLensV1
+    NODE_CLASS_MAPPINGS["PanavisionLensV1"] = PanavisionLensV1
+    NODE_DISPLAY_NAME_MAPPINGS["PanavisionLensV1"] = "Panavision Lens Effect V1"
+except ImportError:
+    print("Unable to import PanavisionLensV1. This node will not be available.")
+
+try:
+    from .PanavisionLensV2 import PanavisionLensV2
+    NODE_CLASS_MAPPINGS["PanavisionLensV2"] = PanavisionLensV2
+    NODE_DISPLAY_NAME_MAPPINGS["PanavisionLensV2"] = "Panavision Lens Effect V2"
+except ImportError:
+    print("Unable to import PanavisionLensV2. This node will not be available.")
+
+try:
+    from .KinescopeEffectV1 import KinescopeEffectV1
+    NODE_CLASS_MAPPINGS["KinescopeEffectV1"] = KinescopeEffectV1
+    NODE_DISPLAY_NAME_MAPPINGS["KinescopeEffectV1"] = "Kinescope Effect V1"
+except ImportError:
+    print("Unable to import KinescopeEffectV1. This node will not be available.")
+
+try:
+    from .VideoInterlaced import VideoInterlaced
+    NODE_CLASS_MAPPINGS["VideoInterlaced"] = VideoInterlaced
+    NODE_DISPLAY_NAME_MAPPINGS["VideoInterlaced"] = "Video Interlaced Upscaler"
+except ImportError:
+    print("Unable to import VideoInterlaced. This node will not be available.")
+
+try:
+    from .StringChaos import StringChaos
+    NODE_CLASS_MAPPINGS["StringChaos"] = StringChaos
+    NODE_DISPLAY_NAME_MAPPINGS["StringChaos"] = "String Chaos Modes"
+except ImportError:
+    print("Unable to import StringChaos. This node will not be available.")
+
+try:
+    from .CombineAudio import CombineAudio
+    NODE_CLASS_MAPPINGS["CombineAudio"] = CombineAudio
+    NODE_DISPLAY_NAME_MAPPINGS["CombineAudio"] = "Combine Audio Tracks"
+except ImportError:
+    print("Unable to import CombineAudio. This node will not be available.")
+
+try:
+    from .BlackBarsV1 import BlackBarsV1
+    NODE_CLASS_MAPPINGS["BlackBarsV1"] = BlackBarsV1
+    NODE_DISPLAY_NAME_MAPPINGS["BlackBarsV1"] = "Black Bars V1"
+except ImportError:
+    print("Unable to import BlackBarsV1. This node will not be available.")
+
+try:
+    from .BlackBarsV2 import BlackBarsV2
+    NODE_CLASS_MAPPINGS["BlackBarsV2"] = BlackBarsV2
+    NODE_DISPLAY_NAME_MAPPINGS["BlackBarsV2"] = "Black Bars V2"
+except ImportError:
+    print("Unable to import BlackBarsV2. This node will not be available.")
+
+try:
+    from .VideoInterlacedV2 import VideoInterlacedV2
+    NODE_CLASS_MAPPINGS["VideoInterlacedV2"] = VideoInterlacedV2
+    NODE_DISPLAY_NAME_MAPPINGS["VideoInterlacedV2"] = "Video Interlaced Upscaler V2"
+except ImportError:
+    print("Unable to import VideoInterlacedV2. This node will not be available.")
+
+try:
+    from .VHS_Effect_V3 import VHS_Effect_V3
+    NODE_CLASS_MAPPINGS["VHS_Effect_V3"] = VHS_Effect_V3
+    NODE_DISPLAY_NAME_MAPPINGS["VHS_Effect_V3"] = "VHS Effect V3"
+except ImportError:
+    print("Unable to import VHS_Effect_V3. This node will not be available.")
+
+try:
+    from .RetroVideoText import RetroVideoText
+    NODE_CLASS_MAPPINGS["RetroVideoText"] = RetroVideoText
+    NODE_DISPLAY_NAME_MAPPINGS["RetroVideoText"] = "Retro Video Text"
+except ImportError:
+    print("Unable to import RetroVideoText. This node will not be available.")
+
+try:
+    from .NonSquarePixelsV1 import NonSquarePixelsV1
+    NODE_CLASS_MAPPINGS["NonSquarePixelsV1"] = NonSquarePixelsV1
+    NODE_DISPLAY_NAME_MAPPINGS["NonSquarePixelsV1"] = "Non-Square Pixels V1"
+except ImportError:
+    print("Unable to import NonSquarePixelsV1. This node will not be available.")
+
+try:
+    from .BlackBarsV3 import BlackBarsV3
+    NODE_CLASS_MAPPINGS["BlackBarsV3"] = BlackBarsV3
+    NODE_DISPLAY_NAME_MAPPINGS["BlackBarsV3"] = "Black Bars V3"
+except ImportError:
+    print("Unable to import BlackBarsV3. This node will not be available.")
+
+try:
+    from .VideoInterlaceGANV3 import VideoInterlaceGANV3
+    NODE_CLASS_MAPPINGS["VideoInterlaceGANV3"] = VideoInterlaceGANV3
+    NODE_DISPLAY_NAME_MAPPINGS["VideoInterlaceGANV3"] = "GAN Video Interlaced Upscaler V3"
+except ImportError:
+    print("Unable to import VideoInterlaceGANV3. This node will not be available.")
+
+
+try:
+    from .VideoInterlaceFastV4 import VideoInterlaceFastV4
+    NODE_CLASS_MAPPINGS["VideoInterlaceFastV4"] = VideoInterlaceFastV4
+    NODE_DISPLAY_NAME_MAPPINGS["VideoInterlaceFastV4"] = "Fast Video Interlaced Upscaler V4"
+except ImportError:
+    print("Unable to import VideoInterlaceFastV4. This node will not be available.")
+
+try:
+    from .FilmGrainEffect import FilmGrainEffect
+    NODE_CLASS_MAPPINGS["FilmGrainEffect"] = FilmGrainEffect
+    NODE_DISPLAY_NAME_MAPPINGS["FilmGrainEffect"] = "Film Grain Effect (video)"
+except ImportError:
+    print("Unable to import FilmGrainEffect. This node will not be available.")
+
+try:
+    from .FilmGrainEffect_v2 import FilmGrainEffect_v2
+    NODE_CLASS_MAPPINGS["FilmGrainEffect_v2"] = FilmGrainEffect_v2
+    NODE_DISPLAY_NAME_MAPPINGS["FilmGrainEffect_v2"] = "Film Grain Effect V2 (video)"
+except ImportError:
+    print("Unable to import FilmGrainEffect_v2. This node will not be available.")
+
+try:
+    from .FishEyeEffect import FishEyeEffect
+    NODE_CLASS_MAPPINGS["FishEyeEffect"] = FishEyeEffect
+    NODE_DISPLAY_NAME_MAPPINGS["FishEyeEffect"] = "Fish Eye Effect"
+except ImportError:
+    print("Unable to import FishEyeEffect. This node will not be available.")
+
+try:
+    from .ClassicFilmEffect import ClassicFilmEffect
+    NODE_CLASS_MAPPINGS["ClassicFilmEffect"] = ClassicFilmEffect
+    NODE_DISPLAY_NAME_MAPPINGS["ClassicFilmEffect"] = "Classic Film Effect"
+except ImportError:
+    print("Unable to import ClassicFilmEffect. This node will not be available.")
+
+try:
+    from .VideoBitClamp import VideoBitClamp
+    NODE_CLASS_MAPPINGS["VideoBitClamp"] = VideoBitClamp
+    NODE_DISPLAY_NAME_MAPPINGS["VideoBitClamp"] = "Video Bit Clamp"
+except ImportError:
+    print("Unable to import VideoBitClamp. This node will not be available.")
+
+try:
+    from .ThreeToneStyler import ThreeToneStyler
+    NODE_CLASS_MAPPINGS["ThreeToneStyler"] = ThreeToneStyler
+    NODE_DISPLAY_NAME_MAPPINGS["ThreeToneStyler"] = "Three Tone Styler"
+except ImportError:
+    print("Unable to import ThreeToneStyler. This node will not be available.")
+
+try:
+    from .PromptDupeRemover import PromptDupeRemover
+    NODE_CLASS_MAPPINGS["PromptDupeRemover"] = PromptDupeRemover
+    NODE_DISPLAY_NAME_MAPPINGS["PromptDupeRemover"] = "Prompt Dupe-Remover"
+except ImportError:
+    print("Unable to import PromptDupeRemover. This node will not be available.")
+
+try:
+    from .ZenkaiPromptV3 import ZenkaiPromptV3
+    NODE_CLASS_MAPPINGS["ZenkaiPromptV3"] = ZenkaiPromptV3
+    NODE_DISPLAY_NAME_MAPPINGS["ZenkaiPromptV3"] = "Zenkai Prompt V3"
+except ImportError:
+    print("Unable to import ZenkaiPromptV3. This node will not be available.")
+
+try:
+    from .DjzDatamoshV8 import DjzDatamoshV8
+    NODE_CLASS_MAPPINGS["DjzDatamoshV8"] = DjzDatamoshV8
+    NODE_DISPLAY_NAME_MAPPINGS["DjzDatamoshV8"] = "Djz Pixel Sort V8 Advanced"
+except ImportError:
+    print("Unable to import DjzDatamoshV8. This node will not be available.")
+
+try:
+    from .ImageInterleavedUpscaler import ImageInterleavedUpscaler
+    NODE_CLASS_MAPPINGS["ImageInterleavedUpscaler"] = ImageInterleavedUpscaler
+    NODE_DISPLAY_NAME_MAPPINGS["ImageInterleavedUpscaler"] = "Image Interleaved Upscaler (720p to 1080i)"
+except ImportError:
+    print("Unable to import ImageInterleavedUpscaler. This node will not be available.")
+
+try:
+    from .WaveletDecompose import WaveletDecompose
+    NODE_CLASS_MAPPINGS["WaveletDecompose"] = WaveletDecompose
+    NODE_DISPLAY_NAME_MAPPINGS["WaveletDecompose"] = "Wavelet Decomposition"
+except ImportError:
+    print("Unable to import WaveletDecompose. This node will not be available.")
+
+try:
+    from .WaveletCompose import WaveletCompose
+    NODE_CLASS_MAPPINGS["WaveletCompose"] = WaveletCompose
+    NODE_DISPLAY_NAME_MAPPINGS["WaveletCompose"] = "Wavelet Composition"
+except ImportError:
+    print("Unable to import WaveletCompose. This node will not be available.")
+
+try:
+    from .JitterEffect import JitterEffect
+    NODE_CLASS_MAPPINGS["JitterEffect"] = JitterEffect
+    NODE_DISPLAY_NAME_MAPPINGS["JitterEffect"] = "Jitter Effect"
+except ImportError:
+    print("Unable to import JitterEffect. This node will not be available.")
+
+try:
+    from .FishEyeV2 import FishEyeV2
+    NODE_CLASS_MAPPINGS["FishEyeV2"] = FishEyeV2
+    NODE_DISPLAY_NAME_MAPPINGS["FishEyeV2"] = "Fish Eye Effects V2"
+except ImportError:
+    print("Unable to import FishEyeV2. This node will not be available.")
+
+try:
+    from .PromptDupeRemoverV2 import PromptDupeRemoverV2
+    NODE_CLASS_MAPPINGS["PromptDupeRemoverV2"] = PromptDupeRemoverV2
+    NODE_DISPLAY_NAME_MAPPINGS["PromptDupeRemoverV2"] = "Prompt Dupe Remover V2"
+except ImportError:
+    print("Unable to import PromptDupeRemoverV2. This node will not be available.")
+
+try:
+    from .ImageInterleavedUpscalerV2 import ImageInterleavedUpscalerV2
+    NODE_CLASS_MAPPINGS["ImageInterleavedUpscalerV2"] = ImageInterleavedUpscalerV2
+    NODE_DISPLAY_NAME_MAPPINGS["ImageInterleavedUpscalerV2"] = "Image Interleaved Upscaler V2"
+except ImportError:
+    print("Unable to import ImageInterleavedUpscalerV2. This node will not be available.")
+
+try:
+    from .NoiseFactory import NoiseFactory
+    NODE_CLASS_MAPPINGS["NoiseFactory"] = NoiseFactory
+    NODE_DISPLAY_NAME_MAPPINGS["NoiseFactory"] = "Noise Factory"
+except ImportError:
+    print("Unable to import NoiseFactory. This node will not be available.")
+
+try:
+    from .NoiseFactoryV2 import NoiseFactoryV2
+    NODE_CLASS_MAPPINGS["NoiseFactoryV2"] = NoiseFactoryV2
+    NODE_DISPLAY_NAME_MAPPINGS["NoiseFactoryV2"] = "Noise Factory V2"
+except ImportError:
+    print("Unable to import NoiseFactoryV2. This node will not be available.")
+
+try:
+    from .NoiseFactoryV3 import NoiseFactoryV3
+    NODE_CLASS_MAPPINGS["NoiseFactoryV3"] = NoiseFactoryV3
+    NODE_DISPLAY_NAME_MAPPINGS["NoiseFactoryV3"] = "Noise Factory V3"
+except ImportError:
+    print("Unable to import NoiseFactoryV3. This node will not be available.")
+
+try:
+    from .WinampViz import WinampViz
+    NODE_CLASS_MAPPINGS["WinampViz"] = WinampViz
+    NODE_DISPLAY_NAME_MAPPINGS["WinampViz"] = "🦙 Winamp Viz"
+except ImportError:
+    print("Unable to import WinampViz. This node will not be available.")
+
+try:
+    from .WinampVizV2 import WinampVizV2
+    NODE_CLASS_MAPPINGS["WinampVizV2"] = WinampVizV2
+    NODE_DISPLAY_NAME_MAPPINGS["WinampVizV2"] = "🦙 Winamp Viz V2"
+except ImportError:
+    print("Unable to import WinampVizV2. This node will not be available.")
+
+try:
+    from .VideoNoiseFactory import VideoNoiseFactory
+    NODE_CLASS_MAPPINGS["VideoNoiseFactory"] = VideoNoiseFactory
+    NODE_DISPLAY_NAME_MAPPINGS["VideoNoiseFactory"] = "Video Noise Factory"
+except ImportError:
+    print("Unable to import VideoNoiseFactory. This node will not be available.")
+
+try:
+    from .ZenkaiPromptV4 import ZenkaiPromptV4
+    NODE_CLASS_MAPPINGS["ZenkaiPromptV4"] = ZenkaiPromptV4
+    NODE_DISPLAY_NAME_MAPPINGS["ZenkaiPromptV4"] = "Zenkai Prompt V4"
+except ImportError:
+    print("Unable to import ZenkaiPromptV4. This node will not be available.")
+
+try:
+    from .VideoTimecode import VideoTimecode
+    NODE_CLASS_MAPPINGS["VideoTimecode"] = VideoTimecode
+    NODE_DISPLAY_NAME_MAPPINGS["VideoTimecode"] = "Video Timecode"
+except ImportError:
+    print("Unable to import VideoTimecode. This node will not be available.")
+
+try:
+    from .UncleanSpeech import UncleanSpeech
+    NODE_CLASS_MAPPINGS["UncleanSpeech"] = UncleanSpeech
+    NODE_DISPLAY_NAME_MAPPINGS["UncleanSpeech"] = "Unclean Speech"
+except ImportError:
+    print("Unable to import UncleanSpeech. This node will not be available.")
+
+try:
+    from .LoadVideoDirectoryV2 import LoadVideoDirectoryV2
+    NODE_CLASS_MAPPINGS["LoadVideoDirectoryV2"] = LoadVideoDirectoryV2
+    NODE_DISPLAY_NAME_MAPPINGS["LoadVideoDirectoryV2"] = "Load Video Directory V2"
+except ImportError:
+    print("Unable to import LoadVideoDirectoryV2. This node will not be available.")
+
+try:
+    from .VGA_Effect_v1 import VGA_Effect_v1
+    NODE_CLASS_MAPPINGS["VGA_Effect_v1"] = VGA_Effect_v1
+    NODE_DISPLAY_NAME_MAPPINGS["VGA_Effect_v1"] = "VGA Effect v1"
+except ImportError:
+    print("Unable to import VGA_Effect_v1. This node will not be available.")
+
+try:
+    from .VideoChromaticAberration import VideoChromaticAberration
+    NODE_CLASS_MAPPINGS["VideoChromaticAberration"] = VideoChromaticAberration
+    NODE_DISPLAY_NAME_MAPPINGS["VideoChromaticAberration"] = "Video Chromatic Aberration"
+except ImportError:
+    print("Unable to import VideoChromaticAberration. This node will not be available.")
+
+try:
+    from .CRT_Effect_v1 import CRT_Effect_v1
+    NODE_CLASS_MAPPINGS["CRT_Effect_v1"] = CRT_Effect_v1
+    NODE_DISPLAY_NAME_MAPPINGS["CRT_Effect_v1"] = "CRT Effect v1"
+except ImportError:
+    print("Unable to import CRT_Effect_v1. This node will not be available.")
+
+try:
+    from .MotionBlending import MotionBlending
+    NODE_CLASS_MAPPINGS["MotionBlending"] = MotionBlending
+    NODE_DISPLAY_NAME_MAPPINGS["MotionBlending"] = "Motion Blending"
+except ImportError:
+    print("Unable to import MotionBlending. This node will not be available.")
+
+try:
+    from .HalationBloom import HalationBloom
+    NODE_CLASS_MAPPINGS["HalationBloom"] = HalationBloom
+    NODE_DISPLAY_NAME_MAPPINGS["HalationBloom"] = "Halation Bloom"
+except ImportError:
+    print("Unable to import HalationBloom. This node will not be available.")
+
+try:
+    from .VideoFilmDamage import VideoFilmDamage
+    NODE_CLASS_MAPPINGS["VideoFilmDamage"] = VideoFilmDamage
+    NODE_DISPLAY_NAME_MAPPINGS["VideoFilmDamage"] = "Video Film Damage"
+except ImportError:
+    print("Unable to import VideoFilmDamage. This node will not be available.")
+
+try:
+    from .FilmGateWeave import FilmGateWeave
+    NODE_CLASS_MAPPINGS["FilmGateWeave"] = FilmGateWeave
+    NODE_DISPLAY_NAME_MAPPINGS["FilmGateWeave"] = "Film Gate Weave"
+except ImportError:
+    print("Unable to import FilmGateWeave. This node will not be available.")
+
+try:
+    from .VideoVignettingV1 import VideoVignettingV1
+    NODE_CLASS_MAPPINGS["VideoVignettingV1"] = VideoVignettingV1
+    NODE_DISPLAY_NAME_MAPPINGS["VideoVignettingV1"] = "Video VignettingV1"
+except ImportError:
+    print("Unable to import VideoVignettingV1. This node will not be available.")
+
+try:
+    from .VideoTemperatureV1 import VideoTemperatureV1
+    NODE_CLASS_MAPPINGS["VideoTemperatureV1"] = VideoTemperatureV1
+    NODE_DISPLAY_NAME_MAPPINGS["VideoTemperatureV1"] = "Video Temperature V1"
+except ImportError:
+    print("Unable to import VideoTemperatureV1. This node will not be available.")
+
+try:
+    from .KeyframeBasedUpscalerV1 import KeyframeBasedUpscalerV1
+    NODE_CLASS_MAPPINGS["KeyframeBasedUpscalerV1"] = KeyframeBasedUpscalerV1
+    NODE_DISPLAY_NAME_MAPPINGS["KeyframeBasedUpscalerV1"] = "Keyframe Based Upscaler V1"
+except ImportError:
+    print("Unable to import KeyframeBasedUpscalerV1. This node will not be available.")
+
+try:
+    from .VideoRingPainter import VideoRingPainter
+    NODE_CLASS_MAPPINGS["VideoRingPainter"] = VideoRingPainter
+    NODE_DISPLAY_NAME_MAPPINGS["VideoRingPainter"] = "Video Ring Painter"
+except ImportError:
+    print("Unable to import VideoRingPainter. This node will not be available.")
+
+try:
+    from .LensLeaks import LensLeaks
+    NODE_CLASS_MAPPINGS["LensLeaks"] = LensLeaks
+    NODE_DISPLAY_NAME_MAPPINGS["LensLeaks"] = "Lens Leaks"
+except ImportError:
+    print("Unable to import LensLeaks. This node will not be available.")
+
+try:
+    from .ScreensaverGenerator import ScreensaverGenerator
+    NODE_CLASS_MAPPINGS["ScreensaverGenerator"] = ScreensaverGenerator
+    NODE_DISPLAY_NAME_MAPPINGS["ScreensaverGenerator"] = "Screensaver Generator"
+except ImportError:
+    print("Unable to import ScreensaverGenerator. This node will not be available.")
+
+try:
+    from .DjzDatabendingV1 import DjzDatabendingV1
+    NODE_CLASS_MAPPINGS["DjzDatabendingV1"] = DjzDatabendingV1
+    NODE_DISPLAY_NAME_MAPPINGS["DjzDatabendingV1"] = "Djz Databending V1"
+except ImportError:
+    print("Unable to import DjzDatabendingV1. This node will not be available.")
+
+try:
+    from .VideoTrails import VideoTrails
+    NODE_CLASS_MAPPINGS["VideoTrails"] = VideoTrails
+    NODE_DISPLAY_NAME_MAPPINGS["VideoTrails"] = "Video Trails"
+except ImportError:
+    print("Unable to import VideoTrails. This node will not be available.")
+
+try:
+    from .VideoTrailsV2 import VideoTrailsV2
+    NODE_CLASS_MAPPINGS["VideoTrailsV2"] = VideoTrailsV2
+    NODE_DISPLAY_NAME_MAPPINGS["VideoTrailsV2"] = "Video Trails V2"
+except ImportError:
+    print("Unable to import VideoTrailsV2. This node will not be available.")
+
+try:
+    from .ScreensaverGeneratorV2 import ScreensaverGeneratorV2
+    NODE_CLASS_MAPPINGS["ScreensaverGeneratorV2"] = ScreensaverGeneratorV2
+    NODE_DISPLAY_NAME_MAPPINGS["ScreensaverGeneratorV2"] = "Screensaver Generator V2"
+except ImportError:
+    print("Unable to import ScreensaverGeneratorV2. This node will not be available.")
+
+try:
+    from .VideoMazeV1 import VideoMazeV1
+    NODE_CLASS_MAPPINGS["VideoMazeV1"] = VideoMazeV1
+    NODE_DISPLAY_NAME_MAPPINGS["VideoMazeV1"] = "Video Maze V1"
+except ImportError:
+    print("Unable to import VideoMazeV1. This node will not be available.")
+
+try:
+    from .VideoMazeV2 import VideoMazeV2
+    NODE_CLASS_MAPPINGS["VideoMazeV2"] = VideoMazeV2
+    NODE_DISPLAY_NAME_MAPPINGS["VideoMazeV2"] = "Video Maze V2"
+except ImportError:
+    print("Unable to import VideoMazeV2. This node will not be available.")
+
+try:
+    from .VideoCubeV1 import VideoCubeV1
+    NODE_CLASS_MAPPINGS["VideoCubeV1"] = VideoCubeV1
+    NODE_DISPLAY_NAME_MAPPINGS["VideoCubeV1"] = "Video Cube V1"
+except ImportError:
+    print("Unable to import VideoCubeV1. This node will not be available.")
+
+try:
+    from .VideoCorridorV1 import VideoCorridorV1
+    NODE_CLASS_MAPPINGS["VideoCorridorV1"] = VideoCorridorV1
+    NODE_DISPLAY_NAME_MAPPINGS["VideoCorridorV1"] = "Video Corridor V1"
+except ImportError:
+    print("Unable to import VideoCorridorV1. This node will not be available.")
+
+try:
+    from .CathodeRayEffect import CathodeRayEffect
+    NODE_CLASS_MAPPINGS["CathodeRayEffect"] = CathodeRayEffect
+    NODE_DISPLAY_NAME_MAPPINGS["CathodeRayEffect"] = "Cathode Ray Effect"
+except ImportError:
+    print("Unable to import CathodeRayEffect. This node will not be available.")
+
+try:
+    from .GSL_Filter_V1 import GSL_Filter_V1
+    NODE_CLASS_MAPPINGS["GSL_Filter_V1"] = GSL_Filter_V1
+    NODE_DISPLAY_NAME_MAPPINGS["GSL_Filter_V1"] = "GSL Filter v1"
+except ImportError:
+    print("Unable to import GSL_Filter_V1. This node will not be available.")
+
+try:
+    from .BatchAlphaComposite import BatchAlphaComposite
+    NODE_CLASS_MAPPINGS["BatchAlphaComposite"] = BatchAlphaComposite
+    NODE_DISPLAY_NAME_MAPPINGS["BatchAlphaComposite"] = "Batch Alpha Composite"
+except ImportError:
+    print("Unable to import BatchAlphaComposite. This node will not be available.")
+
+try:
+    from .DeadPixelEffect import DeadPixelEffect
+    NODE_CLASS_MAPPINGS["DeadPixelEffect"] = DeadPixelEffect
+    NODE_DISPLAY_NAME_MAPPINGS["DeadPixelEffect"] = "Dead Pixel Effect"
+except ImportError:
+    print("Unable to import DeadPixelEffect. This node will not be available.")
+
+try:
+    from .ScreensaverGeneratorV3 import ScreensaverGeneratorV3
+    NODE_CLASS_MAPPINGS["ScreensaverGeneratorV3"] = ScreensaverGeneratorV3
+    NODE_DISPLAY_NAME_MAPPINGS["ScreensaverGeneratorV3"] = "Screensaver Generator V3"
+except ImportError:
+    print("Unable to import ScreensaverGeneratorV3. This node will not be available.")
+
+try:
+    from .VideoPyramidV1 import VideoPyramidV1
+    NODE_CLASS_MAPPINGS["VideoPyramidV1"] = VideoPyramidV1
+    NODE_DISPLAY_NAME_MAPPINGS["VideoPyramidV1"] = "🎆 Video Pyramid Generator"
+except ImportError:
+    print("Unable to import VideoPyramidV1. This node will not be available.")
+
+try:
+    from .DepthBasedPixelization import DepthBasedPixelization
+    NODE_CLASS_MAPPINGS["DepthBasedPixelization"] = DepthBasedPixelization
+    NODE_DISPLAY_NAME_MAPPINGS["DepthBasedPixelization"] = "Depth-Based Pixelization"
+except ImportError:
+    print("Unable to import DepthBasedPixelization. This node will not be available.")
+
+try:
+    from .ThinkSeeker import ThinkSeeker
+    NODE_CLASS_MAPPINGS["ThinkSeeker"] = ThinkSeeker
+    NODE_DISPLAY_NAME_MAPPINGS["ThinkSeeker"] = "Think Tag Seeker"
+except ImportError:
+    print("Unable to import ThinkSeeker. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

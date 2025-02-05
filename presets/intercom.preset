@@ -1,0 +1,25 @@
+{
+    "name": "Intercom System",
+    "description": "Emulates typical intercom and public address system characteristics with heavy bandwidth limiting and system noise",
+    
+    "compression_ratio": 8.0,
+    "compression_threshold": -12.0,
+    
+    "low_cut": 300.0,
+    "high_cut": 3400.0,
+    
+    "distortion_amount": 0.25,
+    
+    "noise_level": 0.08,
+    "noise_color": "brown",
+    
+    "reverb_amount": 0.3,
+    "room_size": 0.6,
+    
+    "metadata": {
+        "category": "Communication",
+        "era": "Modern",
+        "quality": "Low-Fi",
+        "variants": ["PA System", "Security Intercom", "Building Intercom"]
+    }
+}

@@ -1,0 +1,84 @@
+import numpy as np
+import cv2
+
+def render(features, width, height, color_palette, state=None):
+    """
+    Renders a circular arrangement of dots that react to frequency bands.
+    Each dot represents a frequency band and pulses with its intensity.
+    
+    Args:
+        features (dict): Audio features
+        width (int): Output image width
+        height (int): Output image height
+        color_palette (list): List of (R,G,B) tuples for colors
+        state (dict, optional): Previous frame state
+        
+    Returns:
+        numpy.ndarray: RGB image of the visualization
+    """
+    # Create black background
+    image = np.zeros((height, width, 3), dtype=np.uint8)
+    center = (width // 2, height // 2)
+    
+    # Get spectrum data
+    spectrum = features['spectrum']
+    num_dots = min(32, len(spectrum))  # Use up to 32 frequency bands
+    base_radius = min(width, height) * 0.35  # Base circle radius
+    
+    # Calculate global intensity for additional effects
+    intensity = (features['bass'] + features['mids'] + features['highs']) / 3
+    
+    # Draw dots in a circle
+    for i in range(num_dots):
+        # Calculate dot position on the circle
+        angle = (i / num_dots) * 2 * np.pi
+        
+        # Get frequency amplitude for this dot
+        amp = spectrum[i]
+        
+        # Calculate dot size based on amplitude
+        dot_size = int(max(3, 15 * amp))
+        
+        # Calculate dot position with some "bounce"
+        radius = base_radius * (1 + amp * 0.3)  # Dots move outward with amplitude
+        x = int(center[0] + radius * np.cos(angle))
+        y = int(center[1] + radius * np.sin(angle))
+        
+        # Select color based on frequency band and intensity
+        color_idx = int((i / num_dots) * len(color_palette))
+        color = color_palette[color_idx % len(color_palette)]
+        
+        # Draw main dot
+        cv2.circle(image, (x, y), dot_size, color, -1)
+        
+        # Add glow effect
+        glow = np.zeros_like(image)
+        cv2.circle(glow, (x, y), dot_size * 2, color, -1)
+        cv2.GaussianBlur(glow, (15, 15), 5, dst=glow)
+        
+        # Blend glow with main image
+        image = cv2.addWeighted(image, 1, glow, 0.3 * amp, 0)
+        
+        # Draw connection lines between dots when audio intensity is high
+        if intensity > 0.6:
+            next_i = (i + 1) % num_dots
+            next_angle = (next_i / num_dots) * 2 * np.pi
+            next_radius = base_radius * (1 + spectrum[next_i] * 0.3)
+            next_x = int(center[0] + next_radius * np.cos(next_angle))
+            next_y = int(center[1] + next_radius * np.sin(next_angle))
+            
+            # Draw line with alpha based on intensity
+            line_color = tuple(int(c * intensity) for c in color)
+            cv2.line(image, (x, y), (next_x, next_y), line_color, 1)
+    
+    # Add central circle that pulses with bass
+    bass_radius = int(20 * (1 + features['bass']))
+    cv2.circle(image, center, bass_radius, color_palette[0], -1)
+    
+    # Add glow to central circle
+    center_glow = np.zeros_like(image)
+    cv2.circle(center_glow, center, bass_radius * 2, color_palette[0], -1)
+    cv2.GaussianBlur(center_glow, (21, 21), 7, dst=center_glow)
+    image = cv2.addWeighted(image, 1, center_glow, 0.5 * features['bass'], 0)
+    
+    return image

@@ -1,0 +1,126 @@
+import numpy as np
+import cv2
+
+def mandelbrot(h, w, max_iter, zoom, center, audio_mod):
+    """Generate Mandelbrot set with audio-reactive modifications"""
+    y, x = np.ogrid[-1.4:1.4:h*1j, -2:0.8:w*1j]
+    c = x + y*1j
+    
+    # Apply zoom and center offset
+    c = c / zoom + complex(*center)
+    
+    # Add audio-reactive distortion
+    c += audio_mod * np.exp(1j * np.angle(c))
+    
+    z = c
+    divtime = max_iter + np.zeros(z.shape, dtype=int)
+    
+    for i in range(max_iter):
+        z = z**2 + c
+        diverge = z*np.conj(z) > 2**2
+        div_now = diverge & (divtime == max_iter)
+        divtime[div_now] = i
+        z[diverge] = 2
+    
+    return divtime
+
+def render(features, width, height, color_palette, state=None):
+    """
+    Renders an audio-reactive fractal visualization based on the Mandelbrot set.
+    The fractal pattern morphs and pulses with the audio.
+    
+    Args:
+        features (dict): Audio features
+        width (int): Output image width
+        height (int): Output image height
+        color_palette (list): List of (R,G,B) tuples for colors
+        state (dict, optional): Previous frame state
+        
+    Returns:
+        tuple: (numpy.ndarray, dict) - RGB image and updated state
+    """
+    # Initialize or get state
+    if state is None:
+        state = {
+            'zoom': 1.0,
+            'center': (-0.5, 0),
+            'rotation': 0
+        }
+    
+    # Calculate audio reactivity
+    intensity = (features['bass'] + features['mids'] + features['highs']) / 3
+    bass_mod = features['bass'] * 0.3
+    mids_mod = features['mids'] * 0.2
+    highs_mod = features['highs'] * 0.1
+    
+    # Update state
+    # Zoom varies with overall intensity
+    target_zoom = 1.0 + intensity * 2
+    state['zoom'] += (target_zoom - state['zoom']) * 0.1
+    
+    # Center position affected by mids
+    center_x = -0.5 + np.sin(state['rotation']) * mids_mod
+    center_y = np.cos(state['rotation']) * mids_mod
+    state['center'] = (center_x, center_y)
+    
+    # Rotation speed affected by bass
+    state['rotation'] += bass_mod * 0.1
+    
+    # Calculate audio modulation for fractal distortion
+    audio_mod = complex(bass_mod, highs_mod)
+    
+    # Generate fractal
+    max_iter = 100
+    fractal = mandelbrot(height, width, max_iter, state['zoom'], state['center'], audio_mod)
+    
+    # Create image array
+    image = np.zeros((height, width, 3), dtype=np.uint8)
+    
+    # Color mapping
+    for i in range(max_iter):
+        mask = fractal == i
+        if not np.any(mask):
+            continue
+            
+        # Calculate color index based on iteration and audio
+        color_idx = int((i / max_iter + intensity) * len(color_palette))
+        color = color_palette[color_idx % len(color_palette)]
+        
+        # Scale color by iteration count and audio intensity
+        factor = (i / max_iter) * (1 + intensity)
+        color = tuple(int(c * factor) for c in color)
+        
+        # Apply color to mask
+        image[mask] = color
+    
+    # Add glow effect
+    glow = cv2.GaussianBlur(image, (15, 15), 5)
+    image = cv2.addWeighted(image, 1, glow, 0.5 * intensity, 0)
+    
+    # Add audio-reactive highlights
+    if intensity > 0.7:
+        highlight = np.zeros_like(image)
+        center = (width // 2, height // 2)
+        radius = int(min(width, height) * 0.4 * intensity)
+        cv2.circle(highlight, center, radius, color_palette[0], -1)
+        cv2.GaussianBlur(highlight, (31, 31), 15, dst=highlight)
+        image = cv2.addWeighted(image, 1, highlight, 0.3, 0)
+    
+    # Add frequency bands visualization around the edges
+    spectrum = features['spectrum']
+    num_bands = min(32, len(spectrum))
+    band_width = width // num_bands
+    
+    for i in range(num_bands):
+        # Top edge
+        amp = spectrum[i]
+        height_top = int(height * 0.1 * amp)
+        x = i * band_width
+        color = color_palette[i % len(color_palette)]
+        cv2.rectangle(image, (x, 0), (x + band_width, height_top), color, -1)
+        
+        # Bottom edge
+        height_bottom = int(height * 0.1 * amp)
+        cv2.rectangle(image, (x, height - height_bottom), (x + band_width, height), color, -1)
+    
+    return image, state

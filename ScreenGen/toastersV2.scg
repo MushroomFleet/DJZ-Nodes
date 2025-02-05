@@ -1,0 +1,201 @@
+import cv2
+import numpy as np
+from math import sin, cos, pi
+
+class ToastersScreensaver:
+    def __init__(self):
+        self.name = "Flying Toasters"
+        self.description = "Classic After Dark flying toasters screensaver"
+        self.parameters = {
+            "toaster_count": {
+                "type": "INT",
+                "default": 8,
+                "min": 1,
+                "max": 20,
+                "step": 1
+            },
+            "toast_count": {
+                "type": "INT",
+                "default": 6,
+                "min": 0,
+                "max": 15,
+                "step": 1
+            },
+            "wing_speed": {
+                "type": "FLOAT",
+                "default": 0.2,
+                "min": 0.1,
+                "max": 0.5,
+                "step": 0.05
+            },
+            "size_variation": {
+                "type": "FLOAT",
+                "default": 0.3,
+                "min": 0.0,
+                "max": 0.5,
+                "step": 0.1
+            }
+        }
+        
+    def init_state(self):
+        """Initialize flying objects state"""
+        return {
+            'toasters': [],
+            'toast': [],
+            'frame_count': 0
+        }
+
+    def create_toaster(self, width, height, size_variation):
+        """Create a new toaster with random position and size"""
+        base_size = 60
+        size_factor = 1.0 + np.random.uniform(-size_variation, size_variation)
+        return {
+            'x': np.random.uniform(0, width),
+            'y': -base_size * size_factor,  # Start above screen
+            'size': int(base_size * size_factor),
+            'speed': np.random.uniform(2, 4),
+            'wing_phase': np.random.uniform(0, 2*pi),
+            'depth': np.random.uniform(0.7, 1.0)  # For parallax effect
+        }
+
+    def create_toast(self, width, height, size_variation):
+        """Create a new piece of toast"""
+        base_size = 40
+        size_factor = 1.0 + np.random.uniform(-size_variation, size_variation)
+        return {
+            'x': np.random.uniform(0, width),
+            'y': -base_size * size_factor,
+            'size': int(base_size * size_factor),
+            'speed': np.random.uniform(1.5, 3),
+            'rotation': np.random.uniform(0, 2*pi),
+            'spin': np.random.uniform(-0.1, 0.1),
+            'depth': np.random.uniform(0.7, 1.0)
+        }
+
+    def draw_toaster(self, img, toaster, wing_phase, chrome_color):
+        """Draw a toaster with animated wings"""
+        x, y = int(toaster['x']), int(toaster['y'])
+        size = toaster['size']
+        depth = toaster['depth']
+        
+        # Scale colors based on depth
+        color_scale = 0.7 + 0.3 * depth
+        toaster_color = tuple(int(c * color_scale) for c in chrome_color)
+        
+        # Main toaster body
+        body_points = np.array([
+            [x - size//2, y - size//3],
+            [x + size//2, y - size//3],
+            [x + size//2, y + size//2],
+            [x - size//2, y + size//2]
+        ], np.int32)
+        cv2.fillPoly(img, [body_points], toaster_color)
+        
+        # Toaster details
+        cv2.rectangle(img, 
+                     (x - size//3, y - size//4),
+                     (x + size//3, y + size//3),
+                     (int(40*color_scale), int(40*color_scale), int(40*color_scale)), 2)
+        
+        # Animated wings
+        wing_extend = abs(sin(wing_phase)) * size//2
+        left_wing = np.array([
+            [x - size//2, y - size//4],
+            [x - size//2 - wing_extend, y - size//2],
+            [x - size//2, y - size//2]
+        ], np.int32)
+        right_wing = np.array([
+            [x + size//2, y - size//4],
+            [x + size//2 + wing_extend, y - size//2],
+            [x + size//2, y - size//2]
+        ], np.int32)
+        cv2.fillPoly(img, [left_wing], toaster_color)
+        cv2.fillPoly(img, [right_wing], toaster_color)
+
+    def draw_toast(self, img, toast, toast_color):
+        """Draw a piece of toast"""
+        x, y = int(toast['x']), int(toast['y'])
+        size = toast['size']
+        depth = toast['depth']
+        
+        # Scale color based on depth
+        color_scale = 0.7 + 0.3 * depth
+        scaled_color = tuple(int(c * color_scale) for c in toast_color)
+        
+        # Create toast shape
+        points = np.array([
+            [x - size//2, y - size//2],
+            [x + size//2, y - size//2],
+            [x + size//2, y + size//2],
+            [x - size//2, y + size//2]
+        ], np.int32)
+        
+        # Rotate points around center
+        rotation_matrix = cv2.getRotationMatrix2D((x, y), 
+                                                toast['rotation'] * 180/pi, 1.0)
+        points = np.array([rotation_matrix.dot(np.array([p[0], p[1], 1]))
+                          for p in points], np.int32)
+        
+        # Draw toast
+        cv2.fillPoly(img, [points], scaled_color)
+        
+        # Add toast texture (simple grid pattern)
+        for i in range(2):
+            for j in range(2):
+                tx = int(x + (i-0.5)*size//3)
+                ty = int(y + (j-0.5)*size//3)
+                cv2.circle(img, (tx, ty), size//12, 
+                          (int(30*color_scale), int(20*color_scale), int(10*color_scale)))
+
+    def render(self, width, height, frame, colors, speed, state, params):
+        """Render one frame of the toasters screensaver"""
+        if not state:
+            state = self.init_state()
+            
+        # Create image (black background)
+        img = np.zeros((height, width, 3), dtype=np.uint8)
+        
+        # Update frame counter
+        state['frame_count'] += 1
+        
+        # Create new toasters if needed
+        while len(state['toasters']) < params['toaster_count']:
+            state['toasters'].append(
+                self.create_toaster(width, height, params['size_variation']))
+            
+        # Create new toast if needed
+        while len(state['toast']) < params['toast_count']:
+            state['toast'].append(
+                self.create_toast(width, height, params['size_variation']))
+        
+        # Choose colors from palette
+        chrome_color = colors[0]  # Use first color for toasters
+        toast_color = (200, 150, 100)  # Fixed toast color for authenticity
+        
+        # Update and draw toast (behind toasters)
+        for t in state['toast']:
+            # Update position
+            t['y'] += t['speed'] * speed
+            t['rotation'] += t['spin']
+            
+            # Draw if on screen
+            if t['y'] < height + t['size']:
+                self.draw_toast(img, t, toast_color)
+                
+        # Update and draw toasters
+        for t in state['toasters']:
+            # Update position and wing animation
+            t['y'] += t['speed'] * speed
+            t['wing_phase'] += params['wing_speed'] * speed
+            
+            # Draw if on screen
+            if t['y'] < height + t['size']:
+                self.draw_toaster(img, t, t['wing_phase'], chrome_color)
+        
+        # Remove objects that have moved off screen
+        state['toasters'] = [t for t in state['toasters'] 
+                           if t['y'] < height + t['size']]
+        state['toast'] = [t for t in state['toast'] 
+                         if t['y'] < height + t['size']]
+        
+        return img, state

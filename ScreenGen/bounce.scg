@@ -1,0 +1,134 @@
+import cv2
+import numpy as np
+
+class BounceScreensaver:
+    def __init__(self):
+        self.name = "Bounce"
+        self.description = "Bouncing shapes screensaver effect"
+        self.parameters = {
+            "shape_count": {
+                "type": "INT",
+                "default": 5,
+                "min": 1,
+                "max": 20,
+                "step": 1
+            },
+            "min_size": {
+                "type": "INT",
+                "default": 20,
+                "min": 5,
+                "max": 100,
+                "step": 5
+            },
+            "max_size": {
+                "type": "INT",
+                "default": 50,
+                "min": 10,
+                "max": 200,
+                "step": 5
+            },
+            "shape_type": {
+                "type": "STRING",
+                "default": "circle",
+                "choices": ["circle", "square", "triangle", "star"]
+            },
+            "bounce_damping": {
+                "type": "FLOAT",
+                "default": 1.0,
+                "min": 0.5,
+                "max": 1.5,
+                "step": 0.1
+            },
+            "gravity": {
+                "type": "FLOAT",
+                "default": 0.0,
+                "min": -1.0,
+                "max": 1.0,
+                "step": 0.1
+            }
+        }
+        
+    def init_state(self):
+        return {
+            'shapes': []
+        }
+        
+    def draw_star(self, img, center, size, color):
+        """Draw a star shape"""
+        points = []
+        for i in range(10):
+            angle = i * np.pi / 5 - np.pi / 2
+            r = size if i % 2 == 0 else size/2
+            x = center[0] + r * np.cos(angle)
+            y = center[1] + r * np.sin(angle)
+            points.append([int(x), int(y)])
+        pts = np.array(points, np.int32)
+        pts = pts.reshape((-1, 1, 2))
+        cv2.fillPoly(img, [pts], color)
+        
+    def draw_shape(self, img, shape, params):
+        """Draw the specified shape type"""
+        pos = (int(shape['pos'][0]), int(shape['pos'][1]))
+        color = shape['color']
+        size = shape['size']
+        
+        if params['shape_type'] == 'circle':
+            cv2.circle(img, pos, size, color, -1)
+        elif params['shape_type'] == 'square':
+            half_size = size
+            cv2.rectangle(img, 
+                         (pos[0] - half_size, pos[1] - half_size),
+                         (pos[0] + half_size, pos[1] + half_size),
+                         color, -1)
+        elif params['shape_type'] == 'triangle':
+            points = np.array([
+                [pos[0], pos[1] - size],
+                [pos[0] - size, pos[1] + size],
+                [pos[0] + size, pos[1] + size]
+            ], np.int32)
+            cv2.fillPoly(img, [points], color)
+        elif params['shape_type'] == 'star':
+            self.draw_star(img, pos, size, color)
+        
+    def render(self, width, height, frame, colors, speed, state, params):
+        """Render bouncing shapes screensaver"""
+        if not state:
+            state = self.init_state()
+            for _ in range(params['shape_count']):
+                state['shapes'].append({
+                    'pos': np.array([np.random.randint(0, width), 
+                                   np.random.randint(0, height)], dtype=np.float64),
+                    'vel': np.array([np.random.rand() * 10 - 5, 
+                                   np.random.rand() * 10 - 5]) * speed,
+                    'size': np.random.randint(params['min_size'], params['max_size']),
+                    'color': colors[np.random.randint(0, len(colors))]
+                })
+        
+        img = np.zeros((height, width, 3), dtype=np.uint8)
+        
+        for shape in state['shapes']:
+            # Apply gravity
+            shape['vel'][1] += params['gravity']
+            
+            # Update position
+            shape['pos'] += shape['vel']
+            
+            # Bounce off walls with damping
+            if shape['pos'][0] - shape['size'] < 0:
+                shape['pos'][0] = shape['size']
+                shape['vel'][0] = abs(shape['vel'][0]) * params['bounce_damping']
+            elif shape['pos'][0] + shape['size'] > width:
+                shape['pos'][0] = width - shape['size']
+                shape['vel'][0] = -abs(shape['vel'][0]) * params['bounce_damping']
+                
+            if shape['pos'][1] - shape['size'] < 0:
+                shape['pos'][1] = shape['size']
+                shape['vel'][1] = abs(shape['vel'][1]) * params['bounce_damping']
+            elif shape['pos'][1] + shape['size'] > height:
+                shape['pos'][1] = height - shape['size']
+                shape['vel'][1] = -abs(shape['vel'][1]) * params['bounce_damping']
+            
+            # Draw shape
+            self.draw_shape(img, shape, params)
+        
+        return img, state

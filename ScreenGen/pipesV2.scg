@@ -1,0 +1,116 @@
+import cv2
+import numpy as np
+
+class PipesScreensaver:
+    def __init__(self):
+        self.name = "3D Pipes"
+        self.description = "Classic pipes screensaver with growing animated pipes"
+        self.parameters = {
+            "pipe_thickness": {
+                "type": "INT",
+                "default": 8,
+                "min": 4,
+                "max": 20,
+                "step": 1
+            },
+            "pipe_spawn_rate": {
+                "type": "INT",
+                "default": 30,
+                "min": 10,
+                "max": 60,
+                "step": 5
+            },
+            "pipe_speed": {
+                "type": "FLOAT",
+                "default": 3.0,
+                "min": 1.0,
+                "max": 10.0,
+                "step": 0.5
+            },
+            "max_pipes": {
+                "type": "INT",
+                "default": 15,
+                "min": 5,
+                "max": 30,
+                "step": 1
+            }
+        }
+
+    def init_state(self):
+        return {
+            'pipes': [],
+            'next_pipe': 0
+        }
+
+    def render(self, width, height, frame, colors, speed, state, params):
+        """Render growing animated pipes"""
+        if not state:
+            state = self.init_state()
+        
+        img = np.zeros((height, width, 3), dtype=np.uint8)
+        
+        # Update existing pipes
+        active_pipes = []
+        for pipe in state['pipes']:
+            # Update pipe position and length
+            pipe['length'] += speed * params['pipe_speed']
+            
+            # Calculate end position based on direction and length
+            end_x = int(pipe['start'][0] + pipe['dir'][0] * pipe['length'])
+            end_y = int(pipe['start'][1] + pipe['dir'][1] * pipe['length'])
+            
+            # Only keep pipe if it's still on screen
+            if (0 <= end_x < width and 0 <= end_y < height and
+                pipe['length'] < max(width, height)):
+                cv2.line(img, 
+                        (int(pipe['start'][0]), int(pipe['start'][1])),
+                        (end_x, end_y),
+                        colors[pipe['color_idx']], 
+                        thickness=params['pipe_thickness'])
+                active_pipes.append(pipe)
+                
+                # Randomly change direction with small probability
+                if np.random.random() < 0.02:
+                    new_dir = np.array([
+                        np.random.choice([-1, 0, 1]),
+                        np.random.choice([-1, 0, 1])
+                    ])
+                    if not np.all(new_dir == 0):  # Avoid zero direction
+                        new_dir = new_dir / np.linalg.norm(new_dir)
+                        pipe['dir'] = new_dir
+                        pipe['start'] = (end_x, end_y)
+                        pipe['length'] = 0
+        
+        state['pipes'] = active_pipes
+        
+        # Add new pipe if needed
+        state['next_pipe'] -= 1
+        if state['next_pipe'] <= 0 and len(state['pipes']) < params['max_pipes']:
+            # Start from edge with higher probability
+            if np.random.random() < 0.7:
+                if np.random.random() < 0.5:
+                    start_x = np.random.choice([0, width-1])
+                    start_y = np.random.randint(0, height)
+                else:
+                    start_x = np.random.randint(0, width)
+                    start_y = np.random.choice([0, height-1])
+            else:
+                start_x = np.random.randint(0, width)
+                start_y = np.random.randint(0, height)
+            
+            # Random direction, normalized
+            dir_x = np.random.rand() * 2 - 1
+            dir_y = np.random.rand() * 2 - 1
+            dir_len = np.sqrt(dir_x*dir_x + dir_y*dir_y)
+            dir_x /= dir_len
+            dir_y /= dir_len
+            
+            state['pipes'].append({
+                'start': (start_x, start_y),
+                'dir': np.array([dir_x, dir_y]),
+                'length': 0,
+                'color_idx': np.random.randint(0, len(colors))
+            })
+            state['next_pipe'] = params['pipe_spawn_rate']
+
+        return img, state

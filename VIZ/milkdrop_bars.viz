@@ -1,0 +1,62 @@
+import numpy as np
+import cv2
+
+def render(features, width, height, color_palette):
+    """
+    Renders a Milkdrop-style bar visualization with glow effects.
+    
+    Args:
+        features (dict): Audio features including 'waveform', 'spectrum', 'bass', 'mids', 'highs'
+        width (int): Output image width
+        height (int): Output image height
+        color_palette (list): List of (R,G,B) tuples for colors
+        
+    Returns:
+        numpy.ndarray: RGB image of the visualization
+    """
+    image = np.zeros((height, width, 3), dtype=np.uint8)
+    
+    spectrum = features['spectrum']
+    num_bars = min(32, len(spectrum))
+    bar_width = width // num_bars
+    
+    for i in range(num_bars):
+        # Calculate bar properties
+        amp = spectrum[i] * (1 + features['bass'] * 2)  # Amplify with bass
+        bar_height = int(amp * height * 0.8)  # 80% max height
+        
+        # Calculate color based on amplitude and position
+        color_idx = int((i / num_bars + amp) * len(color_palette)) % len(color_palette)
+        color = color_palette[color_idx]
+        
+        # Draw main bar
+        x_start = i * bar_width
+        x_end = x_start + bar_width - 1
+        y_start = height - bar_height
+        y_end = height
+        
+        # Draw the bar
+        cv2.rectangle(image, (x_start, y_start), (x_end, y_end), color, -1)
+        
+        # Add glow effect
+        if bar_height > 0:
+            # Create a small section for the glow
+            glow_section = image[y_start:y_end, x_start:x_end+1].copy()
+            # Apply gaussian blur
+            cv2.GaussianBlur(glow_section, (5, 5), 2, dst=glow_section)
+            # Blend back
+            image[y_start:y_end, x_start:x_end+1] = cv2.addWeighted(
+                image[y_start:y_end, x_start:x_end+1], 0.7,
+                glow_section, 0.3, 0
+            )
+            
+        # Add peak marker
+        peak_height = 2
+        if bar_height > peak_height:
+            peak_y = height - bar_height - peak_height
+            cv2.rectangle(image, 
+                         (x_start, peak_y),
+                         (x_end, peak_y + peak_height),
+                         color, -1)
+    
+    return image

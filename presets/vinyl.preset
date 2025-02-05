@@ -1,0 +1,52 @@
+{
+    "name": "Vinyl Record",
+    "description": "Emulates characteristics of vinyl record playback systems including surface noise and tonal warmth",
+    
+    "compression_ratio": 1.5,
+    "compression_threshold": -20.0,
+    
+    "low_cut": 30.0,
+    "high_cut": 16000.0,
+    
+    "distortion_amount": 0.08,
+    
+    "noise_level": 0.03,
+    "noise_color": "pink",
+    
+    "reverb_amount": 0.0,
+    "room_size": 0.0,
+    
+    "metadata": {
+        "category": "Analog",
+        "era": "Classic",
+        "quality": "Hi-Fi",
+        "variants": [
+            {
+                "name": "New Pressing",
+                "noise_level": 0.02,
+                "distortion": 0.05
+            },
+            {
+                "name": "Vintage",
+                "noise_level": 0.06,
+                "distortion": 0.12
+            },
+            {
+                "name": "Worn",
+                "noise_level": 0.09,
+                "distortion": 0.15
+            }
+        ],
+        "characteristics": [
+            "surface noise",
+            "inner groove distortion",
+            "rumble",
+            "wow and flutter"
+        ],
+        "technical_specs": {
+            "frequency_response": "30Hz-16kHz",
+            "dynamic_range": "60dB",
+            "channel_separation": "30dB"
+        }
+    }
+}
