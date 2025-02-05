@@ -114,10 +114,6 @@ class LoadVideoDirectory:
             return (frames_tensor, os.path.basename(video_path))
 
         def get_next_video_frames(self, index, skip_frames, max_frames):
-            print("=========================================")
-            print(index)
-            print(max_frames)
-            print(self.video_paths)
             if index >= len(self.video_paths):
                 index = 0
             return self.get_video_frames_by_id(index, skip_frames, max_frames)
