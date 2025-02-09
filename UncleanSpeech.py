@@ -166,6 +166,8 @@ class UncleanSpeech:
             nyquist = sample_rate / 2
             low_cut_norm = low_cut / nyquist
             high_cut_norm = high_cut / nyquist
+            if high_cut_norm >= 1:
+                high_cut_norm = 0.999
             
             # Design and apply bandpass filter
             b, a = signal.butter(4, [low_cut_norm, high_cut_norm], btype='band')
