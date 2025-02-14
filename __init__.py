@@ -879,4 +879,11 @@ try:
 except ImportError:
     print("Unable to import VoiceEffects. This node will not be available.")
 
+try:
+    from .VoiceEffects2 import VoiceEffects2
+    NODE_CLASS_MAPPINGS["VoiceEffects2"] = VoiceEffects2
+    NODE_DISPLAY_NAME_MAPPINGS["VoiceEffects2"] = "🎤 Voice Effects 2"
+except ImportError:
+    print("Unable to import VoiceEffects2. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
