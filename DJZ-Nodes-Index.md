@@ -412,6 +412,10 @@
 - [Documentation](VideoTimecode.md)
 - [Example Workflow](#)
 
+## VoiceEffects
+- [Documentation](VoiceEffects.md)
+- [Example Workflow](#)
+
 ## WaveletCompose
 - [Documentation](WaveletCompose.md)
 - [Example Workflow](#)

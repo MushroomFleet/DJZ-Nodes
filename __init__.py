@@ -872,4 +872,11 @@ try:
 except ImportError:
     print("Unable to import ZenkaiPoseMap. This node will not be available.")
 
+try:
+    from .VoiceEffects import VoiceEffects
+    NODE_CLASS_MAPPINGS["VoiceEffects"] = VoiceEffects
+    NODE_DISPLAY_NAME_MAPPINGS["VoiceEffects"] = "🎤 Voice Effects"
+except ImportError:
+    print("Unable to import VoiceEffects. This node will not be available.")
+
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
