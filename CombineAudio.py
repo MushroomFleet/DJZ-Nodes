@@ -43,11 +43,17 @@ class CombineAudio:
             if volume2 != 1.0:
                 sound2 = sound2 + (20 * float(volume2))  # Convert to dB
             
-            # Match lengths
+            # Match lengths by padding the shorter audio with silence that matches its audio parameters
             if len(sound1) > len(sound2):
-                sound2 = sound2 + AudioSegment.silent(duration=len(sound1) - len(sound2))
+                diff = len(sound1) - len(sound2)
+                silence = AudioSegment.silent(duration=diff, frame_rate=sound2.frame_rate)
+                silence = silence.set_channels(sound2.channels)
+                sound2 = sound2 + silence
             else:
-                sound1 = sound1 + AudioSegment.silent(duration=len(sound2) - len(sound1))
+                diff = len(sound2) - len(sound1)
+                silence = AudioSegment.silent(duration=diff, frame_rate=sound1.frame_rate)
+                silence = silence.set_channels(sound1.channels)
+                sound1 = sound1 + silence
             
             # Combine audio (overlay maintains both tracks)
             combined = sound1.overlay(sound2)

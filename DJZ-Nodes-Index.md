@@ -44,6 +44,10 @@
 - [Documentation](BlackBarsV3.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Black-Bars-V3.json)
 
+## BracketCleaner
+- [Documentation](BracketCleaner.md)
+- [Example Workflow](#)
+
 ## CaptionsToPromptList
 - [Documentation](CaptionsToPromptList.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/Caption-to-Proimpt-List.json)
@@ -78,11 +82,11 @@
 
 ## DinskyPlus
 - [Documentation](DinskyPlus.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Dinsky-Plus.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/Dinsky-Plus.json)
 
 ## DinskyPlusV2
 - [Documentation](DinskyPlusV2.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Dinsky-Plus-V2.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/Dinsky-Plus-V2.json)
 
 ## DjzDatabendingV1
 - [Documentation](DjzDatabendingV1.md)
@@ -118,7 +122,7 @@
 
 ## DjzDatamoshV8
 - [Documentation](DjzDatamoshV8.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-DJZ-DATAMOSH-V8.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DjzDatamosh/DJZ-Nodes-Examples-DatamoshingV8.json)
 
 ## DJZLoadLatent
 - [Documentation](DJZLoadLatent.md)
@@ -128,13 +132,13 @@
 - [Documentation](DJZLoadLatentV2.md)
 - [Example Workflow](#)
 
-## FilmGateWeave
-- [Documentation](FilmGateWeave.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Film-Gate-Weave.json)
-
 ## FFXFADEORAMA
 - [Documentation](FFXFADEORAMA.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-FFXFADEORAMA.json)
+
+## FilmGateWeave
+- [Documentation](FilmGateWeave.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Film-Gate-Weave.json)
 
 ## FilmGrainEffect
 - [Documentation](FilmGrainEffect.md)
@@ -222,11 +226,11 @@
 
 ## LoadVideoDirectoryV2
 - [Documentation](LoadVideoDirectoryV2.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Load-Video-Directory-V2.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Load-Video-Directory-V2.json)
 
 ## MotionBlending
 - [Documentation](MotionBlending.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Motion-Blending-V1.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Motion-Blending-V1.json)
 
 ## NonSquarePixelsV1
 - [Documentation](NonSquarePixelsV1.md)
@@ -234,15 +238,15 @@
 
 ## NoiseFactory
 - [Documentation](NoiseFactory.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Noise%20Factory.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Noise%20Factory.json)
 
 ## NoiseFactoryV2
 - [Documentation](NoiseFactoryV2.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Noise%20Factory.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Noise%20Factory.json)
 
 ## NoiseFactoryV3
 - [Documentation](NoiseFactoryV3.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Noise%20Factory.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Noise%20Factory.json)
 
 ## ParametricMeshGen
 - [Documentation](ParametricMeshGen.md)
@@ -274,11 +278,11 @@
 
 ## PromptDupeRemover
 - [Documentation](PromptDupeRemover.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Prompt-Dupe-Remover.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Prompt-Dupe-Remover.json)
 
 ## PromptDupeRemoverV2
 - [Documentation](PromptDupeRemoverV2.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Dupe-Remover-V2.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Dupe-Remover-V2.json)
 
 ## PromptInject
 - [Documentation](PromptInject.md)
@@ -294,144 +298,160 @@
 
 ## ScreensaverGenerator
 - [Documentation](ScreensaverGenerator.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Screensaver-generator.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Screensaver-generator.json)
 
 ## ScreensaverGeneratorV2
 - [Documentation](ScreensaverGeneratorV2.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Screensaver-Generator-V2.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Screensaver-Generator-V2.json)
 
 ## ScreensaverGeneratorV3
 - [Documentation](ScreensaverGeneratorV3.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Screensaver-Generator-V2.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Screensaver-Generator-V2.json)
 
 ## SequentialNumberGenerator
 - [Documentation](SequentialNumberGenerator.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DjzDatamosh/DJZ-Nodes-Examples-Sequential-Selection.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DjzDatamosh/DJZ-Nodes-Examples-Sequential-Selection.json)
 
 ## ThinkSeeker
 - [Documentation](ThinkSeeker.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Think-Seeker-v1.json)
-
-## StringChaos
-- [Documentation](StringChaos.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-String-Chaos-Modes-V1.json)
-
-## StringPainter
-- [Documentation](StringPainter.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/StringPainter.json)
-
-## StringPainterV2
-- [Documentation](StringPainterV2.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-String-Painter-V2.json)
-
-## StringWeights
-- [Documentation](StringWeights.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-String-Weights.json)
-
-## Technicolor3Strip_v1
-- [Documentation](Technicolor3Strip_v1.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Technicolor-3Strip.json)
-
-## Technicolor3Strip_v2
-- [Documentation](Technicolor3Strip_v2.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Technicolor-3Strip-V2.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Think-Seeker-v1.json)
 
 ## ThreeToneStyler
 - [Documentation](ThreeToneStyler.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Three-Tone-Styler.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Three-Tone-Styler.json)
 
 ## TrianglesPlus
 - [Documentation](TrianglesPlus.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Triangles-Plus.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/Triangles-Plus.json)
 
 ## TrianglesPlusV2
 - [Documentation](TrianglesPlusV2.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Triangles-Plus-V2.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/Triangles-Plus-V2.json)
 
 ## UncleanSpeech
 - [Documentation](UncleanSpeech.md)
 - [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Nodes-Examples-Unclean-Speech.json)
 
+## VGA_Effect_v1
+- [Documentation](VGA_Effect_v1.md)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-VGA-Effect.json)
+
 ## VHS_Effect_v1
 - [Documentation](VHS_Effect_v1.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-VHS-Effect-V1.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-VHS-Effect-V1.json)
 
 ## VHS_Effect_v2
 - [Documentation](VHS_Effect_v2.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-VHS-Effect-V2.json)
-
-## VGA_Effect_v1
-- [Documentation](VGA_Effect_v1.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-VGA-Effect.json)
-
-## VHS_Effect_V3
-- [Documentation](VHS_Effect_V3.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-VHS-Effect-V3.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-VHS-Effect-V2.json)
 
 ## VideoBitClamp
 - [Documentation](VideoBitClamp.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Bit-Clamp.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Video-Bit-Clamp.json)
 
 ## VideoChromaticAberration
 - [Documentation](VideoChromaticAberration.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Chromatic-Aberration.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Chromatic-Aberration.json)
 
 ## VideoCorridorV1
 - [Documentation](VideoCorridorV1.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-video-corridor.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-video-corridor.json)
 
 ## VideoCubeV1
 - [Documentation](VideoCubeV1.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-video-cube.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-video-cube.json)
 
 ## VideoFilmDamage
 - [Documentation](VideoFilmDamage.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Damage-Effect.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Video-Damage-Effect.json)
 
 ## VideoInterlaced
 - [Documentation](VideoInterlaced.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Interlaced-Upscaler-V1.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Video-Interlaced-Upscaler-V1.json)
 
 ## VideoInterlacedV2
 - [Documentation](VideoInterlacedV2.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Interlaced-Upscaler-V2.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Video-Interlaced-Upscaler-V2.json)
 
 ## VideoMazeV1
 - [Documentation](VideoMazeV1.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Maze-Generator-V1.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Maze-Generator-V1.json)
 
 ## VideoMazeV2
 - [Documentation](VideoMazeV2.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Maze-Generator-V2.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Maze-Generator-V2.json)
 
 ## VideoInterlaceFastV4
 - [Documentation](VideoInterlaceFastV4.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-FAST-Video-Interlaced-Upscaler-V4.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-FAST-Video-Interlaced-Upscaler-V4.json)
 
 ## VideoInterlaceGANV3
 - [Documentation](VideoInterlaceGANV3.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-GAN-Video-Interlaced-Upscaler-V3.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-GAN-Video-Interlaced-Upscaler-V3.json)
 
 ## VideoRingPainter
 - [Documentation](VideoRingPainter.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Ringpainting-V1.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Video-Ringpainting-V1.json)
 
 ## VideoNoiseFactory
 - [Documentation](VideoNoiseFactory.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Noise-Factory.json)
+- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Node-Examples-Video-Noise-Factory.json)
 
 ## VideoTrails
 - [Documentation](VideoTrails.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Trails.json)
+- [Example Workflow](#)
 
 ## VideoTrailsV2
 - [Documentation](VideoTrailsV2.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-Trails-V2.json)
+- [Example Workflow](#)
 
 ## VideoVignettingV1
 - [Documentation](VideoVignettingV1.md)
-- [Example Workflow](https://github.com/MushroomFleet/DJZ-Workflows/blob/main/DJZ-Nodes-Examples/DJZ-Node-Examples-Video-VignettingV1.json)
+- [Example Workflow](#)
 
 ## VideoTimecode
 - [Documentation](VideoTimecode.md)
+- [Example Workflow](#)
+
+## WaveletCompose
+- [Documentation](WaveletCompose.md)
+- [Example Workflow](#)
+
+## WaveletDecompose
+- [Documentation](WaveletDecompose.md)
+- [Example Workflow](#)
+
+## WinampViz
+- [Documentation](WinampViz.md)
+- [Example Workflow](#)
+
+## WinampVizV2
+- [Documentation](WinampVizV2.md)
+- [Example Workflow](#)
+
+## ZenkaiPoseMap
+- [Documentation](ZenkaiPoseMap.md)
+- [Example Workflow](#)
+
+## ZenkaiPrompt
+- [Documentation](ZenkaiPrompt.md)
+- [Example Workflow](#)
+
+## ZenkaiPromptV2
+- [Documentation](ZenkaiPromptV2.md)
+- [Example Workflow](#)
+
+## ZenkaiPromptV3
+- [Documentation](ZenkaiPromptV3.md)
+- [Example Workflow](#)
+
+## ZenkaiPromptV4
+- [Documentation](ZenkaiPromptV4.md)
+- [Example Workflow](#)
+
+## ZenkaiWildcard
+- [Documentation](ZenkaiWildcard.md)
+- [Example Workflow](#)
+
+## ZenkaiWildcardV2
+- [Documentation](ZenkaiWildcardV2.md)
 - [Example Workflow](#)

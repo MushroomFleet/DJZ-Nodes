@@ -851,5 +851,25 @@ try:
 except ImportError:
     print("Unable to import ThinkSeeker. This node will not be available.")
 
+try:
+    from .BracketCleaner import BracketCleaner
+    NODE_CLASS_MAPPINGS["BracketCleaner"] = BracketCleaner
+    NODE_DISPLAY_NAME_MAPPINGS["BracketCleaner"] = "BracketCleaner"
+except ImportError:
+    print("Unable to import BracketCleaner. This node will not be available.")
+
+try:
+    from .PromptCleanerV2 import PromptCleanerV2
+    NODE_CLASS_MAPPINGS["PromptCleanerV2"] = PromptCleanerV2
+    NODE_DISPLAY_NAME_MAPPINGS["PromptCleanerV2"] = "Prompt Cleaner V2"
+except ImportError:
+    print("Unable to import PromptCleanerV2. This node will not be available.")
+
+try:
+    from .ZenkaiPoseMap import ZenkaiPoseMap
+    NODE_CLASS_MAPPINGS["ZenkaiPoseMap"] = ZenkaiPoseMap
+    NODE_DISPLAY_NAME_MAPPINGS["ZenkaiPoseMap"] = "Zenkai Pose Map"
+except ImportError:
+    print("Unable to import ZenkaiPoseMap. This node will not be available.")
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
