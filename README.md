@@ -25,7 +25,6 @@ Clone this repository into your ComfyUI's custom_nodes directory:
 ```bash
 cd custom_nodes
 git clone https://github.com/MushroomFleet/DJZ-Nodes
-cd DJZ-Nodes
 pip install -r requirements.txt
 ```
 
