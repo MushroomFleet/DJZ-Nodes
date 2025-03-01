@@ -326,6 +326,13 @@ except ImportError:
     print("Unable to import PromptInject. This node will not be available.")
 
 try:
+    from .PromptInjectV2 import PromptInjectV2
+    NODE_CLASS_MAPPINGS["PromptInjectV2"] = PromptInjectV2
+    NODE_DISPLAY_NAME_MAPPINGS["PromptInjectV2"] = "Prompt Inject V2"
+except ImportError:
+    print("Unable to import PromptInjectV2. This node will not be available.")
+
+try:
     from .VHS_Effect_v1 import VHS_Effect_v1
     NODE_CLASS_MAPPINGS["VHS_Effect_v1"] = VHS_Effect_v1
     NODE_DISPLAY_NAME_MAPPINGS["VHS_Effect_v1"] = "VHS Effect v1"
@@ -885,5 +892,20 @@ try:
     NODE_DISPLAY_NAME_MAPPINGS["VoiceEffects2"] = "🎤 Voice Effects 2"
 except ImportError:
     print("Unable to import VoiceEffects2. This node will not be available.")
+
+try:
+    from .ZenkaiImagePromptV1 import ZenkaiImagePromptV1
+    NODE_CLASS_MAPPINGS["ZenkaiImagePromptV1"] = ZenkaiImagePromptV1
+    NODE_DISPLAY_NAME_MAPPINGS["ZenkaiImagePromptV1"] = "Zenkai Image Prompt V1"
+except ImportError:
+    print("Unable to import ZenkaiImagePromptV1. This node will not be available.")
+
+try:
+    from .PromptInjectV2 import PromptInjectV2
+    NODE_CLASS_MAPPINGS["PromptInjectV2"] = PromptInjectV2
+    NODE_DISPLAY_NAME_MAPPINGS["PromptInjectV2"] = "Prompt Inject V2"
+except ImportError:
+    print("Unable to import PromptInjectV2. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
