@@ -907,5 +907,12 @@ try:
 except ImportError:
     print("Unable to import PromptInjectV2. This node will not be available.")
 
+try:
+    from .ZenkaiPromptV5 import ZenkaiPromptV5
+    NODE_CLASS_MAPPINGS["ZenkaiPromptV5"] = ZenkaiPromptV5
+    NODE_DISPLAY_NAME_MAPPINGS["ZenkaiPromptV5"] = "Zenkai Prompt V5"
+except ImportError:
+    print("Unable to import ZenkaiPromptV5. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
