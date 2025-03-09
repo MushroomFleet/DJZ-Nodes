@@ -914,5 +914,12 @@ try:
 except ImportError:
     print("Unable to import ZenkaiPromptV5. This node will not be available.")
 
+try:
+    from .ZenkaiImagePromptV2 import ZenkaiImagePromptV2
+    NODE_CLASS_MAPPINGS["ZenkaiImagePromptV2"] = ZenkaiImagePromptV2
+    NODE_DISPLAY_NAME_MAPPINGS["ZenkaiImagePromptV2"] = "Zenkai Image Prompt V2"
+except ImportError:
+    print("Unable to import ZenkaiImagePromptV2. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
