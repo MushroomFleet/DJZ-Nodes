@@ -368,13 +368,6 @@ except ImportError:
     print("Unable to import Technicolor3Strip_v2. This node will not be available.")
 
 try:
-    from .PanavisionLensV1 import PanavisionLensV1
-    NODE_CLASS_MAPPINGS["PanavisionLensV1"] = PanavisionLensV1
-    NODE_DISPLAY_NAME_MAPPINGS["PanavisionLensV1"] = "Panavision Lens Effect V1"
-except ImportError:
-    print("Unable to import PanavisionLensV1. This node will not be available.")
-
-try:
     from .PanavisionLensV2 import PanavisionLensV2
     NODE_CLASS_MAPPINGS["PanavisionLensV2"] = PanavisionLensV2
     NODE_DISPLAY_NAME_MAPPINGS["PanavisionLensV2"] = "Panavision Lens Effect V2"
