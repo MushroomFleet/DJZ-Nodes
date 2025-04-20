@@ -921,5 +921,33 @@ try:
 except ImportError:
     print("Unable to import ZenkaiImagePromptV2. This node will not be available.")
 
+try:
+    from .ProjectFolderPathNode import ProjectFolderPathNode
+    NODE_CLASS_MAPPINGS["ProjectFolderPathNode"] = ProjectFolderPathNode
+    NODE_DISPLAY_NAME_MAPPINGS["ProjectFolderPathNode"] = "Project Folder Path Node"
+except ImportError:
+    print("Unable to import ProjectFolderPathNode. This node will not be available.")
+
+try:
+    from .Zenkai_IMPv1 import Zenkai_IMPv1
+    NODE_CLASS_MAPPINGS["Zenkai_IMPv1"] = Zenkai_IMPv1
+    NODE_DISPLAY_NAME_MAPPINGS["Zenkai_IMPv1"] = "Zenkai IMP v1"
+except ImportError:
+    print("Unable to import Zenkai_IMPv1. This node will not be available.")
+
+try:
+    from .ZenkaiControlPromptV1 import ZenkaiControlPromptV1
+    NODE_CLASS_MAPPINGS["ZenkaiControlPromptV1"] = ZenkaiControlPromptV1
+    NODE_DISPLAY_NAME_MAPPINGS["ZenkaiControlPromptV1"] = "Zenkai Control Prompt V1"
+except ImportError:
+    print("Unable to import ZenkaiControlPromptV1. This node will not be available.")
+
+try:
+    from .ZenkaiDepthPrompt import ZenkaiDepthPrompt
+    NODE_CLASS_MAPPINGS["ZenkaiDepthPrompt"] = ZenkaiDepthPrompt
+    NODE_DISPLAY_NAME_MAPPINGS["ZenkaiDepthPrompt"] = "Zenkai Depth Prompt"
+except ImportError:
+    print("Unable to import ZenkaiDepthPrompt. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
