@@ -942,5 +942,12 @@ try:
 except ImportError:
     print("Unable to import ZenkaiDepthPrompt. This node will not be available.")
 
+try:
+    from .VideoText import VideoText
+    NODE_CLASS_MAPPINGS["VideoText"] = VideoText
+    NODE_DISPLAY_NAME_MAPPINGS["VideoText"] = "Video Text"
+except ImportError:
+    print("Unable to import VideoText. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
