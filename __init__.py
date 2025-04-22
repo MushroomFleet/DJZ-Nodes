@@ -949,5 +949,12 @@ try:
 except ImportError:
     print("Unable to import VideoText. This node will not be available.")
 
+try:
+    from .BorderCompositeAlpha import BorderCompositeAlpha
+    NODE_CLASS_MAPPINGS["BorderCompositeAlpha"] = BorderCompositeAlpha
+    NODE_DISPLAY_NAME_MAPPINGS["BorderCompositeAlpha"] = "Border Composite Alpha"
+except ImportError:
+    print("Unable to import BorderCompositeAlpha. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
