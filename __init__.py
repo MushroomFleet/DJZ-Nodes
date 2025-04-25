@@ -950,11 +950,32 @@ except ImportError:
     print("Unable to import VideoText. This node will not be available.")
 
 try:
+    from .VideoTextV2 import VideoTextV2
+    NODE_CLASS_MAPPINGS["VideoTextV2"] = VideoTextV2
+    NODE_DISPLAY_NAME_MAPPINGS["VideoTextV2"] = "Video Text V2"
+except ImportError:
+    print("Unable to import VideoTextV2. This node will not be available.")
+
+try:
     from .BorderCompositeAlpha import BorderCompositeAlpha
     NODE_CLASS_MAPPINGS["BorderCompositeAlpha"] = BorderCompositeAlpha
     NODE_DISPLAY_NAME_MAPPINGS["BorderCompositeAlpha"] = "Border Composite Alpha"
 except ImportError:
     print("Unable to import BorderCompositeAlpha. This node will not be available.")
+
+try:
+    from .djzTiling import djzTiling
+    NODE_CLASS_MAPPINGS["djzTiling"] = djzTiling
+    NODE_DISPLAY_NAME_MAPPINGS["djzTiling"] = "DJZ Tiling"
+except ImportError:
+    print("Unable to import djzTiling. This node will not be available.")
+
+try:
+    from .djzTilingV2 import djzTilingV2
+    NODE_CLASS_MAPPINGS["djzTilingV2"] = djzTilingV2
+    NODE_DISPLAY_NAME_MAPPINGS["djzTilingV2"] = "DJZ Tiling V2"
+except ImportError:
+    print("Unable to import djzTilingV2. This node will not be available.")
 
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
