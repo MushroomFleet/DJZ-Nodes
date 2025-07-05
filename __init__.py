@@ -873,6 +873,13 @@ except ImportError:
     print("Unable to import ZenkaiPoseMap. This node will not be available.")
 
 try:
+    from .ZenkaiVideoPose import ZenkaiVideoPose
+    NODE_CLASS_MAPPINGS["ZenkaiVideoPose"] = ZenkaiVideoPose
+    NODE_DISPLAY_NAME_MAPPINGS["ZenkaiVideoPose"] = "Zenkai Video Pose"
+except ImportError:
+    print("Unable to import ZenkaiVideoPose. This node will not be available.")
+
+try:
     from .VoiceEffects import VoiceEffects
     NODE_CLASS_MAPPINGS["VoiceEffects"] = VoiceEffects
     NODE_DISPLAY_NAME_MAPPINGS["VoiceEffects"] = "🎤 Voice Effects"
@@ -936,6 +943,13 @@ except ImportError:
     print("Unable to import ZenkaiControlPromptV1. This node will not be available.")
 
 try:
+    from .ZenkaiControlPromptV2 import ZenkaiControlPromptV2
+    NODE_CLASS_MAPPINGS["ZenkaiControlPromptV2"] = ZenkaiControlPromptV2
+    NODE_DISPLAY_NAME_MAPPINGS["ZenkaiControlPromptV2"] = "Zenkai Control Prompt V2"
+except ImportError:
+    print("Unable to import ZenkaiControlPromptV2. This node will not be available.")
+
+try:
     from .ZenkaiDepthPrompt import ZenkaiDepthPrompt
     NODE_CLASS_MAPPINGS["ZenkaiDepthPrompt"] = ZenkaiDepthPrompt
     NODE_DISPLAY_NAME_MAPPINGS["ZenkaiDepthPrompt"] = "Zenkai Depth Prompt"
@@ -976,6 +990,29 @@ try:
     NODE_DISPLAY_NAME_MAPPINGS["djzTilingV2"] = "DJZ Tiling V2"
 except ImportError:
     print("Unable to import djzTilingV2. This node will not be available.")
+
+
+
+try:
+    from .ZenkaiSceneVideoV1 import ZenkaiSceneVideoV1
+    NODE_CLASS_MAPPINGS["ZenkaiSceneVideoV1"] = ZenkaiSceneVideoV1
+    NODE_DISPLAY_NAME_MAPPINGS["ZenkaiSceneVideoV1"] = "Zenkai Scene Video V1"
+except ImportError:
+    print("Unable to import ZenkaiSceneVideoV1. This node will not be available.")
+
+try:
+    from .ZenkaiAmbienceAudioV1 import ZenkaiAmbienceAudioV1
+    NODE_CLASS_MAPPINGS["ZenkaiAmbienceAudioV1"] = ZenkaiAmbienceAudioV1
+    NODE_DISPLAY_NAME_MAPPINGS["ZenkaiAmbienceAudioV1"] = "Zenkai Ambience Audio V1"
+except ImportError:
+    print("Unable to import ZenkaiAmbienceAudioV1. This node will not be available.")
+
+try:
+    from .ZenakiVideoPromptV1 import ZenakiVideoPromptV1
+    NODE_CLASS_MAPPINGS["ZenakiVideoPromptV1"] = ZenakiVideoPromptV1
+    NODE_DISPLAY_NAME_MAPPINGS["ZenakiVideoPromptV1"] = "Zenaki Video Prompt V1"
+except ImportError:
+    print("Unable to import ZenakiVideoPromptV1. This node will not be available.")
 
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
