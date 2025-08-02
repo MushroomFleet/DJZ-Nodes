@@ -105,6 +105,126 @@ def frame_generator(video_path: str, start_frame: int, frames_to_read: int, fps:
     finally:
         cap.release()
 
+class LazyAudioDict(dict):
+    """A dictionary-like object that loads audio lazily when accessed"""
+    
+    def __init__(self, video_path: str, start_time: float, duration: Optional[float] = None):
+        super().__init__()
+        self.video_path = video_path
+        self.start_time = start_time
+        self.duration = duration
+        self._loaded = False
+        self._audio_data = None
+        
+    def _load_audio(self):
+        """Load audio data on first access"""
+        if self._loaded:
+            return
+            
+        try:
+            import ffmpeg
+            import numpy as np
+            
+            # Probe for audio stream info
+            try:
+                probe = ffmpeg.probe(self.video_path)
+                audio_stream = next((stream for stream in probe['streams'] if stream['codec_type'] == 'audio'), None)
+                
+                if not audio_stream:
+                    print(f"No audio stream found in {self.video_path}")
+                    self._audio_data = None
+                    self._loaded = True
+                    return
+                    
+            except ffmpeg.Error as e:
+                print(f"FFmpeg probe error: {e.stderr.decode()}")
+                self._audio_data = None
+                self._loaded = True
+                return
+            
+            try:
+                # Setup ffmpeg input with seeking
+                stream = ffmpeg.input(self.video_path, ss=self.start_time)
+                if self.duration:
+                    stream = stream.filter('atrim', duration=self.duration)
+                
+                # Get audio as 32-bit float PCM, stereo, 44.1kHz
+                process = (stream.audio
+                          .output('pipe:', format='f32le', acodec='pcm_f32le', ac=2, ar=44100)
+                          .overwrite_output()
+                          .run_async(pipe_stdout=True, pipe_stderr=True))
+                
+                out, err = process.communicate()
+                
+                if process.returncode != 0:
+                    print(f"FFmpeg extraction error: {err.decode()}")
+                    self._audio_data = None
+                    self._loaded = True
+                    return
+                
+                # Convert to numpy array then to tensor
+                audio_data = np.frombuffer(out, np.float32).reshape(-1, 2)
+                audio_tensor = torch.from_numpy(audio_data).t()  # Transpose to [channels, samples]
+                audio_tensor = audio_tensor.unsqueeze(0)  # Add batch dimension [1, channels, samples]
+                
+                # Store in ComfyUI-compatible format
+                self._audio_data = {
+                    "waveform": audio_tensor,
+                    "sample_rate": 44100
+                }
+                
+            except ffmpeg.Error as e:
+                print(f"FFmpeg extraction error: {e.stderr.decode()}")
+                self._audio_data = None
+                
+        except Exception as e:
+            print(f"Audio extraction failed: {str(e)}")
+            self._audio_data = None
+            
+        self._loaded = True
+    
+    def __getitem__(self, key):
+        """Override dictionary access to load audio on demand"""
+        self._load_audio()
+        
+        if self._audio_data is None:
+            # Return None for audio-less videos or handle gracefully
+            if key == "waveform":
+                # Return empty tensor with correct shape for compatibility
+                return torch.zeros((1, 2, 0), dtype=torch.float32)
+            elif key == "sample_rate":
+                return 44100
+            else:
+                raise KeyError(f"Key '{key}' not found")
+        
+        return self._audio_data[key]
+    
+    def __contains__(self, key):
+        """Support 'in' operator"""
+        return key in ["waveform", "sample_rate"]
+    
+    def __iter__(self):
+        """Support iteration"""
+        self._load_audio()
+        if self._audio_data is None:
+            return iter(["waveform", "sample_rate"])
+        return iter(self._audio_data)
+    
+    def keys(self):
+        """Support .keys() method"""
+        return ["waveform", "sample_rate"]
+    
+    def get(self, key, default=None):
+        """Support .get() method"""
+        try:
+            return self[key]
+        except KeyError:
+            return default
+
+def create_lazy_audio_loader(video_path: str, start_time: float, duration: Optional[float] = None):
+    """Create a lazy audio loader dictionary compatible with ComfyUI's audio system"""
+    return LazyAudioDict(video_path, start_time, duration)
+
 def load_matching_prompt(video_path: str, default_prompt: str = "") -> str:
     """Load a matching prompt file for the given video path"""
     try:
@@ -219,7 +339,7 @@ class ZenakiVideoPromptV1:
                        skip_frames: int = 0, max_frames: int = 0, mode: str = "single_video", 
                        seed: int = 0, label: str = 'Scene Video Batch', force_rate: int = 0,
                        meta_batch=None, unique_id=None, memory_limit_mb: int = 0, 
-                       vae=None, default_prompt: str = "") -> Tuple[torch.Tensor, int, Optional[Dict], Dict, str, str]:
+                       vae=None, default_prompt: str = "") -> Tuple[torch.Tensor, int, LazyAudioDict, Dict, str, str]:
         # Initialize inputs dict if not exists
         if not hasattr(self, 'inputs'):
             self.inputs = {}
@@ -378,13 +498,13 @@ class ZenakiVideoPromptV1:
             "loaded_height": meta_state["height"],
         }
 
-        # Get audio data
+        # Create lazy audio loader - THIS IS THE KEY FIX
         current_start_time = (skip_frames + meta_state["total_frames_read"] - len(frames_list)) / meta_state["fps"]
         audio_duration = len(frames_list) / meta_state["fps"] if meta_state["fps"] > 0 else None
-        audio_info = load_audio(video_path, current_start_time, audio_duration)
+        audio_lazy_loader = create_lazy_audio_loader(video_path, current_start_time, audio_duration)
 
-        # Return all the original outputs plus the prompt
-        return (frames_tensor, len(frames_list), audio_info, video_info, filename, prompt)
+        # Return all the original outputs plus the prompt with lazy audio loader
+        return (frames_tensor, len(frames_list), audio_lazy_loader, video_info, filename, prompt)
 
     class VideoDirectoryLoader:
         def __init__(self, directory_path: str, pattern: str):
