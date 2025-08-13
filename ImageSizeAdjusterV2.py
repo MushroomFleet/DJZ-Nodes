@@ -6,7 +6,7 @@ class ImageSizeAdjusterV2:
         return {
             "required": {
                 "image": ("IMAGE",),
-                "model_type": (["SD", "SDXL", "Cascade"],),
+                "model_type": (["SD", "SDXL", "1440p", "WAN22", "Cascade", "4K", "8K", "16K"],),
                 "downscale_factor": ("INT", {
                     "default": 64,
                     "min": 1,
@@ -52,7 +52,12 @@ class ImageSizeAdjusterV2:
         total_pixels = {
             'SD': 512 * 512,
             'SDXL': 1024 * 1024,
-            'Cascade': 2048 * 2048
+            '1440p': 1440 * 1440,
+            'WAN22': 1536 * 1536,
+            'Cascade': 2048 * 2048,
+            '4K': 2880 * 2880,
+            '8K': 5760 * 5760,
+            '16K': 11520 * 11520
         }
 
         _, original_height, original_width, _ = image.shape

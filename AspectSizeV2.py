@@ -8,7 +8,7 @@ class AspectSizeV2:
     def INPUT_TYPES(s):
         return {
             "required": {
-                "model_type": (["SD","SDXL","WAN22","Cascade"],),
+                "model_type": (["SD", "SDXL", "1440p", "WAN22", "Cascade", "4K", "8K", "16K"],),
                 "aspect_ratio_width": ("INT", {
                     "default": 1,
                     "step": 1,
@@ -39,8 +39,12 @@ class AspectSizeV2:
         total_pixels = {
             'SD': 512 * 512,
             'SDXL': 1024 * 1024,
+            '1440p': 1440 * 1440,
             'WAN22': 1536 * 1536,
-            'Cascade': 2048 * 2048
+            'Cascade': 2048 * 2048,
+            '4K': 2880 * 2880,
+            '8K': 5760 * 5760,
+            '16K': 11520 * 11520
         }
     
         # Calculate the number of total pixels based on model type
