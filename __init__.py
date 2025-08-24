@@ -1014,5 +1014,12 @@ try:
 except ImportError:
     print("Unable to import ZenakiVideoPromptV1. This node will not be available.")
 
+try:
+    from .PartTimer import PartTimer
+    NODE_CLASS_MAPPINGS["PartTimer"] = PartTimer
+    NODE_DISPLAY_NAME_MAPPINGS["PartTimer"] = "Part Timer (Stopwatch)"
+except ImportError:
+    print("Unable to import PartTimer. This node will not be available.")
+
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
