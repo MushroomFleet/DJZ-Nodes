@@ -136,6 +136,13 @@ except ImportError:
     print("Unable to import DJZ-LoadLatentV2. This node will not be available.")
 
 try:
+    from .DJZImageScaleToTotalPixels import DJZImageScaleToTotalPixels
+    NODE_CLASS_MAPPINGS["DJZImageScaleToTotalPixels"] = DJZImageScaleToTotalPixels
+    NODE_DISPLAY_NAME_MAPPINGS["DJZImageScaleToTotalPixels"] = "DJZ Scale to Total Pixels"
+except ImportError:
+    print("Unable to import DJZImageScaleToTotalPixels. This node will not be available.")
+
+try:
     from .SaveText import SaveText
     NODE_CLASS_MAPPINGS["SaveText"] = SaveText
     NODE_DISPLAY_NAME_MAPPINGS["SaveText"] = "Save Text"
@@ -394,6 +401,13 @@ try:
     NODE_DISPLAY_NAME_MAPPINGS["StringChaos"] = "String Chaos Modes"
 except ImportError:
     print("Unable to import StringChaos. This node will not be available.")
+
+try:
+    from .StringMatch import StringMatch
+    NODE_CLASS_MAPPINGS["StringMatch"] = StringMatch
+    NODE_DISPLAY_NAME_MAPPINGS["StringMatch"] = "String Match"
+except ImportError:
+    print("Unable to import StringMatch. This node will not be available.")
 
 try:
     from .CombineAudio import CombineAudio
@@ -1020,6 +1034,13 @@ try:
     NODE_DISPLAY_NAME_MAPPINGS["PartTimer"] = "Part Timer (Stopwatch)"
 except ImportError:
     print("Unable to import PartTimer. This node will not be available.")
+
+try:
+    from .DJZ_ParallaxV1 import DJZ_ParallaxV1
+    NODE_CLASS_MAPPINGS["DJZ_ParallaxV1"] = DJZ_ParallaxV1
+    NODE_DISPLAY_NAME_MAPPINGS["DJZ_ParallaxV1"] = "DJZ Parallax V1"
+except ImportError:
+    print("Unable to import DJZ_ParallaxV1. This node will not be available.")
 
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

@@ -59,15 +59,18 @@ class PartTimer:
             Tuple of (START, STOP) passed through for chaining
         """
         current_time = time.time()
+        print(f"Current Time: {current_time}")
         
         # If this is the first time we're seeing START input, record start time
         if START is not None and self.start_time is None:
             self.start_time = current_time
             print(f"[{label}] Stopwatch STARTED at {time.strftime('%H:%M:%S', time.localtime(current_time))}")
+            print(f"Start Time: {self.start_time}")
         
         # If we have a STOP input and we've already started timing
         if STOP is not None and self.start_time is not None:
             elapsed_seconds = current_time - self.start_time
+            print(f"Elapsed Seconds: {elapsed_seconds}")
             
             # Convert to HHMMSS format
             hours = int(elapsed_seconds // 3600)
