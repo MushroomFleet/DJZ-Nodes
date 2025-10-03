@@ -136,6 +136,13 @@ except ImportError:
     print("Unable to import DJZ-LoadLatentV2. This node will not be available.")
 
 try:
+    from .DJZColorWheel import DJZColorWheel
+    NODE_CLASS_MAPPINGS["DJZColorWheel"] = DJZColorWheel
+    NODE_DISPLAY_NAME_MAPPINGS["DJZColorWheel"] = "DJZ Color Wheel"
+except ImportError:
+    print("Unable to import DJZColorWheel. This node will not be available.")
+
+try:
     from .DJZImageScaleToTotalPixels import DJZImageScaleToTotalPixels
     NODE_CLASS_MAPPINGS["DJZImageScaleToTotalPixels"] = DJZImageScaleToTotalPixels
     NODE_DISPLAY_NAME_MAPPINGS["DJZImageScaleToTotalPixels"] = "DJZ Scale to Total Pixels"

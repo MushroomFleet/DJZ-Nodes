@@ -46,7 +46,7 @@ class ZenkaiDepthPrompt:
                 "whitelist": ("STRING", {
                     "default": "",
                     "multiline": False,
-                    "placeholder": "e.g., photo, man, \"man holding\", landscape"
+                    "placeholder": "e.g., photo, low angle, man holding, landscape"
                 })
             }
         }
@@ -56,15 +56,20 @@ class ZenkaiDepthPrompt:
     CATEGORY = "DJZ-Nodes"
 
     def parse_whitelist(self, whitelist_str):
+        """Parse comma-separated whitelist terms, supporting multi-word phrases.
+        
+        Examples:
+            "photo, low angle, man holding" -> ["photo", "low angle", "man holding"]
+            "sunset,    beach scene  , ocean" -> ["sunset", "beach scene", "ocean"]
+        """
         if not whitelist_str.strip():
             return []
         
-        # Pattern to match either quoted phrases or single words
-        pattern = r'"([^"]+)"|([^,\s]+)'
-        matches = re.findall(pattern, whitelist_str)
+        # Split by commas and strip whitespace from each term
+        terms = [term.strip() for term in whitelist_str.split(',')]
         
-        # Combine both quoted and unquoted matches, strip whitespace
-        return [quoted or unquoted.strip() for quoted, unquoted in matches if quoted or unquoted.strip()]
+        # Filter out empty terms
+        return [term for term in terms if term]
 
     def contains_whitelist_term(self, text, whitelist_terms):
         if not whitelist_terms:
