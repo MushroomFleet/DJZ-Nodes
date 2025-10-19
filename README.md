@@ -135,6 +135,25 @@ Every node includes comprehensive documentation in its corresponding .md file, c
 
 Find the complete documentation index in [DJZ-Nodes-Index.md](https://github.com/MushroomFleet/DJZ-Nodes/blob/main/DJZ-Nodes-Index.md).
 
+
+## 📚 Citation
+
+### Academic Citation
+
+If you use this codebase in your research or project, please cite:
+
+```bibtex
+@software{djz_nodes,
+  title = {DJZ Nodes: over 100 ComfyUI custom nodes, from Drift Johnson at Scuffed Epoch},
+  author = {[Drift Johnson]},
+  year = {2025},
+  url = {https://github.com/MushroomFleet/DJZ-Nodes},
+  version = {1.0.0}
+}
+```
+
+
+
 # About the Creator
 
 ### Hi 👋, I'm Drift Johnson
@@ -174,3 +193,4 @@ Find the complete documentation index in [DJZ-Nodes-Index.md](https://github.com
 ### Support:
 
 [![Ko-Fi](https://cdn.ko-fi.com/cdn/kofi3.png?v=3)](https://ko-fi.com/driftjohnson)
+
