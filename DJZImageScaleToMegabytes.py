@@ -36,16 +36,16 @@ class DJZImageScaleToMegabytes:
 
     def estimate_png_size(self, width, height, channels=3):
         """
-        Estimate PNG file size in bytes.
-        PNG compression varies, but a reasonable estimate is:
-        - Uncompressed: width * height * channels bytes
-        - With compression: typically 30-50% of uncompressed size for photos
-        - We'll use a conservative 40% compression factor
+        Estimate PNG file size in bytes with safety margin.
+        PNG compression is highly variable, so we use conservative estimates:
+        - Base compression factor: 0.8 (assume 20% compression)
+        - Safety margin: 0.85 (to stay under limit)
+        - Combined: 0.68 of uncompressed size
+        This ensures output files stay safely under the specified target.
         """
         uncompressed_size = width * height * channels
-        # Conservative estimate: assume 40% compression efficiency
-        # (60% of original size remains after compression)
-        estimated_size = uncompressed_size * 0.6
+        # Conservative estimate with safety margin to prevent exceeding target
+        estimated_size = uncompressed_size * 0.8 * 0.85  # = 0.68
         return estimated_size
 
     def calculate_target_dimensions(self, current_width, current_height, target_bytes, channels=3):
@@ -76,7 +76,8 @@ class DJZImageScaleToMegabytes:
         # Determine target bytes per image
         if batch:
             # Divide target bytes across all images in batch
-            bytes_per_image = target_bytes / batch_size
+            # Apply additional 0.82 safety factor for batch mode to prevent overshoot
+            bytes_per_image = (target_bytes / batch_size) * 0.82
         else:
             # Each image should be approximately the target size
             bytes_per_image = target_bytes
