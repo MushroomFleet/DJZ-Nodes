@@ -150,6 +150,13 @@ except ImportError:
     print("Unable to import DJZImageScaleToTotalPixels. This node will not be available.")
 
 try:
+    from .DJZImageScaleToMegabytes import DJZImageScaleToMegabytes
+    NODE_CLASS_MAPPINGS["DJZImageScaleToMegabytes"] = DJZImageScaleToMegabytes
+    NODE_DISPLAY_NAME_MAPPINGS["DJZImageScaleToMegabytes"] = "DJZ Scale to Megabytes"
+except ImportError:
+    print("Unable to import DJZImageScaleToMegabytes. This node will not be available.")
+
+try:
     from .SaveText import SaveText
     NODE_CLASS_MAPPINGS["SaveText"] = SaveText
     NODE_DISPLAY_NAME_MAPPINGS["SaveText"] = "Save Text"
